@@ -180,6 +180,10 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         }
     }
 
+    public void onClick(View v){
+        v.getParent();
+    }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
