@@ -12,30 +12,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\.idea\libraries\jaudiotagger3.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="f1e509aca2fa0a12c0ea9d138dd881e1347c92fc">
-        <dex dex="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\transforms\dex\debug\folders\1000\2\jaudiotagger3_cdfba15a854578d6896a7bf1f0e238808f91c32b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
         sha1="b3cd9787dbda8d0a3fb3d0dea58965603ac3974f">
         <dex dex="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_be6fecb19b85a2c3b7a8a30ac33d19bbd9455af4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\.idea\libraries\MyID3_for_Android.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="36069803c7ed5def20d753420857f40a5a91cd06">
-        <dex dex="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\transforms\dex\debug\folders\1000\2\MyID3_for_Android_d589c914dacd3af51ccc899fa47eaaf71c8b9491\classes.dex" />
     </item>
 
 </items>

@@ -54,6 +54,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
             public void onClick(View view) {
                 //Snackbar.make(view, "Does it work? Maybe...", Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
+                /*
                 ArrayList<HashMap<String,String>> songList=getPlayList(Environment.getExternalStorageDirectory().getAbsolutePath(), ".mp3");
                 if(songList!=null){
                     for(int i=0;i<songList.size();i++){
@@ -66,6 +67,8 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
                 } else {
                     System.out.println("null");
                 }
+                */
+
                 test();
             }
         });
@@ -121,6 +124,8 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
 
             File mp3 = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath() + "/test.mp3");
+            System.out.println(mp3.getAbsolutePath());
+
 
             AudioFile audio = null;
 
@@ -136,15 +141,17 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
                 System.out.println("metadata exists.");
                 try {
                     Tag tag = audio.getTag();
+
                     System.out.println(tag.getFirst(FieldKey.ARTIST));
 
-                    if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                        tag.setField(FieldKey.ARTIST, "nougatschnitte");
+                    System.out.println("writing");
 
-                        AudioFileIO.write(audio);
-                    } else {
-                        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSIONS_REQUEST_WRITE_STORAGE);
-                    }
+                    tag.setField(FieldKey.ARTIST, "trollkonig");
+
+                    System.out.println(tag.getFirst(FieldKey.ARTIST));
+
+                    AudioFileIO.write(audio);
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
