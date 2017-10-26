@@ -2,6 +2,7 @@ package thejetstream.de.mp3tagedit;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.media.MediaMetadataRetriever;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -146,11 +147,16 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
 
                     System.out.println("writing");
 
-                    tag.setField(FieldKey.ARTIST, "trollkonig");
+                    tag.setField(FieldKey.ARTIST, "weintraube");
 
                     System.out.println(tag.getFirst(FieldKey.ARTIST));
 
                     AudioFileIO.write(audio);
+
+                    MediaMetadataRetriever mmr = new MediaMetadataRetriever();
+                    mmr.setDataSource(mp3.getAbsolutePath());
+
+                    System.out.println("MMR Name: " + mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ARTIST));
 
                 } catch (Exception e) {
                     e.printStackTrace();
