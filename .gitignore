@@ -29,3 +29,5 @@ hs_err_pid*
 .gradle/3.3/taskArtifacts/taskArtifacts.lock
 .gradle/3.3/taskArtifacts/taskArtifacts.bin
 *.properties
+*.lock
+*.bin
