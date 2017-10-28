@@ -5,4 +5,5 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="defaultText">#202020</color>
+    <color name="Text">#202020</color>
 </resources>
