@@ -1,0 +1,38 @@
+<resources>
+
+    <!--
+    GERMAN LOCALE
+    -->
+
+    <string name="app_name">mp3 Tag Editor</string>
+
+    <string name="navigation_drawer_open">Navigation öffnen</string>
+    <string name="navigation_drawer_close">Navigation schließen</string>
+
+    <!-- Text for various buttons -->
+    <string name="action_settings">Einstellungen</string>
+    <string name="button_add">+</string>
+    <string name="button_remove">-</string>
+
+    <!-- Text for the tags (fields) -->
+    <string name="tagedit_artists">Interpret</string>
+    <string name="tagedit_album">Album</string>
+    <string name="tagedit_album_artist">Album Interpret</string>
+    <string name="tagedit_genres">Genres</string>
+    <string name="tagedit_title">Titel</string>
+    <string name="tagedit_track">Track</string>
+
+    <!-- Text for the music player (buttons) -->
+    <string name="player_play">Play</string>
+    <string name="player_stop">Pause</string>
+
+    <!-- Text for file handling -->
+    <string name="file_open">Öffnen</string>
+    <string name="file_close">Schließen</string>
+    <string name="file_save">Speichern</string>
+    <string name="file_undo">Rückgängig</string>
+
+    <!-- Text for navigation -->
+    <string name="nav_forward">Vor</string>
+    <string name="nav_backward">Zurück</string>
+</resources>

@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="?attr/actionBarSize"
-        android:background="@color/colorPrimary2">
+        android:background="@color/colorAccent">
 
         <LinearLayout
             android:id="@+id/appbarContent"
@@ -51,9 +51,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="Titel"
+                    android:text="@string/tagedit_title"
                     android:textSize="10pt"
-                    android:textColor="@color/defaultText" />
+                    android:textColor="@color/lightText" />
 
                 <EditText
                     android:id="@+id/titelIn"
@@ -75,14 +75,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Play" />
+                        android:text="@string/player_play" />
 
                     <Button
                         android:id="@+id/save"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Speichern" />
+                        android:text="@string/file_save" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -132,7 +132,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
-                android:text="Album"
+                android:text="@string/tagedit_album"
                 android:textColor="@color/defaultText" />
 
             <EditText
@@ -149,7 +149,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
-                android:text="Künstler"
+                android:text="@string/tagedit_artists"
                 android:textColor="@color/defaultText" />
 
             <EditText
@@ -165,7 +165,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
-                android:text="Genre"
+                android:text="@string/tagedit_genres"
                 android:textColor="@color/defaultText" />
 
             <EditText

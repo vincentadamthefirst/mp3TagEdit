@@ -1,8 +1,38 @@
 <resources>
+
+    <!--
+    OTHER LOCALE (use english)
+    -->
+
     <string name="app_name">mp3 Tag Edit</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <!-- Text for various buttons -->
     <string name="action_settings">Settings</string>
+    <string name="button_add">+</string>
+    <string name="button_remove">-</string>
+
+    <!-- Text for the tags (fields) -->
+    <string name="tagedit_artists">Artists</string>
+    <string name="tagedit_album">Album</string>
+    <string name="tagedit_album_artist">Album artist</string>
+    <string name="tagedit_genres">Genres</string>
+    <string name="tagedit_title">Title</string>
+    <string name="tagedit_track">Track number</string>
+
+    <!-- Text for the music player (buttons) -->
+    <string name="player_play">Play</string>
+    <string name="player_stop">Pause</string>
+
+    <!-- Text for file handling -->
+    <string name="file_open">Open</string>
+    <string name="file_close">Close</string>
+    <string name="file_save">Save</string>
+    <string name="file_undo">Undo</string>
+
+    <!-- Text for navigation -->
+    <string name="nav_forward">Forward</string>
+    <string name="nav_backward">Backward</string>
 </resources>
