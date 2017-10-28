@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="?attr/actionBarSize"
-        android:background="@color/colorAccent">
+        android:background="@color/colorSecondaryLight">
 
         <LinearLayout
             android:id="@+id/appbarContent"
@@ -52,6 +52,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
+                    android:textStyle="bold"
                     android:text="@string/tagedit_title"
                     android:textSize="10pt"
                     android:textColor="@color/lightText" />
@@ -61,6 +62,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
+                    android:textColor="@color/lightText"
                     android:ems="10"
                     android:inputType="textImeMultiLine"
                     android:text=""
@@ -106,6 +108,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:layout_marginTop="7dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp">
 
@@ -121,6 +124,7 @@
                 android:id="@+id/album"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:layout_weight="1.5"
                 android:text="@string/tagedit_album"
                 android:textColor="@color/defaultText" />
@@ -138,6 +142,7 @@
                 android:id="@+id/artist"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:layout_weight="1.5"
                 android:text="@string/tagedit_artists"
                 android:textColor="@color/defaultText" />
@@ -175,6 +180,7 @@
                 android:id="@+id/genre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:layout_weight="1.5"
                 android:text="@string/tagedit_genres"
                 android:textColor="@color/defaultText" />
