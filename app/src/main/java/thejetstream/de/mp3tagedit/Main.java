@@ -37,6 +37,18 @@ import java.util.HashMap;
 
 public class Main extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    /*
+    https://musicmachinery.com/music-apis/
+    https://www.programmableweb.com/category/music/apis?category=19990
+
+    https://wiki.musicbrainz.org/Development/XML_Web_Service/Version_2
+    https://www.last.fm/api/account/create
+    https://www.last.fm/api/account/create
+    http://developer.openaura.com/
+    */
+
+
+
     // request integers for permissions
     public static final int PERMISSIONS_REQUEST_READ_STORAGE = 42;
     public static final int PERMISSIONS_REQUEST_WRITE_STORAGE = 43;

@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="98ec79607b8f35eb9384987d16b0b9d99795e57b">
+        <dex dex="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_b702da93593f1a5de0573783e823ea9092930fe2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_dca1efa9f4c1ac27380aa56349651ed974636d2e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="b3cd9787dbda8d0a3fb3d0dea58965603ac3974f">
-        <dex dex="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_be6fecb19b85a2c3b7a8a30ac33d19bbd9455af4\classes.dex" />
+        <dex dex="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_f06c5c6bc92a3769b18efb050b0be94f253389df\classes.dex" />
     </item>
 
 </items>
