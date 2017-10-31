@@ -2,6 +2,9 @@ package thejetstream.de.mp3tagedit;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Icon;
 import android.media.MediaMetadataRetriever;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,6 +23,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import org.jaudiotagger.audio.AudioFile;
 import org.jaudiotagger.audio.AudioFileIO;
@@ -29,6 +34,7 @@ import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
 import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagException;
+import org.jaudiotagger.tag.images.Artwork;
 
 import java.io.File;
 import java.io.IOException;
@@ -83,6 +89,15 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
                 */
 
                 test();
+            }
+        });
+
+        Button play = (Button) findViewById(R.id.play_button);
+        play.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
             }
         });
 
@@ -153,8 +168,23 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
             } else {
                 System.out.println("metadata exists.");
                 try {
+                    // get the tags
                     Tag tag = audio.getTag();
 
+                    // get the object
+                    ImageButton butt = (ImageButton) findViewById(R.id.coverArt);
+
+                    // get artwork and convert to bmp
+                    Artwork a = tag.getFirstArtwork();
+                    byte[] data = a.getBinaryData();
+                    Bitmap bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
+
+                    // set image
+                    butt.setImageBitmap(bmp);
+
+
+
+                    /*
                     System.out.println(tag.getFirst(FieldKey.ARTIST));
 
                     System.out.println("writing");
@@ -169,6 +199,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
                     mmr.setDataSource(mp3.getAbsolutePath());
 
                     System.out.println("MMR Name: " + mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ARTIST));
+                    */
 
                 } catch (Exception e) {
                     e.printStackTrace();

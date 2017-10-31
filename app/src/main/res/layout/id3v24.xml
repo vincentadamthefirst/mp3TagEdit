@@ -75,7 +75,7 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/play"
+                        android:id="@+id/play_button"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -85,7 +85,7 @@
                         android:textColor="@color/lightText" />
 
                     <Button
-                        android:id="@+id/save"
+                        android:id="@+id/save_button"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

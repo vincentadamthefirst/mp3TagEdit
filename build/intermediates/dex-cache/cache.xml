@@ -2,139 +2,22 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="C:\Users\Vincent\.android\build-cache\2fd9729d5e77a8a5b5afd51fd653ad2e34df4958\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="9935891f23923f39d002087085d9696568a9f657">
-        <dex dex="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\pre-dexed\debug\classes_8d65fa8db95a1fe33870b6dfc7389b69dca9d531.jar" />
+        sha1="b3cd9787dbda8d0a3fb3d0dea58965603ac3974f">
+        <dex dex="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_be6fecb19b85a2c3b7a8a30ac33d19bbd9455af4\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\Vincent\.android\build-cache\76fac1dab5a282fa39cce2b58ae11191ec96442b\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
-        <dex dex="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\pre-dexed\debug\classes_d2b38a9a7e7f844c3ef1566fd1460e9dc86b3f71.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Vincent\.android\build-cache\5381df772dab570ed89e1ec83e86ad099d19626d\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
-        <dex dex="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\pre-dexed\debug\classes_75020507164f37d59691f6e8cb43ef0e7dd41ffb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Vincent\.android\build-cache\7da026a6f9cca6dfdb76037489949017da6ddf35\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="952944218ecedea1554a513dec0c14d570642843">
-        <dex dex="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\pre-dexed\debug\classes_27173fe003b2137df73323153f46e973d96dd367.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Vincent\.android\build-cache\22362403ac6b49400ca2da5dbcb992b2c38b4367\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
-        <dex dex="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\pre-dexed\debug\classes_e37cf08e9908ab012c8cdb0a09696523accb4a23.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Vincent\.android\build-cache\372156a3afd76c0980d7e83ae71bd9d4859d0290\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
-        <dex dex="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\pre-dexed\debug\classes_5ee7a8bbfc814095ac3cf397ced871c807204c30.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Vincent\.android\build-cache\95c1457ad99cf1d9dd37d71d69708fb698f97c9f\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
-        <dex dex="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\pre-dexed\debug\classes_74ab410b77dc9e94f9907100510199d7ca5f1d25.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Vincent\.android\build-cache\5a2cc50b52587ef8d0b7534216e7789e13324e36\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\pre-dexed\debug\classes_bfb221bc3b36124edc36e05762e48f1f2808b701.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Vincent\.android\build-cache\eb9fd773a9d68bb5afe66113aa59266e70503081\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
-        <dex dex="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\pre-dexed\debug\classes_a94de7107d01cbfe3d2c5935338c85578ae9b0c7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Vincent\.android\build-cache\dbcc8500e601e4bc672bb48306ced40c6bc82f92\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
-        <dex dex="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\pre-dexed\debug\classes_29107083a4eb23f5cf528ecb7c6d014ad02d608a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Data\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="023ee503b631f69511e335a061ea008f8da60f40">
-        <dex dex="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\pre-dexed\debug\support-annotations-26.0.0-alpha1_9a77fa7b7c8905ee3f0ebe37ed2d4037118b7318.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Data\AndroidSDK\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_ffd2c019360d0c1f97b01538469fae9f7d73ff8b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Vincent\.android\build-cache\e10463c1c65c3e1bc0514caaf496db16e59534f9\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
-        <dex dex="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\pre-dexed\debug\classes_17f7a9aa41ab57aaef6b98737be7e556ee5a4f94.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Vincent\.android\build-cache\d0e3f0eb2b9ae1451bc64c42031bb7325ae06bbc\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\pre-dexed\debug\classes_44482fe6b23fcd6ff71db766d963b39bf51dac20.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Vincent\.android\build-cache\10fa6bba8943b48b90de08b45c363b57c956f05b\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
-        <dex dex="D:\Data\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\pre-dexed\debug\classes_07e01c76c3f96f8b9285240531f214af22b450c2.jar" />
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_dca1efa9f4c1ac27380aa56349651ed974636d2e\classes.dex" />
     </item>
 
 </items>
