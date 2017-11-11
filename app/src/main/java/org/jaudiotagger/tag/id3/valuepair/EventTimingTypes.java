@@ -41,7 +41,7 @@ public class EventTimingTypes extends AbstractIntStringValuePair
         idToValue.put(0x00, "Padding (has no meaning)");
         idToValue.put(0x01, "End of initial silence");
         idToValue.put(0x02, "Intro start");
-        idToValue.put(0x03, "Main part start");
+        idToValue.put(0x03, "id3v24 part start");
         idToValue.put(0x04, "Outro start");
         idToValue.put(0x05, "Outro end");
         idToValue.put(0x06, "Verse start");
@@ -55,7 +55,7 @@ public class EventTimingTypes extends AbstractIntStringValuePair
         idToValue.put(0x0E, "Sustained noise");
         idToValue.put(0x0F, "Sustained noise end");
         idToValue.put(0x10, "Intro end");
-        idToValue.put(0x11, "Main part end");
+        idToValue.put(0x11, "id3v24 part end");
         idToValue.put(0x12, "Verse end");
         idToValue.put(0x13, "Refrain end");
         idToValue.put(0x14, "Theme end");

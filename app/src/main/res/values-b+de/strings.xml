@@ -35,4 +35,10 @@
     <!-- Text for navigation -->
     <string name="nav_forward">Vor</string>
     <string name="nav_backward">Zurück</string>
+
+    <!-- Text for Welcome Screen -->
+    <string name="welcome_message">Wilkommen bei mp3TagEdit</string>
+
+    <!-- Text for Help page -->
+    <string name="placeholder">Platzhalter</string>
 </resources>

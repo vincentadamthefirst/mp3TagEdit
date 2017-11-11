@@ -305,11 +305,11 @@ public class Mp4EsdsBox extends AbstractMp4Box
      */
     public static enum AudioProfile
     {
-        MAIN(1, "Main"),
+        MAIN(1, "id3v24"),
         LOW_COMPLEXITY(2, "Low Complexity"),
         SCALEABLE(3, "Scaleable Sample rate"),
         T_F(4, "T/F"),
-        T_F_MAIN(5, "T/F Main"),
+        T_F_MAIN(5, "T/F id3v24"),
         T_F_LC(6, "T/F LC"),
         TWIN_VQ(7, "TWIN"),
         CELP(8, "CELP"),
