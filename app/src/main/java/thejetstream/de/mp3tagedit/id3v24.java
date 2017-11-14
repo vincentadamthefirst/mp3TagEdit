@@ -1,6 +1,7 @@
 package thejetstream.de.mp3tagedit;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -23,6 +24,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -58,6 +61,8 @@ public class id3v24 extends AppCompatActivity implements NavigationView.OnNaviga
     // request integers for permissions
     public static final int PERMISSIONS_REQUEST_READ_STORAGE = 42;
     public static final int PERMISSIONS_REQUEST_WRITE_STORAGE = 43;
+
+
 
 
     @Override
@@ -98,6 +103,18 @@ public class id3v24 extends AppCompatActivity implements NavigationView.OnNaviga
 
             @Override
             public void onClick(View v) {
+
+            }
+        });
+
+        Button addArtist = (Button) findViewById(R.id.addArtist);
+        addArtist.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick (View v) {
+                ViewGroup vg =  (ViewGroup) v.getParent();
+
+                vg.removeView(v);
 
             }
         });
