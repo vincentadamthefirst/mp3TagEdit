@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="thejetstream.de.mp3tagedit.id3v24">
+    tools:context="thejetstream.de.main.id3v24">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

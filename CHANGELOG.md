@@ -11,9 +11,11 @@ Additionally there is information on upcoming features in the "Upcoming" Section
 
 ## Releases
 
-### Version 0.0.1 (Initial Release)
+### Version 0.1 (Initial Release)
 
 * basic functions implemented
 * set-up of the github page
 
 * **APK-Download**: no release
+
+### Version 0.2 (still W.I.P)

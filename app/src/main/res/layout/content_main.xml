@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="thejetstream.de.mp3tagedit.id3v24"
+    tools:context="thejetstream.de.main.id3v24"
     tools:showIn="@layout/app_bar_main">
 
     <TextView

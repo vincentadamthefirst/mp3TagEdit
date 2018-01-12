@@ -42,4 +42,13 @@
     <!-- Text for Help page -->
     <string name="placeholder">placeholder</string>
 
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <!-- Recent Update Text -->
+    <!-- every '*' will start a new point -->
+    <string name="current_version">Version 0.2a</string>
+    <string name="update_text">* test * another test</string>
+
 </resources>
