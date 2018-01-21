@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context="mp3tagedit.de.main.WelcomeActivity">
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Starteditor"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="174dp" />
 </android.support.constraint.ConstraintLayout>

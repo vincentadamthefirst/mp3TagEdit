@@ -14,6 +14,7 @@ import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
@@ -28,6 +29,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -74,6 +76,9 @@ public class id3v24 extends AppCompatActivity implements NavigationView.OnNaviga
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -82,6 +87,7 @@ public class id3v24 extends AppCompatActivity implements NavigationView.OnNaviga
         for (File f : allStorage) {
             System.out.println(f.getAbsolutePath());
         }
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -160,6 +166,12 @@ public class id3v24 extends AppCompatActivity implements NavigationView.OnNaviga
         output.copyTo(bmp);
 
         View overall = (View) findViewById(R.id.overall);
+
+        AppBarLayout appbar = (AppBarLayout) findViewById(R.id.appbar);
+        appbar.setVisibility(View.INVISIBLE);
+
+        overall.bringToFront();
+
         BitmapDrawable bmpd = new BitmapDrawable(getResources(), bmp);
         overall.setBackground(bmpd);
     }
