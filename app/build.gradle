@@ -37,9 +37,10 @@ dependencies {
         transitive = true
     }
     compile 'com.android.support:recyclerview-v7:26.1.0'       // additionally needed by materialdrawer
-    compile 'com.android.support:support-annotations:26.1.0'   // additionally needed by materialdrawer
+    compile 'com.android.support:support-annotations:27.0.2'   // additionally needed by materialdrawer
 
-    // Including usable Icons and Fonts from Fontawesome
+    // Including usable Icons and Fonts from Fontawesome and Google Typeface
     compile 'com.mikepenz:iconics-core:3.0.1@aar'
     compile 'com.mikepenz:fontawesome-typeface:4.7.0.2@aar'
+    implementation 'com.mikepenz:google-material-typeface:3.0.1.2.original@aar'
 }

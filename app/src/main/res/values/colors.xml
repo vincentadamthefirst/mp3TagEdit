@@ -1,17 +1,15 @@
 <!--?xml version="1.0" encoding="UTF-8"?-->
 <resources>
-    <color name="colorPrimary">#1a237e</color>
-    <color name="colorPrimary2">#534bae</color>
-    <color name="colorPrimaryDark">#000051</color>
+    <color name="colorPrimary">#ffffff</color>        <!-- -->
+    <color name="colorPrimaryDark">#010006</color>    <!-- e.g. Android Task Bar -->
     <color name="colorSecondary">#3949ab</color>
     <color name="colorSecondaryLight">#6f74dd</color>
     <color name="colorSecondaryDark">#002984</color>
     <color name="colorAccentNone">#3949ab</color>
     <color name="colorAccentLight">#6f74dd</color>
-    <color name="colorAccent">#00227b</color>
-    <color name="defaultText">#202020</color>
-    <color name="lightText">#ffffff</color>
-    <color name="gightText">#ffffff</color>
+    <color name="colorAccent">#d9ffffff</color>
+    <color name="defaultText">#d9d9d9</color>         <!-- default text color for all text elements -->
+    <color name="lightText">#ffffff</color>           <!-- white Text -->
 
     <color name="black_overlay">#66000000</color>
 </resources>
