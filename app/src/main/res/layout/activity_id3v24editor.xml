@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,6 +8,7 @@
 
     <RelativeLayout
         android:id="@+id/actionbar"
+        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="50dp">
@@ -45,10 +46,28 @@
 
             <Button
                 android:id="@+id/open_options"
-                android:layout_width="30dp"
+                android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"/>
         </RelativeLayout>
     </RelativeLayout>
-</android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/verticalbar"
+        android:layout_below="@id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/white_rectangle"/>
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/coordinatorlayout"
+        android:layout_below="@id/verticalbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- MAIN CONTENT -->
+
+    </android.support.design.widget.CoordinatorLayout>
+</android.widget.RelativeLayout>
