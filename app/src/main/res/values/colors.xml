@@ -10,6 +10,6 @@
     <color name="colorAccent">#d9ffffff</color>
     <color name="defaultText">#d9d9d9</color>         <!-- default text color for all text elements -->
     <color name="lightText">#ffffff</color>           <!-- white Text -->
-
+    <color name="whiteSeeThrough">#0fffffff</color>
     <color name="black_overlay">#66000000</color>
 </resources>

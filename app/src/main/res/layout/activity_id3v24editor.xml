@@ -62,7 +62,7 @@
         </RelativeLayout>
     </RelativeLayout>
 
-    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/coordinatorlayout"
         android:layout_below="@id/actionbar"
         android:layout_width="match_parent"
@@ -72,10 +72,11 @@
         <!-- MAIN CONTENT -->
 
         <RelativeLayout
+            android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginTop="5dp"
-            android:background="#0FFFFFFF">  <!-- first "OF" used for opacity (6%) -->
+            android:background="@color/whiteSeeThrough">  <!-- first "OF" used for opacity (6%) -->
 
             <ImageButton
                 android:layout_width="130dp"
@@ -88,66 +89,232 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="150dp"
-                android:orientation="vertical"
-                android:layout_marginStart="150dp">
+                android:layout_marginStart="150dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_Title"
                     android:layout_width="fill_parent"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:textColor="@color/defaultText"
+                    android:layout_marginTop="10dp"
                     android:text="@string/tagedit_title"
-                    />
+                    android:textColor="@color/defaultText"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/edit_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
-                    android:textSize="18sp"
                     android:textColor="@color/defaultText"
-                    />
+                    android:textSize="18sp" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginStart="2dp"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginStart="2dp">
 
                     <Button
                         android:id="@+id/play_button"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        />
+                        android:layout_centerVertical="true" />
 
                     <Button
                         android:id="@+id/save_button"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
-                        android:layout_centerVertical="true"
                         android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
                         android:background="@drawable/white_rectangle"
-                        android:textColor="@color/defaultText"
-                        />
+                        android:textColor="@color/defaultText" />
 
                     <Button
                         android:id="@+id/share_button"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        />
+                        android:layout_centerVertical="true" />
                 </RelativeLayout>
 
 
             </LinearLayout>
         </RelativeLayout>
-    </android.support.design.widget.CoordinatorLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/header"
+            app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--
+                Album
+                Artist
+                Comment (auto generated, hidden)
+                Track
+                TotalTracks
+                Genre
+                -->
+
+                <RelativeLayout
+                    android:id="@+id/albumLayout"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/whiteSeeThrough">
+
+                    <TextView
+                        android:id="@+id/tv_album"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:textStyle="bold"
+                        android:text="@string/tagedit_album"
+                        android:textColor="@color/defaultText" />
+
+                    <EditText
+                        android:id="@+id/albumIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_below="@id/tv_album"
+                        android:ems="10"
+                        android:inputType="textImeMultiLine"
+                        android:text="" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/artistLayout"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/whiteSeeThrough">
+
+                    <TextView
+                        android:id="@+id/tv_artist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:textStyle="bold"
+                        android:text="@string/tagedit_artists"
+                        android:textColor="@color/defaultText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/tv_artist"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="5dp"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/artistIn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:inputType="textImeMultiLine"
+                                android:text="" />
+
+                            <Button
+                                android:id="@+id/addArtist"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="10"
+                                android:layout_marginBottom="5dp"
+                                android:onClick="addInputLineArtist"
+                                android:text="@string/button_add"
+                                style="@style/Widget.AppCompat.Button.Colored"
+                                android:theme="@style/Button.Add"
+                                android:textColor="@color/defaultText"
+                                android:background="@drawable/white_rectangle"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/genre_layout"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/whiteSeeThrough">
+
+                    <TextView
+                        android:id="@+id/tv_genre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:textStyle="bold"
+                        android:text="@string/tagedit_genres"
+                        android:textColor="@color/defaultText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/tv_genre"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="5dp"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/genreIn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:inputType="textImeMultiLine"
+                                android:text="" />
+
+                            <Button
+                                android:id="@+id/addGenre"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="10"
+                                android:layout_marginBottom="5dp"
+                                android:onClick="addInputLineGenre"
+                                android:text="@string/button_add"
+                                style="@style/Widget.AppCompat.Button.Colored"
+                                android:theme="@style/Button.Add"
+                                android:textColor="@color/defaultText"
+                                android:background="@drawable/white_rectangle"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </RelativeLayout>
 </android.widget.RelativeLayout>
