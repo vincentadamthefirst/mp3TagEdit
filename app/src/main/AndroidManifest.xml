@@ -14,19 +14,23 @@
         <activity
             android:name=".id3v24"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".WelcomeActivity"
             android:theme="@style/AppTheme">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".WelcomeActivity"
+            android:theme="@style/AppTheme">
+
+        </activity>
         <activity android:name=".ErrorActivity" />
         <activity android:name=".id3v24editor" />
         <activity android:name=".id3v23editor"/>
+        <activity android:name=".FileManager"/>
     </application>
 
 </manifest>
