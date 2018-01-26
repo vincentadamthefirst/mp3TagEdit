@@ -8,10 +8,13 @@ import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewManager;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
@@ -25,17 +28,30 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class id3v24editor extends AppCompatActivity {
 
     private Drawer mainDrawer;
 
-    private final static int ACTIONBARSIZE = 50;
+    private final static int PERM_REQ_WRITE_STORAGE = 42;
+    private final static int PERM_REQ_READ_STORAGE = 43;
+
+    public static ArrayList<EditText> artistList;
+    public static ArrayList<EditText> genreList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_id3v24editor);
+
+        artistList = new ArrayList<EditText>();
+        artistList.add((EditText)(findViewById(R.id.artistIn)));
+
+        genreList = new ArrayList<EditText>();
+        genreList.add((EditText)(findViewById(R.id.genreIn)));
 
 
         //if you want to update the items at a later time it is recommended to keep it in a variable
@@ -68,6 +84,46 @@ public class id3v24editor extends AppCompatActivity {
 
         setupActionBar(true, true, "id3v2.4 Editor");
         setupEditorHead();
+    }
+
+    public void addInputLineArtist(View view){
+        ViewGroup viewParent = (ViewGroup)(view.getParent().getParent());
+        ViewGroup vg = (ViewGroup) LayoutInflater.from(viewParent.getContext()).inflate(
+                R.layout.input_line, null);
+
+        artistList.add( (EditText) vg.getChildAt(0));
+
+        vg.getChildAt(1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ViewGroup parent = (ViewGroup) v.getParent().getParent();
+                int index = parent.indexOfChild((View) v.getParent());
+                artistList.remove(index);
+                parent.removeViewAt(index);
+            }
+        });
+
+        viewParent.addView(vg);
+    }
+
+    public void addInputLineGenre(View view){
+        ViewGroup viewParent = (ViewGroup)(view.getParent().getParent());
+        ViewGroup vg = (ViewGroup) LayoutInflater.from(viewParent.getContext()).inflate(
+                R.layout.input_line, null);
+
+        genreList.add( (EditText) vg.getChildAt(0) );
+
+        vg.getChildAt(1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ViewGroup parent = (ViewGroup) v.getParent().getParent();
+                int index = parent.indexOfChild((View) v.getParent());
+                genreList.remove(index);
+                parent.removeViewAt(index);
+            }
+        });
+
+        viewParent.addView(vg);
     }
 
     @Override
