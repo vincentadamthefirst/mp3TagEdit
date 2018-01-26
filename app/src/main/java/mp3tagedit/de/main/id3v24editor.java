@@ -71,7 +71,14 @@ public class id3v24editor extends AppCompatActivity {
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-                        return true;
+                        long identifier = drawerItem.getIdentifier();
+                        if (identifier == 1) {
+                            return true;
+                        } else if (identifier == 2) {
+                            return true;
+                        } else {
+                            return true;
+                        }
                     }
                 }).withDrawerWidthDp(240).build();
 
