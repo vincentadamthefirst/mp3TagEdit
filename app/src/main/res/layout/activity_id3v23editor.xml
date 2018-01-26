@@ -1,9 +1,267 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="mp3tagedit.de.main.id3v23editor">
+    tools:context="mp3tagedit.de.main.id3v24editor">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        android:background="@drawable/bg2blurred"/>
+
+    <RelativeLayout
+        android:id="@+id/actionbar"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:id="@+id/open_drawer_layout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp">
+
+            <Button
+                android:id="@+id/open_drawer"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/activity_title"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/defaultText"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:id="@+id/open_options_layout"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp">
+
+            <Button
+                android:id="@+id/open_options"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/coordinatorlayout"
+        android:layout_below="@id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- MAIN CONTENT -->
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/whiteSeeThrough">  <!-- first "OF" used for opacity (6%) -->
+
+            <ImageButton
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:background="@drawable/white_rectangle"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="10dp"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="150dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_Title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/tagedit_title"
+                    android:textColor="@color/defaultText"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edit_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/defaultText"
+                    android:textSize="18sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="2dp">
+
+                    <Button
+                        android:id="@+id/play_button"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true" />
+
+                    <Button
+                        android:id="@+id/save_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/white_rectangle"
+                        android:textColor="@color/defaultText" />
+
+                    <Button
+                        android:id="@+id/share_button"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/header"
+            app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--
+                Album
+                Artist
+                Comment (auto generated, hidden)
+                Track
+                TotalTracks
+                Genre
+                -->
+
+                <RelativeLayout
+                    android:id="@+id/albumLayout"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/whiteSeeThrough">
+
+                    <TextView
+                        android:id="@+id/tv_album"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:textStyle="bold"
+                        android:text="@string/tagedit_album"
+                        android:textColor="@color/defaultText" />
+
+                    <EditText
+                        android:id="@+id/albumIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_below="@id/tv_album"
+                        android:ems="10"
+                        android:inputType="textImeMultiLine"
+                        android:text="" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/artistLayout"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/whiteSeeThrough">
+
+                    <TextView
+                        android:id="@+id/tv_artist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:textStyle="bold"
+                        android:text="@string/tagedit_artists"
+                        android:textColor="@color/defaultText" />
+
+                    <EditText
+                        android:id="@+id/artistIn"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/tv_artist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="textImeMultiLine"
+                        android:text="" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/genre_layout"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/whiteSeeThrough">
+
+                    <TextView
+                        android:id="@+id/tv_genre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:textStyle="bold"
+                        android:text="@string/tagedit_genres"
+                        android:textColor="@color/defaultText" />
+
+                    <EditText
+                        android:id="@+id/genreIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/tv_genre"
+                        android:ems="10"
+                        android:inputType="textImeMultiLine"
+                        android:text="" />
+                </RelativeLayout>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </RelativeLayout>
+</android.widget.RelativeLayout>

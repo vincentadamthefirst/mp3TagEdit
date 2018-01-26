@@ -11,42 +11,36 @@ import java.util.Random;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-    //minimal Radius for the circles
-    int minRadius = 100;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        Button b = (Button) findViewById(R.id.button1);
-        b.setOnClickListener(new View.OnClickListener() {
+        Button b1 = findViewById(R.id.button1);
+        b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                open();
+                open24();
             }
         });
 
-        //drawCircles(30, this.getCurrentFocus());
+
+        Button b2 = findViewById(R.id.button2);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                open23();
+            }
+        });
     }
 
-    public void open() {
+    public void open24() {
         Intent intfeed = new Intent(this, id3v24editor.class);
         startActivity(intfeed);
     }
 
-
-    public void drawCircles(int k, View v) {
-        Random random = new Random();
-        int w = v.getWidth();
-        int h = v.getHeight();
-
-        for (int i = 0; i < k; i++) {
-            int ranX = random.nextInt(w);
-            int ranY = random.nextInt(h);
-            int ranR = minRadius + random.nextInt(100);
-        }
+    public void open23() {
+        Intent intfeed = new Intent(this, id3v23editor.class);
+        startActivity(intfeed);
     }
-
-
 }
