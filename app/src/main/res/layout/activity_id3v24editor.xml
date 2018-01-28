@@ -158,15 +158,6 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <!--
-                Album
-                Artist
-                Comment (auto generated, hidden)
-                Track
-                TotalTracks
-                Genre
-                -->
-
                 <RelativeLayout
                     android:id="@+id/albumLayout"
                     android:layout_marginTop="5dp"
@@ -313,6 +304,71 @@
                                 />
                         </LinearLayout>
                     </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/yearsLayout"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/whiteSeeThrough">
+
+                    <TextView
+                        android:id="@+id/tv_year"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:textStyle="bold"
+                        android:text="@string/tagedit_year"
+                        android:textColor="@color/defaultText" />
+
+                    <EditText
+                        android:id="@+id/yearIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_below="@id/tv_year"
+                        android:textAlignment="viewEnd"
+                        android:ems="10"
+                        android:inputType="number" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/tracksLayout"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/whiteSeeThrough">
+
+                    <TextView
+                        android:id="@+id/tv_track"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:textStyle="bold"
+                        android:text="@string/tagedit_track"
+                        android:textColor="@color/defaultText" />
+
+                    <EditText
+                        android:id="@+id/trackIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_below="@id/tv_track"
+                        android:textAlignment="viewEnd"
+                        android:ems="10"
+                        android:inputType="number|textFilter"
+                        android:digits="0123456789/"/>
+
                 </RelativeLayout>
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>

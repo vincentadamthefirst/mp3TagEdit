@@ -20,6 +20,7 @@
     <string name="tagedit_album_artist">Album Interpret</string>
     <string name="tagedit_genres">Genres</string>
     <string name="tagedit_title">Titel</string>
+    <string name="tagedit_year">Erscheinungsjahr</string>
     <string name="tagedit_track">Track</string>
 
     <!-- Text for the music player (buttons) -->

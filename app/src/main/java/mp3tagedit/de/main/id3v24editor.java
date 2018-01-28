@@ -15,6 +15,7 @@ import android.view.ViewManager;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
@@ -30,6 +31,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class id3v24editor extends AppCompatActivity {
 
@@ -53,6 +55,8 @@ public class id3v24editor extends AppCompatActivity {
         genreList = new ArrayList<EditText>();
         genreList.add((EditText)(findViewById(R.id.genreIn)));
 
+        TextView teYear = findViewById(R.id.yearIn);
+        teYear.setText( "" + (Calendar.getInstance().get(Calendar.YEAR)-2));
 
         //if you want to update the items at a later time it is recommended to keep it in a variable
         PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName("Home");
