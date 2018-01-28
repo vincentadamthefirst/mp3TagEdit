@@ -21,7 +21,7 @@
             android:id="@+id/up"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Parent folder" />
+            android:text= "übergeordneter Ordner" />
 
     </LinearLayout>
 
@@ -36,5 +36,13 @@
         android:layout_height="wrap_content">
 
     </ListView>
+
+    <Button
+        android:id="@+id/add_folder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
+        android:text="Ordner hinzufügen" />
 
 </LinearLayout>

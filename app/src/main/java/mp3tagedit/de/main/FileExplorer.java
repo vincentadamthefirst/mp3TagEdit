@@ -43,6 +43,7 @@ public class FileExplorer extends Activity {
 
     Button buttonOpenDialog;
     Button buttonUp;
+    Button buttonAdd;
     TextView textFolder;
 
     String KEY_TEXTPSS = "TEXTPSS";
@@ -140,6 +141,15 @@ public class FileExplorer extends Activity {
                     @Override
                     public void onClick(View v) {
                         ListDir(curFolder.getParentFile(), fileExt);
+                    }
+                });
+
+                buttonAdd = (Button) dialog.findViewById(R.id.add_folder);
+                buttonAdd.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //TODO add Code to return textFolder to parental layer
+                        dismissDialog(CUSTOM_DIALOG_ID);
                     }
                 });
 
