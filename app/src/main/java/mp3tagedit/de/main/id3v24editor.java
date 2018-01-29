@@ -366,8 +366,6 @@ public class id3v24editor extends AppCompatActivity {
                 }
             }
         });
-
-        saveButton.setText("TEST");
     }
 
     private void playSong() throws IOException {

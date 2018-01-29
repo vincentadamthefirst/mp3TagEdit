@@ -132,7 +132,8 @@
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:background="@drawable/white_rectangle"
-                        android:textColor="@color/defaultText" />
+                        android:textColor="@color/defaultText"
+                        android:text="@string/file_save"/>
 
                     <Button
                         android:id="@+id/share_button"
