@@ -1,11 +1,15 @@
 package mp3tagedit.de.main;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.media.MediaPlayer;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
@@ -32,9 +36,11 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import org.jaudiotagger.audio.AudioFile;
 import org.jaudiotagger.audio.AudioFileIO;
 import org.jaudiotagger.audio.exceptions.CannotReadException;
+import org.jaudiotagger.audio.exceptions.CannotWriteException;
 import org.jaudiotagger.audio.exceptions.InvalidAudioFrameException;
 import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
 import org.jaudiotagger.audio.mp3.MP3File;
+import org.jaudiotagger.tag.FieldDataInvalidException;
 import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagException;
@@ -74,9 +80,12 @@ public class id3v23editor extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_id3v23editor);
 
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERM_REQ_WRITE_STORAGE);
+
         et_artist = findViewById(R.id.artistIn);
         et_genre = findViewById(R.id.genreIn);
         et_title = findViewById(R.id.edit_title);
+        et_album = findViewById(R.id.albumIn);
 
         ib_artwork = findViewById(R.id.coverArt);
 
@@ -159,6 +168,7 @@ public class id3v23editor extends AppCompatActivity {
         et_artist.setText(tag.getFirst(FieldKey.ARTIST));
         et_title.setText(tag.getFirst(FieldKey.TITLE));
         et_genre.setText(tag.getFirst(FieldKey.GENRE));
+        et_album.setText(tag.getFirst(FieldKey.ALBUM));
 
         Artwork cover = tag.getFirstArtwork();
         byte[] data = cover.getBinaryData();
@@ -169,7 +179,50 @@ public class id3v23editor extends AppCompatActivity {
         return true;
     }
 
-    private void save() {
+    private boolean save() {
+        MP3File mp3;
+        try {
+            mp3 = (MP3File) AudioFileIO.read(currentFile);
+        } catch (CannotReadException | TagException | IOException | ReadOnlyFileException | InvalidAudioFrameException e) {
+            return false;
+        }
+
+        ID3v23Tag toSave = (ID3v23Tag) mp3.getTag();
+
+        try {
+            toSave.setField(FieldKey.ARTIST, et_artist.getText().toString());
+            toSave.setField(FieldKey.ALBUM, et_album.getText().toString());
+            toSave.setField(FieldKey.TITLE, et_title.getText().toString());
+        } catch (FieldDataInvalidException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+
+
+        mp3.setTag(toSave);
+
+        /*
+        try {
+            mp3.save();
+        } catch (IOException | TagException e) {
+            e.printStackTrace();
+            return false;
+        }
+        */
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+            System.out.println("PERMISSION GRANTED!!!!");
+        }
+
+        try {
+            AudioFileIO.write(mp3);
+        } catch (CannotWriteException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+        return true;
 
     }
 
@@ -341,6 +394,13 @@ public class id3v23editor extends AppCompatActivity {
 
         playButton.setBackgroundDrawable(new IconicsDrawable(this).icon(GoogleMaterial.Icon.gmd_play_arrow).sizeDp(20).color(getResources().getColor(R.color.colorPrimary)));
         shareButton.setBackgroundDrawable(new IconicsDrawable(this).icon(GoogleMaterial.Icon.gmd_share).sizeDp(20).color(getResources().getColor(R.color.colorPrimary)));
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                save();
+            }
+        });
 
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
