@@ -5,12 +5,12 @@
     -->
 
     <string name="app_name">mp3 Tag Edit</string>
+    <string name="app_version">Version 0.2</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <!-- Text for various buttons -->
-    <string name="action_settings">Settings</string>
     <string name="button_add">+</string>
     <string name="button_remove">-</string>
 
@@ -46,9 +46,12 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
-    <!-- Recent Update Text -->
-    <!-- every '*' will start a new point -->
-    <string name="current_version">Version 0.2a</string>
-    <string name="update_text">* test * another test</string>
-
+    <string name="settings">Options</string>
+    <string name="id3v24edit">id3v2.4 Editor</string>
+    <string name="id3v23edit">id3v2.3 Editor</string>
+    <string name="tagtofile">Tag-to-File</string>
+    <string name="home">Home</string>
+    <string name="help">Help</string>
+    <string name="title_activity_settings">settings</string>
+    <string name="title_activity_help">help</string>
 </resources>

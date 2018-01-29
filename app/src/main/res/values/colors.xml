@@ -12,4 +12,5 @@
     <color name="lightText">#ffffff</color>           <!-- white Text -->
     <color name="whiteSeeThrough">#0fffffff</color>
     <color name="black_overlay">#66000000</color>
+    <color name="drawer_main">#07192c</color>
 </resources>

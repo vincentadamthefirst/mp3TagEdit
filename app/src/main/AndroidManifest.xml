@@ -14,10 +14,7 @@
         <activity
             android:name=".id3v24"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme">
-
-
-        </activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".WelcomeActivity"
             android:theme="@style/AppTheme">
@@ -26,12 +23,20 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".ErrorActivity" />
         <activity android:name=".id3v24editor" />
-        <activity android:name=".id3v23editor"/>
-        <activity android:name=".FileManager"/>
+        <activity android:name=".id3v23editor" />
+        <activity android:name=".FileManager" />
+        <activity android:name=".tagtofile" />
+        <activity
+            android:name=".settings"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".help"
+            android:label="@string/title_activity_help"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

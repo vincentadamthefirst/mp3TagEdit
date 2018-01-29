@@ -2,10 +2,8 @@ package mp3tagedit.de.main;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.Point;
 import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
@@ -22,7 +20,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.iconics.context.IconicsContextWrapper;
@@ -37,13 +34,9 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
-import org.jaudiotagger.tag.id3.reference.MediaPlayerRating;
-
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class id3v24editor extends AppCompatActivity {
 
@@ -93,55 +86,122 @@ public class id3v24editor extends AppCompatActivity {
         }
 
         setupDrawer();
-        setupActionBar(true, true, "id3v2.4 Editor");
+        setupActionBar(getResources().getString(R.string.id3v24edit));
         setupEditorHead();
-
     }
 
-    public void setupDrawer() {
-        PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withIcon(GoogleMaterial.Icon.gmd_home).withName("Home");
-        SecondaryDrawerItem item2 = new SecondaryDrawerItem().withIdentifier(2).withIcon(GoogleMaterial.Icon.gmd_settings).withName("Settings");
+    private void setupDrawer() {
+        PrimaryDrawerItem homItem = new PrimaryDrawerItem().withIdentifier(1)
+                .withIcon(GoogleMaterial.Icon.gmd_home).withName(R.string.home)
+                .withTextColor(getResources().getColor(R.color.defaultText))
+                .withSelectedTextColor(getResources().getColor(R.color.colorPrimaryDark))
+                .withIconColor(getResources().getColor(R.color.defaultText))
+                .withSelectedIconColor(getResources().getColor(R.color.colorPrimaryDark));
+        SecondaryDrawerItem setItem = new SecondaryDrawerItem().withIdentifier(2)
+                .withIcon(GoogleMaterial.Icon.gmd_settings).withName(R.string.settings)
+                .withTextColor(getResources().getColor(R.color.defaultText))
+                .withSelectedTextColor(getResources().getColor(R.color.colorPrimaryDark))
+                .withIconColor(getResources().getColor(R.color.defaultText))
+                .withSelectedIconColor(getResources().getColor(R.color.colorPrimaryDark));
+        SecondaryDrawerItem v24Item = new SecondaryDrawerItem().withIdentifier(4)
+                .withIcon(GoogleMaterial.Icon.gmd_insert_drive_file).withName(R.string.id3v24edit)
+                .withTextColor(getResources().getColor(R.color.defaultText))
+                .withSelectedTextColor(getResources().getColor(R.color.colorPrimaryDark))
+                .withIconColor(getResources().getColor(R.color.defaultText))
+                .withSelectedIconColor(getResources().getColor(R.color.colorPrimaryDark));
+        SecondaryDrawerItem v23Item = new SecondaryDrawerItem().withIdentifier(3)
+                .withIcon(GoogleMaterial.Icon.gmd_insert_drive_file).withName(R.string.id3v23edit)
+                .withTextColor(getResources().getColor(R.color.defaultText))
+                .withSelectedTextColor(getResources().getColor(R.color.colorPrimaryDark))
+                .withIconColor(getResources().getColor(R.color.defaultText))
+                .withSelectedIconColor(getResources().getColor(R.color.colorPrimaryDark));
+        SecondaryDrawerItem tagItem = new SecondaryDrawerItem().withIdentifier(5)
+                .withIcon(GoogleMaterial.Icon.gmd_find_replace).withName(R.string.tagtofile)
+                .withTextColor(getResources().getColor(R.color.defaultText))
+                .withSelectedTextColor(getResources().getColor(R.color.colorPrimaryDark))
+                .withIconColor(getResources().getColor(R.color.defaultText))
+                .withSelectedIconColor(getResources().getColor(R.color.colorPrimaryDark));
+        SecondaryDrawerItem helItem = new SecondaryDrawerItem().withIdentifier(6)
+                .withIcon(GoogleMaterial.Icon.gmd_help_outline).withName(R.string.help)
+                .withTextColor(getResources().getColor(R.color.defaultText))
+                .withSelectedTextColor(getResources().getColor(R.color.colorPrimaryDark))
+                .withIconColor(getResources().getColor(R.color.defaultText))
+                .withSelectedIconColor(getResources().getColor(R.color.colorPrimaryDark));
 
-        AccountHeader header = new AccountHeaderBuilder()
-                .withActivity(this)
-                //.withHeaderBackground(R.drawable.header)
-                .addProfiles(
-                        new ProfileDrawerItem().withName("Mike Penz").withEmail("mikepenz@gmail.com").withIcon(GoogleMaterial.Icon.gmd_3d_rotation)
-                )
-                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
-                    @Override
-                    public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
-                        return false;
-                    }
-                })
-                .build();
-
-
+        LayoutInflater li = LayoutInflater.from(getApplicationContext());
+        View headerImage = li.inflate(R.layout.drawer_header, null);
 
         //create the drawer and remember the `Drawer` object
         mainDrawer = new DrawerBuilder()
                 .withActivity(this)
-                .withAccountHeader(header)
                 .withActionBarDrawerToggle(true)
+                .withHeader(headerImage)
+                .withSliderBackgroundColor(getResources().getColor(R.color.drawer_main))
                 .addDrawerItems(
-                        item1,
+                        homItem,
                         new DividerDrawerItem(),
-                        item2,
-                        new SecondaryDrawerItem().withName("Settings")
+                        v23Item,
+                        v24Item,
+                        tagItem,
+                        new DividerDrawerItem(),
+                        helItem,
+                        setItem
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         long identifier = drawerItem.getIdentifier();
+
                         if (identifier == 1) {
+                            openHome();
                             return true;
                         } else if (identifier == 2) {
+                            openSettings();
+                            return true;
+                        } else if (identifier == 3) {
+                            open23();
+                            return true;
+                        } else if (identifier == 5) {
+                            openTagToFile();
+                            return true;
+                        } else if (identifier == 6) {
+                            openHelp();
                             return true;
                         } else {
                             return true;
                         }
                     }
                 }).withDrawerWidthDp(240).build();
+
+        mainDrawer.setSelection(4);
+
+        mainDrawer.openDrawer();
+        mainDrawer.closeDrawer();
+    }
+
+    private void open23() {
+        Intent intent = new Intent(this, id3v23editor.class);
+        startActivity(intent);
+    }
+
+    private void openTagToFile() {
+        Intent intent = new Intent(this, tagtofile.class);
+        startActivity(intent);
+    }
+
+    private void openHelp() {
+        Intent intent = new Intent(this, help.class);
+        startActivity(intent);
+    }
+
+    private void openSettings() {
+        Intent intent = new Intent(this, settings.class);
+        startActivity(intent);
+    }
+
+    private void openHome() {
+        Intent intent = new Intent(this, WelcomeActivity.class);
+        startActivity(intent);
     }
 
     /**
@@ -236,7 +296,7 @@ public class id3v24editor extends AppCompatActivity {
 
     }
 
-    private void setupActionBar(boolean hasOptionsButton, boolean hasDrawerButton, String title) {
+    private void setupActionBar(String title) {
         Button openDrawer = findViewById(R.id.open_drawer);
         Button openOptions = findViewById(R.id.open_options);
         TextView activityTitle = findViewById(R.id.activity_title);
@@ -244,34 +304,22 @@ public class id3v24editor extends AppCompatActivity {
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point(); display.getSize(size);
 
-        if (hasDrawerButton) {
-            //openDrawer.setWidth(ACTIONBARSIZE); openDrawer.setHeight(ACTIONBARSIZE);
-            openDrawer.setBackgroundDrawable(new IconicsDrawable(this).icon(GoogleMaterial.Icon.gmd_menu).sizeDp(30).color(getResources().getColor(R.color.colorPrimary)));
-            openDrawer.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    mainDrawer.openDrawer();
-                }
-            });
-        } else {
-            ((ViewManager) openDrawer.getParent()).removeView(openDrawer);
-        }
+        openDrawer.setBackgroundDrawable(new IconicsDrawable(this).icon(GoogleMaterial.Icon.gmd_menu).sizeDp(30).color(getResources().getColor(R.color.colorPrimary)));
+        openDrawer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainDrawer.openDrawer();
+            }
+        });
 
-        if (hasOptionsButton) {
-            //openOptions.setWidth(ACTIONBARSIZE); openOptions.setHeight(ACTIONBARSIZE);
-            openOptions.setBackgroundDrawable(new IconicsDrawable(this).icon(GoogleMaterial.Icon.gmd_more_vert).sizeDp(30).color(getResources().getColor(R.color.colorPrimary)));
-            openOptions.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    options();
-                }
-            });
-        } else {
-            ((ViewManager) openOptions.getParent()).removeView(openOptions);
-        }
+        openOptions.setBackgroundDrawable(new IconicsDrawable(this).icon(GoogleMaterial.Icon.gmd_more_vert).sizeDp(30).color(getResources().getColor(R.color.colorPrimary)));
+        openOptions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                options();
+            }
+        });
 
-        //activityTitle.setWidth(size.x - 2*ACTIONBARSIZE);
-        //activityTitle.setHeight(ACTIONBARSIZE);
         activityTitle.setText(title); //sets the TextViews text
     }
 
