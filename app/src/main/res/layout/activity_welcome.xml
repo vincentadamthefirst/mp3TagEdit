@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context="mp3tagedit.de.main.WelcomeActivity">
 
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        android:background="@drawable/bg2blurred"/>
+
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
