@@ -1,5 +1,6 @@
 package mp3tagedit.de.main;
 
+import android.content.Intent;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ListFragment;
@@ -21,7 +22,7 @@ import java.util.HashMap;
 
 public class FileManager extends AppCompatActivity {
 
-    public ArrayList<File> files;
+    public ArrayList<File> files = new ArrayList<File>();
     public ArrayList<HashMap<String, String>> fileLoc;
     private LinearLayout fileList;
 
@@ -38,8 +39,16 @@ public class FileManager extends AppCompatActivity {
             }
         });
 
-        files = (ArrayList<File>) getPlayListFile("/storage/3232-3265"+"/Music", "mp3").clone();
+        //files = (ArrayList<File>) getPlayListFile("/storage/3232-3265"+"/Music", "mp3").clone();
         fileList = (LinearLayout) findViewById(R.id.fileList);
+
+        Intent intent = getIntent();
+        String[] filesDir = intent.getStringArrayExtra("files");
+        if(filesDir != null){
+            for(String str:filesDir){
+                addFiles(new File(str));
+            }
+        }
 
         ArrayList<HashMap<String, String>> fls = getPlayList("/storage/3232-3265"+"/Music", "mp3");
 
@@ -114,11 +123,25 @@ public class FileManager extends AppCompatActivity {
         parentVg.addView(vg);
     }
 
+    public void addFiles(ArrayList<File> files, boolean add){
+        if(add){
+            this.files.addAll(files);
+        }
+        else {
+            this.files = files;
+        }
+    }
+
     public void addFiles(File dir){
+        System.out.println(dir);
         if(dir.isFile()){
+            System.out.println("This is a file" + dir);
+            System.out.println(dir == null);
+            System.out.println(dir.exists());
             files.add(dir);
         }
         if(dir.isDirectory()){
+            System.out.println("dir:" + dir);
             File[] files = dir.listFiles();
             System.out.println(files.length);
             for (File f:files){

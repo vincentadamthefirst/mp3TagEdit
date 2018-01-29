@@ -2,32 +2,25 @@ package mp3tagedit.de.main;
 
 import android.Manifest;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.media.MediaPlayer;
-import android.os.Environment;
 import android.support.annotation.NonNull;
-import android.support.annotation.VisibleForTesting;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.LayoutInflater;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewManager;
 import android.view.Window;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
@@ -65,16 +58,10 @@ public class id3v24editor extends AppCompatActivity {
     private int AudioSession = 1;
     private int currentPos;
 
-    private AdapterView.OnItemSelectedListener slcItmListener;
-
-    //TODO when FileExplorer is merged into
-    private FileManager fManager;
-    private ArrayList<File> queue;
-    File currentFile;
-
     private Button playButton;
 
     // TODO
+    File currentFile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,10 +76,6 @@ public class id3v24editor extends AppCompatActivity {
 
         TextView teYear = findViewById(R.id.yearIn);
         teYear.setText( "" + (Calendar.getInstance().get(Calendar.YEAR)-2));
-
-        fManager = new FileManager();
-        queue = new ArrayList<File>();
-
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERM_REQ_WRITE_STORAGE);
 
         File[] allRootPaths = getExternalFilesDirs(null);
@@ -233,46 +216,6 @@ public class id3v24editor extends AppCompatActivity {
      * Leave empty if "hasDrawerButton" in setupActionBar was false
      */
     private void options() {
-        View optionBtn = findViewById(R.id.open_options);
-
-        PopupMenu popup = new PopupMenu(this, optionBtn);
-
-        MenuInflater inflater = popup.getMenuInflater();
-        inflater.inflate(R.menu.action, popup.getMenu());
-
-        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                String itemTitle = item.getTitle().toString();
-
-                System.out.println(itemTitle);
-                if(itemTitle.equals(getString(R.string.action_add_to_queue))) {
-
-                }
-                else if(itemTitle.equals(getString(R.string.action_change_queue))){
-                    deleteFiles();
-                }
-                return false;
-            }
-        });
-
-        popup.show();
-    }
-
-    private void addFiles(){
-
-    }
-
-    private void deleteFiles(){
-        //fManager.addFiles(queue, false);
-        String[] fileDir = new String[queue.size()];
-        for(int i = 0; i < fileDir.length; i++){
-            fileDir[i] = queue.get(i).getAbsolutePath();
-        }
-
-        Intent intfeed = new Intent(this, FileManager.class);
-        intfeed.putExtra("files", fileDir);
-        startActivity(intfeed);
 
     }
 

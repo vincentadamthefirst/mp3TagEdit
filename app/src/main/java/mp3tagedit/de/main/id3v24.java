@@ -111,9 +111,6 @@ public class id3v24 extends AppCompatActivity implements NavigationView.OnNaviga
                 }
                 */
 
-
-
-                test2();
                 //test();
             }
         });
@@ -147,33 +144,6 @@ public class id3v24 extends AppCompatActivity implements NavigationView.OnNaviga
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-    }
-
-    private void test2() {
-        CoordinatorLayout v = (CoordinatorLayout) findViewById(R.id.coordinatorlayout);
-        v.setDrawingCacheEnabled(true);
-        v.buildDrawingCache();
-        Bitmap bmp = v.getDrawingCache();
-
-        RenderScript rs = RenderScript.create(this.getApplicationContext());
-
-        final Allocation input = Allocation.createFromBitmap(rs, bmp); //use this constructor for best performance, because it uses USAGE_SHARED mode which reuses memory
-        final Allocation output = Allocation.createTyped(rs, input.getType());
-        final ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs));
-        script.setRadius(20f);
-        script.setInput(input);
-        script.forEach(output);
-        output.copyTo(bmp);
-
-        View overall = (View) findViewById(R.id.overall);
-
-        AppBarLayout appbar = (AppBarLayout) findViewById(R.id.appbar);
-        appbar.setVisibility(View.INVISIBLE);
-
-        overall.bringToFront();
-
-        BitmapDrawable bmpd = new BitmapDrawable(getResources(), bmp);
-        overall.setBackground(bmpd);
     }
 
     /**

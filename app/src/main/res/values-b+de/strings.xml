@@ -14,6 +14,10 @@
     <string name="button_add">+</string>
     <string name="button_remove">-</string>
 
+    <!-- Text for action menu -->
+    <string name="action_change_queue">Liste bearbeiten</string>
+    <string name="action_add_to_queue">Titel zu Liste hinzufügen</string>
+
     <!-- Text for the tags (fields) -->
     <string name="tagedit_artists">Interpret</string>
     <string name="tagedit_album">Album</string>
@@ -22,6 +26,7 @@
     <string name="tagedit_title">Titel</string>
     <string name="tagedit_year">Erscheinungsjahr</string>
     <string name="tagedit_track">Track</string>
+    <string name="tagedit_comment">Kommnetar</string>
 
     <!-- Text for the music player (buttons) -->
     <string name="player_play">Play</string>

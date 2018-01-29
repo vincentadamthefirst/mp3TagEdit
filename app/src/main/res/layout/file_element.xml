@@ -17,7 +17,7 @@
         android:marqueeRepeatLimit="marquee_forever"
         android:scrollHorizontally="true"
         android:textSize="10pt"
-        android:textColor="#000000"
+        android:textColor="@color/defaultText"
         android:text=""/>
 
     <CheckBox
