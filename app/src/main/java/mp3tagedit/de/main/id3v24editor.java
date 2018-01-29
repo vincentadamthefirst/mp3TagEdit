@@ -1,6 +1,7 @@
 package mp3tagedit.de.main;
 
 import android.Manifest;
+import android.support.v4.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -13,6 +14,7 @@ import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
@@ -29,6 +31,7 @@ import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
@@ -50,7 +53,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class id3v24editor extends AppCompatActivity {
+public class id3v24editor extends AppCompatActivity implements DialogFragmentResultListener{
 
     private Drawer mainDrawer;
 
@@ -67,8 +70,8 @@ public class id3v24editor extends AppCompatActivity {
 
     private AdapterView.OnItemSelectedListener slcItmListener;
 
-    //TODO when FileExplorer is merged into
-    private FileManager fManager;
+
+    //private FileManager fManager;
     private ArrayList<File> queue;
     File currentFile;
 
@@ -90,12 +93,12 @@ public class id3v24editor extends AppCompatActivity {
         TextView teYear = findViewById(R.id.yearIn);
         teYear.setText( "" + (Calendar.getInstance().get(Calendar.YEAR)-2));
 
-        fManager = new FileManager();
+        //fManager = new FileManager();
         queue = new ArrayList<File>();
 
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERM_REQ_WRITE_STORAGE);
 
-        File[] allRootPaths = getExternalFilesDirs(null);
+        /*File[] allRootPaths = getExternalFilesDirs(null);
         for (File f : allRootPaths) {
             System.out.println(f.getAbsolutePath());
             ArrayList<String> playL = getPlayList(f.getAbsolutePath().replace("Android/data/thejetstream.de.mp3tagedit/files", ""), ".mp3");
@@ -107,7 +110,7 @@ public class id3v24editor extends AppCompatActivity {
                     break;
                 }
             }
-        }
+        }*/
 
         setupDrawer();
         setupActionBar(true, true, "id3v2.4 Editor");
@@ -247,10 +250,10 @@ public class id3v24editor extends AppCompatActivity {
 
                 System.out.println(itemTitle);
                 if(itemTitle.equals(getString(R.string.action_add_to_queue))) {
-
+                    addFilesDialog();
                 }
                 else if(itemTitle.equals(getString(R.string.action_change_queue))){
-                    deleteFiles();
+                    deleteFilesDialog();
                 }
                 return false;
             }
@@ -259,21 +262,37 @@ public class id3v24editor extends AppCompatActivity {
         popup.show();
     }
 
-    private void addFiles(){
-
+    private void addFilesDialog(){
+        DialogFragment df = new FileExplorer();
+        df.show(this.getSupportFragmentManager(), "Choose Files");
     }
 
-    private void deleteFiles(){
-        //fManager.addFiles(queue, false);
-        String[] fileDir = new String[queue.size()];
-        for(int i = 0; i < fileDir.length; i++){
-            fileDir[i] = queue.get(i).getAbsolutePath();
+    private void deleteFilesDialog(){
+        FileSelecter df = new FileSelecter();
+        df.fileList = queue;
+        df.show(this.getSupportFragmentManager(), "Select Files");
+    }
+
+    public boolean addFile(File f){
+        boolean isNewFile = true;
+        for(File g:queue){
+            System.out.println(f.getAbsolutePath() + "|" + g.getAbsolutePath());
+            if(f.getAbsolutePath().equals(g.getAbsolutePath())){
+                isNewFile = false;
+
+                break;
+            }
         }
+        System.out.println(isNewFile);
+        if(isNewFile){
+            queue.add(f);
+            return true;
+        }//TODO Queue durchlaufen + Alles auf 23 copieren
+        return false;
+    }
 
-        Intent intfeed = new Intent(this, FileManager.class);
-        intfeed.putExtra("files", fileDir);
-        startActivity(intfeed);
-
+    public void clearAddFile(File f){
+        queue.add(f);
     }
 
     private void setupActionBar(boolean hasOptionsButton, boolean hasDrawerButton, String title) {
@@ -410,4 +429,38 @@ public class id3v24editor extends AppCompatActivity {
             return null;
         }
     }
+
+    @Override
+    public void getFragmentResult(File file, DialogFragment frag) {
+        if(frag.getClass().equals(FileExplorer.class)){
+            addFile(file);
+        }
+        else{
+            queue.clear();
+            clearAddFile(file);
+        }
+        frag.dismiss();
+    }
+
+    @Override
+    public void getMultipleFragmentResult(File[] multiFile, DialogFragment frag) {
+        if(frag.getClass().equals(FileExplorer.class)){
+            int counter = 0;
+            for(File file:multiFile){
+                if(addFile(file)){
+                    counter++;
+                }
+            }
+            Toast.makeText(this, counter + " Dateien wurden hinzugefügt", Toast.LENGTH_LONG).show();
+        }
+        else{
+            queue.clear();
+            for(File file:multiFile){
+                clearAddFile(file);
+            }
+        }
+        frag.dismiss();
+    }
 }
+
+

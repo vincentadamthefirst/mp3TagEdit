@@ -57,6 +57,8 @@
                 android:id="@+id/open_options"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true" />
         </RelativeLayout>

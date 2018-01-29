@@ -3,6 +3,8 @@ package mp3tagedit.de.main;
 import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
+import android.support.v4.app.DialogFragment;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -36,7 +38,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class FileExplorer extends Activity {
+public class FileExplorer extends DialogFragment {
 
     //code partly taken from "http://www.indragni.com/android/FileExplorerDemo.rar"
     public static final int PERMISSIONS_REQUEST_READ_STORAGE = 42;
@@ -55,132 +57,67 @@ public class FileExplorer extends Activity {
 
     private String fileExt;
 
-    private List<String> fileList = new ArrayList<String>();
+    private ArrayList<File> fileList = new ArrayList<>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.file_explore_main);
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
 
-        buttonOpenDialog = (Button) findViewById(R.id.opendialog);
-        buttonOpenDialog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDialog(CUSTOM_DIALOG_ID);
-            }
-        });
+        System.out.println("Create Dialog");
 
-        root = new File("/storage/3232-3265/");
-        curFolder = root;
-
-        fileExt = ".mp3";
-
-        test();
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    public void test() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-
-            File mp3 = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath() + "/test.mp3");
-            System.out.println(mp3.getAbsolutePath());
-
-
-            AudioFile audio = null;
-
-            try {
-                audio = AudioFileIO.read(mp3);
-            } catch (CannotReadException | TagException | IOException | ReadOnlyFileException | InvalidAudioFrameException e) {
-                e.printStackTrace();
-            }
-
-            if (audio == null) {
-                System.out.println("somethings off");
-            } else {
-                System.out.println("metadata exists.");
-                try {
-                    // get the tags
-                    Tag tag = audio.getTag();
-
-                    // get the object
-                    ImageButton butt = (ImageButton) findViewById(R.id.coverArt);
-
-                    // get artwork and convert to bmp
-                    Artwork a = tag.getFirstArtwork();
-                    byte[] data = a.getBinaryData();
-                    Bitmap bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
-
-                    // set image
-                    butt.setImageBitmap(bmp);
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        } else {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSIONS_REQUEST_READ_STORAGE);
-        }
-    }
-
-    @Override
-    protected Dialog onCreateDialog(int id) {
+        fileExt = getString(R.string.file_extension);
 
         Dialog dialog = null;
 
-        switch (id) {
-            case CUSTOM_DIALOG_ID:
-                dialog = new Dialog(FileExplorer.this);
-                dialog.setContentView(R.layout.file_explore_dialog);
-                dialog.setTitle("Custom Dialog");
-                dialog.setCancelable(true);
-                dialog.setCanceledOnTouchOutside(true);
+        dialog = new Dialog(getActivity());
+        dialog.setContentView(R.layout.file_explore_dialog);
+        dialog.setTitle("Custom Dialog");
+        dialog.setCancelable(true);
+        dialog.setCanceledOnTouchOutside(true);
 
-                textFolder = (TextView) dialog.findViewById(R.id.folder);
-                buttonUp = (Button) dialog.findViewById(R.id.up);
-                buttonUp.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        ListDir(curFolder.getParentFile(), fileExt);
-                    }
-                });
+        root = Environment.getExternalStoragePublicDirectory("");
+        System.out.println(root.getAbsolutePath());
+        curFolder = root;
+        textFolder = (TextView) dialog.findViewById(R.id.folder);
+        buttonUp = (Button) dialog.findViewById(R.id.up);
+        buttonUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ListDir(curFolder.getParentFile(), fileExt);
+            }
+        });
 
-                buttonAdd = (Button) dialog.findViewById(R.id.add_folder);
-                buttonAdd.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        //TODO add Code to return textFolder to parental layer
-                        dismissDialog(CUSTOM_DIALOG_ID);
-                    }
-                });
+        buttonAdd = (Button) dialog.findViewById(R.id.add_folder);
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<File> filesDir = getFilesOfDir(curFolder, fileExt);
+                File[] multiFile = new File[filesDir.size()];
+                for(int i = 0; i < multiFile.length; i++){
+                    multiFile[i] = filesDir.get(i);
+                }
 
-                dialog_ListView = (ListView) dialog.findViewById(R.id.dialoglist);
-                dialog_ListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        File selected = new File(curFolder+"/"+fileList.get(position));
-                        if(selected.isDirectory()) {
-                            ListDir(selected, fileExt);
-                        } else {
-                            Toast.makeText(FileExplorer.this, selected.toString() + " selected",
-                                    Toast.LENGTH_LONG).show();
-                            dismissDialog(CUSTOM_DIALOG_ID);
-                        }
-                    }
-                });
+                ((DialogFragmentResultListener)getActivity())
+                        .getMultipleFragmentResult(multiFile, FileExplorer.this);
+            }
+        });
 
-                break;
-        }
+        dialog_ListView = (ListView) dialog.findViewById(R.id.dialoglist);
+        dialog_ListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                File selected = fileList.get(position);
+                if(selected.isDirectory()) {
+                    ListDir(selected, fileExt);
+                } else {
+                    ((DialogFragmentResultListener)getActivity())
+                            .getFragmentResult(selected,FileExplorer.this);
+                }
+            }
+        });
+
+        ListDir(curFolder, fileExt);
+
         return dialog;
-    }
-
-    @Override
-    protected void onPrepareDialog(int id, Dialog dialog) {
-        super.onPrepareDialog(id, dialog);
-        switch (id) {
-            case CUSTOM_DIALOG_ID:
-                ListDir(curFolder, fileExt);
-                break;
-        }
     }
 
     void ListDir(File f, String fileExtension) {
@@ -193,8 +130,6 @@ public class FileExplorer extends Activity {
         curFolder = f;
         textFolder.setText(f.getPath());
 
-
-
         File[] files = f.listFiles();
         fileList.clear();
 
@@ -202,13 +137,40 @@ public class FileExplorer extends Activity {
 
         for(File file : files) {
             if(file.getName().endsWith(fileExtension) || file.isDirectory()){
-                fileList.add(file.getName());
+                fileList.add(file);
             }
 
         }
 
-        ArrayAdapter<String> directoryList = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, fileList);
+        ArrayList<String> fileListStr = new ArrayList<>();
+        for(File file:fileList){fileListStr.add(file.getName());}
+
+        ArrayAdapter<String> directoryList = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1, fileListStr);
         dialog_ListView.setAdapter(directoryList);
+    }
+
+    private ArrayList<File> getFilesOfDir(File dir, String fileExtension) {
+        ArrayList<File> fileList = new ArrayList<>();
+
+        try {
+            File rootFolder = dir;
+            File[] files = rootFolder.listFiles();
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    ArrayList<File> tmp = getFilesOfDir(file, fileExtension);
+                    if (tmp != null) {
+                        fileList.addAll(tmp);
+                    } else {
+                        break;
+                    }
+                } else if (file.getName().endsWith(fileExtension)) {
+                    fileList.add(file);
+                }
+            }
+            return fileList;
+        } catch (Exception e) {
+            return null;
+        }
     }
 }
