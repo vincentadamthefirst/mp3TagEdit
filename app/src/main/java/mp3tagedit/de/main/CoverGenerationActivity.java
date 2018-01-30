@@ -37,8 +37,8 @@ public class CoverGenerationActivity extends AppCompatActivity {
 
     EditText ET_Cover;
     CoverGenConfig CoverConfig;
-    CoverGenTags defaultTestTags = new CoverGenTags("<title>", "<artist>", "<genre>", "<year>");
-    CoverGenTags activeTags;
+    CoverGenTags defaultTestTags = new CoverGenTags("UK National Anthem - God Save The Queen yaaaaaaaaaaaay", "Alexander Alexandrov/Sergey Milkhalkov and the rest", "<genre>", "<year>");
+    CoverGenTags activeTags = new CoverGenTags();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,29 +49,8 @@ public class CoverGenerationActivity extends AppCompatActivity {
 
         ET_Cover = findViewById(R.id.XML_ET);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-////                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-////                        .setAction("Action", null).show();
-////                dialog();
-//                newXML();
-//            }
-//        });
-//
-//        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab2);
-//        fab2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-////                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-////                        .setAction("Action", null).show();
-//                saveXML();
-//                readFile();
-//                readXML();
-//                dialog();
-//            }
-//        });
+        newXML();
+        readXML();
 
         Button B_Show_Image = (Button) findViewById(R.id.button1);
         B_Show_Image.setOnClickListener(new View.OnClickListener() {
@@ -113,9 +92,8 @@ public class CoverGenerationActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent();
                 Bitmap b = draw(); // your bitmap
-                ByteArrayOutputStream bs = new ByteArrayOutputStream();
-                b.compress(Bitmap.CompressFormat.PNG, 100, bs);
-                i.putExtra("byteArray", bs.toByteArray());
+                activeTags.setImage(Bitmap.createScaledBitmap(b, 1000, 1000, false));
+                i.putExtra("active", activeTags);
                 setResult(RESULT_OK, i);
                 finish();
             }
@@ -130,11 +108,8 @@ public class CoverGenerationActivity extends AppCompatActivity {
         CoverGenTags tags;
         String[] order = new String[4];
 
-        if(activeTags != null){
-            tags = activeTags;
-        }else{
-            tags = defaultTestTags;
-        }
+        tags = defaultTestTags;
+        int index = CoverConfig.getIndex();
 
         int dist = src.getHeight()/6;
         int x0 = 50;
@@ -157,11 +132,11 @@ public class CoverGenerationActivity extends AppCompatActivity {
 
             tPaint.setColor(Color.parseColor(CoverConfig.getColors()[1]));
             tPaint.setTextSize(200);
-            cs.drawText("0000", src.getWidth()-tPaint.measureText("0000")-100, 550, tPaint);
+            cs.drawText(String.format("%04d", index), src.getWidth()-tPaint.measureText("0000")-100, 550, tPaint);
         }else{
             tPaint.setColor(Color.parseColor(CoverConfig.getColors()[1]));
             tPaint.setTextSize(200);
-            cs.drawText("0000", src.getWidth()-tPaint.measureText("0000")-100, 2800, tPaint);
+            cs.drawText(String.format("%04d", index), src.getWidth()-tPaint.measureText("0000")-100, 2800, tPaint);
         }
 
         tPaint.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/" + CoverConfig.getFonts()[1] + ".ttf"));
@@ -181,31 +156,32 @@ public class CoverGenerationActivity extends AppCompatActivity {
                 order[CoverConfig.getPositions()[i]] = CoverConfig.getTagNames()[i];
             }
         }
+        tags.verifyLengths(tPaint, tPaint2);
         for(String s:order){
             if(s != null){
                 switch (s){
                     case "Title:":
                         cs.drawText("Title:" , x0, y, tPaint);
-                        cs.drawText(tags.getTitle() , x0+tPaint.measureText("Title: "), y, tPaint2);
+                        cs.drawText(tags.getT1() , x0+tPaint.measureText("Title: "), y-10, tPaint2);
                         y += dist;
-                        cs.drawText(tags.getTitle() , x0+tPaint.measureText("Title: "), y, tPaint2);
+                        cs.drawText(tags.getT2() , x0, y-10, tPaint2);
                         y += dist;
                         break;
                     case "Artist:":
                         cs.drawText("Artist:" , x0, y, tPaint);
-                        cs.drawText(tags.getArtist() , x0+tPaint.measureText("Artist: "), y, tPaint2);
+                        cs.drawText(tags.getA1() , x0+tPaint.measureText("Artist: "), y-10, tPaint2);
                         y += dist;
-                        cs.drawText(tags.getArtist() , x0+tPaint.measureText("Artist: "), y, tPaint2);
+                        cs.drawText(tags.getA2() , x0, y-10, tPaint2);
                         y += dist;
                         break;
                     case "Genre:":
                         cs.drawText("Genre:" , x0, y, tPaint);
-                        cs.drawText(tags.getGenre() , x0+tPaint.measureText("Genre: "), y, tPaint2);
+                        cs.drawText(tags.getGenre() , x0+tPaint.measureText("Genre: "), y-10, tPaint2);
                         y += dist;
                         break;
                     case "Year:":
                         cs.drawText("Year:" , x0, y, tPaint);
-                        cs.drawText(tags.getYear() , x0+tPaint.measureText("Year: "), y, tPaint2);
+                        cs.drawText(tags.getYear() , x0+tPaint.measureText("Year: "), y-10, tPaint2);
                         y += dist;
                         break;
                 }
@@ -260,6 +236,8 @@ public class CoverGenerationActivity extends AppCompatActivity {
             xpp.setInput(new StringReader(ET_Cover.getText().toString()));
 
             boolean PL = true;
+            int index = 0;
+            String Abb = "";
             String PL_Name = "";
             String[] Colors = new String[4];
             String[] Fonts = new String[2];
@@ -276,6 +254,7 @@ public class CoverGenerationActivity extends AppCompatActivity {
                     switch (xpp.getName()){
                         case "Cover":
                             PL = Boolean.valueOf(xpp.getAttributeValue(0));
+                            index = Integer.valueOf(xpp.getAttributeValue(1));
                             break;
                         case "Title":
                             Enabled[0] = Boolean.valueOf(xpp.getAttributeValue(0));
@@ -293,6 +272,8 @@ public class CoverGenerationActivity extends AppCompatActivity {
                             Enabled[3] = Boolean.valueOf(xpp.getAttributeValue(0));
                             Positions[3] = Integer.valueOf(xpp.getAttributeValue(1));
                             break;
+                        case "PLName":
+                            Abb = xpp.getAttributeValue(0);
                         default:
                             lastTag = xpp.getName();
 
@@ -327,7 +308,7 @@ public class CoverGenerationActivity extends AppCompatActivity {
                 }
                 eventType = xpp.next();
             }
-            CoverConfig = new CoverGenConfig(PL, PL_Name, Colors, Fonts, Enabled, Positions);
+            CoverConfig = new CoverGenConfig(PL, Abb, index, PL_Name, Colors, Fonts, Enabled, Positions);
 
         } catch (XmlPullParserException e) {
             e.printStackTrace();
@@ -391,6 +372,7 @@ public class CoverGenerationActivity extends AppCompatActivity {
             serializer.attribute("", "Index", "0");
 
             serializer.startTag("", "PLName");
+            serializer.attribute("", "Abbreviation", "NAP");
             serializer.text("New Awesome Playlist");
             serializer.endTag("", "PLName");
 
@@ -452,133 +434,5 @@ public class CoverGenerationActivity extends AppCompatActivity {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public void verifyLengths(Paint tPaint){
-        String a = activeTags.getArtist();
-        String t = activeTags.getTitle();
-        String a1 = "";
-        String t1 = "";
-        String a2 = "";
-        String t2 = "";
-        String[] aa;
-        String[] ta;
-        float widthA = tPaint.measureText(a);
-        float widthT = tPaint.measureText(t);
-
-        float LengthA1 = 2900 - tPaint.measureText("Artist: ");
-        float LengthA2 = 2900;
-        float LengthT1 = 2900 - tPaint.measureText("Title: ");;
-        float LengthT2 = 2900;
-
-        if(widthA < LengthA1){
-            a1 = a;
-        }else if(widthA < LengthA2){
-            a2 = a;
-        }else{
-            System.out.println(a + "\t" + widthA);
-            if(a.contains("/")){
-                aa = a.split("/");
-                if(tPaint.measureText(aa[0]) < LengthA1){
-                    a1 = aa[0] + "/";
-                    a2 = aa[1];
-                }else if(tPaint.measureText(aa[1]) < LengthA1){
-                    a1 = aa[1] + "/";
-                    a2 = aa[0];
-                }else{
-                    System.out.println("#####fuck " + aa[0] + " " + tPaint.measureText(aa[0]) + " " + aa[1] + " " + tPaint.measureText(aa[1]));
-                }
-            }else if(a.contains("(")){
-                aa = a.split("\\(");
-                if(tPaint.measureText(aa[0]) < LengthA1){
-                    a1 = aa[0];
-                    a2 = "(" + aa[1];
-                }else if(tPaint.measureText(aa[1]) < LengthA1){
-                    a1 = "(" + aa[1];
-                    a2 = aa[0];
-                }else{
-                    System.out.println("#####fuck " + aa[0] + " " + tPaint.measureText(aa[0]) + " " + aa[1] + " " + tPaint.measureText(aa[1]));
-                }
-            }else if(a.contains("-")){
-                aa = a.split("-");
-                if(tPaint.measureText(aa[0]) < LengthA1){
-                    a1 = aa[0];
-                    a2 = aa[1];
-                }else if(tPaint.measureText(aa[1]) < LengthA1){
-                    a1 = aa[1];
-                    a2 = aa[0];
-                }else{
-                    System.out.println("#####fuck " + aa[0] + " " + tPaint.measureText(aa[0]) + " " + aa[1] + " " + tPaint.measureText(aa[1]));
-                }
-            }else{
-                int j = 0;
-                aa = a.split(" ");
-                while(tPaint.measureText(a1 + aa[j]) < LengthA1){
-                    a1 = a1 + aa[j] + " ";
-                    j++;
-                }
-                while(j < aa.length){
-                    a2 = a2 + aa[j] + " ";
-                    j++;
-                }
-            }
-
-
-        }
-
-        if(widthT < LengthT1){
-            t1 = t;
-        }else if(widthT < LengthT2){
-            t2 = t;
-        }else{
-            System.out.println(t + "\t" + widthT);
-            if(t.contains("/")){
-                ta = t.split("/");
-                if(tPaint.measureText(ta[0]) < LengthT1){
-                    t1 = ta[0] + "/";
-                    t2 = ta[1];
-                }else if(tPaint.measureText(ta[1]) < LengthT1){
-                    t1 = ta[1] + "/";
-                    t2 = ta[0];
-                }else{
-                    System.out.println("#####fuck " + ta[0] + " " + tPaint.measureText(ta[0]) + " " + ta[1] + " " + tPaint.measureText(ta[1]));
-                }
-            }else if(t.contains("(")){
-                ta = t.split("\\(");
-                if(tPaint.measureText(ta[0]) < LengthT1){
-                    t1 = ta[0];
-                    t2 = "(" + ta[1];
-                }else if(tPaint.measureText(ta[1]) < LengthT1){
-                    t1 = "(" + ta[1];
-                    t2 = ta[0];
-                }else{
-                    System.out.println("#####fuck " + ta[0] + " " + tPaint.measureText(ta[0]) + " " + ta[1] + " " + tPaint.measureText(ta[1]));
-                }
-            }else if(t.contains("-")){
-                ta = t.split("-");
-                if(tPaint.measureText(ta[0]) < LengthT1){
-                    t1 = ta[0];
-                    t2 = ta[1];
-                }else if(tPaint.measureText(ta[1]) < LengthT1){
-                    t1 = ta[1];
-                    t2 = ta[0];
-                }else{
-                    System.out.println("#####fuck " + ta[0] + " " + tPaint.measureText(ta[0]) + " " + ta[1] + " " + tPaint.measureText(ta[1]));
-                }
-            }else{
-                int j = 0;
-                ta = t.split(" ");
-                while(tPaint.measureText(t1 + ta[j]) < LengthT1){
-                    t1 = t1 + ta[j] + " ";
-                    j++;
-                }
-                while(j < ta.length){
-                    t2 = t2 + ta[j] + " ";
-                    j++;
-                }
-            }
-        }
-
-        //		String.format("%03d", index)
     }
 }

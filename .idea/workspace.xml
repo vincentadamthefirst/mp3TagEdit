@@ -35,9 +35,11 @@
       <file leaf-file-name="id3v24editor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="131" column="38" lean-forward="false" selection-start-line="131" selection-start-column="38" selection-end-line="131" selection-end-column="38" />
-              <folding />
+            <state relative-caret-position="1751">
+              <caret line="104" column="38" lean-forward="false" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
+              <folding>
+                <marker date="1517312546092" expanded="true" signature="24872:24927" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,9 +47,32 @@
       <file leaf-file-name="id3v23editor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v23editor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
+            <state relative-caret-position="986">
               <caret line="110" column="38" lean-forward="false" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="38" />
-              <folding />
+              <folding>
+                <marker date="1517312546076" expanded="true" signature="8044:8373" ph="{...}" />
+                <marker date="1517312546076" expanded="true" signature="8403:8551" ph="{...}" />
+                <marker date="1517312546076" expanded="true" signature="8584:13684" ph="{...}" />
+                <marker date="1517312546076" expanded="true" signature="12525:13540" ph="{...}" />
+                <marker date="1517312546076" expanded="true" signature="12653:13522" ph="{...}" />
+                <marker date="1517312546076" expanded="true" signature="13712:13812" ph="{...}" />
+                <marker date="1517312546076" expanded="true" signature="13847:13944" ph="{...}" />
+                <marker date="1517312546076" expanded="true" signature="13974:14066" ph="{...}" />
+                <marker date="1517312546076" expanded="true" signature="14100:14196" ph="{...}" />
+                <marker date="1517312546076" expanded="true" signature="14226:14329" ph="{...}" />
+                <marker date="1517312546076" expanded="true" signature="14377:15498" ph="{...}" />
+                <marker date="1517312546076" expanded="true" signature="14935:15065" ph="{...}" />
+                <marker date="1517312546076" expanded="false" signature="14998:15017" ph=" { " />
+                <marker date="1517312546076" expanded="false" signature="15041:15055" ph=" }" />
+                <marker date="1517312546076" expanded="true" signature="15309:15425" ph="{...}" />
+                <marker date="1517312546076" expanded="false" signature="15372:15391" ph=" { " />
+                <marker date="1517312546076" expanded="false" signature="15401:15415" ph=" }" />
+                <marker date="1517312546076" expanded="true" signature="15535:17789" ph="{...}" />
+                <marker date="1517312546076" expanded="true" signature="16123:16236" ph="{...}" />
+                <marker date="1517312546076" expanded="false" signature="16186:16205" ph=" { " />
+                <marker date="1517312546076" expanded="false" signature="16212:16226" ph=" }" />
+                <marker date="1517312546076" expanded="true" signature="16369:17771" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,12 +83,15 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="41" column="45" lean-forward="false" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
+            <state relative-caret-position="697">
+              <caret line="51" column="32" lean-forward="false" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
               <folding>
-                <element signature="e#830#848#0" expanded="true" />
-                <element signature="e#1743#1776#0" expanded="true" />
-                <element signature="e#1950#1979#0" expanded="true" />
+                <marker date="1517311486278" expanded="true" signature="1466:1516" ph="..." />
+                <marker date="1517311486278" expanded="true" signature="1561:1611" ph="..." />
+                <marker date="1517311486278" expanded="true" signature="1630:1822" ph="..." />
+                <marker date="1517311486278" expanded="true" signature="1841:2024" ph="..." />
+                <marker date="1517311486278" expanded="true" signature="2043:2222" ph="..." />
+                <marker date="1517311486278" expanded="true" signature="2241:2430" ph="..." />
               </folding>
             </state>
           </provider>
@@ -79,48 +107,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CoverGenTags.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenTags.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CoverGenerationActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenerationActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-612">
-              <caret line="45" column="51" lean-forward="false" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
-              <folding />
+            <state relative-caret-position="4046">
+              <caret line="271" column="36" lean-forward="false" selection-start-line="271" selection-start-column="36" selection-end-line="271" selection-end-column="36" />
+              <folding>
+                <element signature="e#1870#2129#0" expanded="true" />
+                <element signature="e#2128#2129#0" expanded="true" />
+                <element signature="e#2235#2409#0" expanded="true" />
+                <element signature="e#2408#2409#0" expanded="true" />
+                <element signature="e#2515#2661#0" expanded="true" />
+                <element signature="e#2660#2661#0" expanded="true" />
+                <element signature="e#2765#2937#0" expanded="true" />
+                <element signature="e#2936#2937#0" expanded="true" />
+                <element signature="e#3047#3460#0" expanded="true" />
+                <element signature="e#3459#3460#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_album_cover.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_album_cover.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
+      <file leaf-file-name="AlbumCoverActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="image_layout.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/image_layout.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="1649">
+              <caret line="126" column="83" lean-forward="false" selection-start-line="126" selection-start-column="83" selection-end-line="126" selection-end-column="83" />
+              <folding>
+                <marker date="1517315627919" expanded="true" signature="1554:2462" ph="{...}" />
+                <marker date="1517315627919" expanded="true" signature="1565:1633" ph="@{...}" />
+                <marker date="1517315627919" expanded="true" signature="1706:2456" ph="{...}" />
+                <marker date="1517315627919" expanded="true" signature="2500:2622" ph="{...}" />
+                <marker date="1517315627919" expanded="true" signature="2693:3249" ph="{...}" />
+                <marker date="1517315627919" expanded="true" signature="3344:5703" ph="{...}" />
+                <marker date="1517315627919" expanded="true" signature="5788:6108" ph="{...}" />
+                <marker date="1517315627919" expanded="true" signature="6138:6352" ph="{...}" />
+                <marker date="1517315627919" expanded="true" signature="6380:7320" ph="{...}" />
+                <marker date="1517315627919" expanded="true" signature="7380:7803" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1892,12 +1916,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileExplorer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileSelecter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenTags.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenConfig.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v23editor.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenTags.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenConfig.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenerationActivity.java" />
       </list>
     </option>
   </component>
@@ -1923,8 +1949,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2079,7 +2104,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
     </panes>
   </component>
@@ -2183,7 +2209,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517312799496" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517323801231" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2231,7 +2257,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517312799496" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517323801231" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2263,27 +2289,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -2414,7 +2419,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517312799497" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517323801232" />
       </method>
     </configuration>
     <list size="1">
@@ -2453,7 +2458,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -2461,7 +2466,6 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32216907" sideWeight="0.5027365" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -2470,7 +2474,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42532468" sideWeight="0.50373137" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14765458" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14765458" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2484,6 +2488,7 @@
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -2499,9 +2504,132 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="131" column="38" lean-forward="false" selection-start-line="131" selection-start-column="38" selection-end-line="131" selection-end-column="38" />
+          <folding>
+            <marker date="1517312546092" expanded="true" signature="24872:24927" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v23editor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="110" column="38" lean-forward="false" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="38" />
+          <folding>
+            <marker date="1517312546076" expanded="true" signature="8044:8373" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="8403:8551" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="8584:13684" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="12525:13540" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="12653:13522" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="13712:13812" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="13847:13944" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="13974:14066" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="14100:14196" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="14226:14329" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="14377:15498" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="14935:15065" ph="{...}" />
+            <marker date="1517312546076" expanded="false" signature="14998:15017" ph=" { " />
+            <marker date="1517312546076" expanded="false" signature="15041:15055" ph=" }" />
+            <marker date="1517312546076" expanded="true" signature="15309:15425" ph="{...}" />
+            <marker date="1517312546076" expanded="false" signature="15372:15391" ph=" { " />
+            <marker date="1517312546076" expanded="false" signature="15401:15415" ph=" }" />
+            <marker date="1517312546076" expanded="true" signature="15535:17789" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="16123:16236" ph="{...}" />
+            <marker date="1517312546076" expanded="false" signature="16186:16205" ph=" { " />
+            <marker date="1517312546076" expanded="false" signature="16212:16226" ph=" }" />
+            <marker date="1517312546076" expanded="true" signature="16369:17771" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="32" lean-forward="true" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+          <folding>
+            <marker date="1517311486278" expanded="true" signature="1466:1516" ph="..." />
+            <marker date="1517311486278" expanded="true" signature="1561:1611" ph="..." />
+            <marker date="1517311486278" expanded="true" signature="1630:1822" ph="..." />
+            <marker date="1517311486278" expanded="true" signature="1841:2024" ph="..." />
+            <marker date="1517311486278" expanded="true" signature="2043:2222" ph="..." />
+            <marker date="1517311486278" expanded="true" signature="2241:2430" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/file_paths.xml">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1683">
+          <caret line="128" column="83" lean-forward="true" selection-start-line="128" selection-start-column="83" selection-end-line="128" selection-end-column="83" />
+          <folding>
+            <marker date="1517315627919" expanded="true" signature="1554:2462" ph="{...}" />
+            <marker date="1517315627919" expanded="true" signature="1565:1633" ph="@{...}" />
+            <marker date="1517315627919" expanded="true" signature="1706:2456" ph="{...}" />
+            <marker date="1517315627919" expanded="true" signature="2500:2622" ph="{...}" />
+            <marker date="1517315627919" expanded="true" signature="2693:3249" ph="{...}" />
+            <marker date="1517315627919" expanded="true" signature="3344:5703" ph="{...}" />
+            <marker date="1517315627919" expanded="true" signature="5788:6108" ph="{...}" />
+            <marker date="1517315627919" expanded="true" signature="6138:6352" ph="{...}" />
+            <marker date="1517315627919" expanded="true" signature="6380:7320" ph="{...}" />
+            <marker date="1517315627919" expanded="true" signature="7380:7803" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/navigation.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1700">
+          <caret line="100" column="83" lean-forward="false" selection-start-line="100" selection-start-column="83" selection-end-line="100" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenerationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4046">
+          <caret line="274" column="36" lean-forward="false" selection-start-line="274" selection-start-column="36" selection-end-line="274" selection-end-column="36" />
+          <folding>
+            <element signature="e#1870#2129#0" expanded="true" />
+            <element signature="e#2128#2129#0" expanded="true" />
+            <element signature="e#2235#2409#0" expanded="true" />
+            <element signature="e#2408#2409#0" expanded="true" />
+            <element signature="e#2515#2661#0" expanded="true" />
+            <element signature="e#2660#2661#0" expanded="true" />
+            <element signature="e#2765#2937#0" expanded="true" />
+            <element signature="e#2936#2937#0" expanded="true" />
+            <element signature="e#3047#3460#0" expanded="true" />
+            <element signature="e#3459#3460#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1517312546092" expanded="true" signature="24872:24927" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2521,13 +2649,28 @@
         <state relative-caret-position="204">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <element signature="e#3643#3688#0" expanded="false" />
-            <element signature="e#8729#8742#0" expanded="false" />
-            <element signature="e#9230#9247#0" expanded="false" />
-            <element signature="e#9744#9763#0" expanded="false" />
-            <element signature="e#10260#10279#0" expanded="false" />
-            <element signature="e#10771#10789#0" expanded="false" />
-            <element signature="e#11281#11294#0" expanded="false" />
+            <marker date="1517312546076" expanded="true" signature="8044:8373" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="8403:8551" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="8584:13684" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="12525:13540" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="12653:13522" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="13712:13812" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="13847:13944" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="13974:14066" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="14100:14196" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="14226:14329" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="14377:15498" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="14935:15065" ph="{...}" />
+            <marker date="1517312546076" expanded="false" signature="14998:15017" ph=" { " />
+            <marker date="1517312546076" expanded="false" signature="15041:15055" ph=" }" />
+            <marker date="1517312546076" expanded="true" signature="15309:15425" ph="{...}" />
+            <marker date="1517312546076" expanded="false" signature="15372:15391" ph=" { " />
+            <marker date="1517312546076" expanded="false" signature="15401:15415" ph=" }" />
+            <marker date="1517312546076" expanded="true" signature="15535:17789" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="16123:16236" ph="{...}" />
+            <marker date="1517312546076" expanded="false" signature="16186:16205" ph=" { " />
+            <marker date="1517312546076" expanded="false" signature="16212:16226" ph=" }" />
+            <marker date="1517312546076" expanded="true" signature="16369:17771" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2547,7 +2690,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="185" column="40" lean-forward="false" selection-start-line="185" selection-start-column="40" selection-end-line="185" selection-end-column="40" />
-          <folding />
+          <folding>
+            <marker date="1517312546092" expanded="true" signature="24872:24927" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2573,7 +2718,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1517312546092" expanded="true" signature="24872:24927" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2581,7 +2728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="47" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2597,7 +2743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="47" lean-forward="true" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2616,7 +2761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2627,7 +2771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2636,7 +2779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2658,7 +2800,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="72" lean-forward="false" selection-start-line="1" selection-start-column="72" selection-end-line="1" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2669,7 +2810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4280">
           <caret line="50" column="13" lean-forward="false" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2680,22 +2820,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="44" lean-forward="false" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2718,7 +2842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2749,14 +2872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenTags.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/file_paths.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2770,37 +2885,105 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="41" column="45" lean-forward="false" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
+        <state relative-caret-position="697">
+          <caret line="51" column="32" lean-forward="false" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
           <folding>
-            <element signature="e#830#848#0" expanded="true" />
-            <element signature="e#1743#1776#0" expanded="true" />
-            <element signature="e#1950#1979#0" expanded="true" />
+            <marker date="1517311486278" expanded="true" signature="1466:1516" ph="..." />
+            <marker date="1517311486278" expanded="true" signature="1561:1611" ph="..." />
+            <marker date="1517311486278" expanded="true" signature="1630:1822" ph="..." />
+            <marker date="1517311486278" expanded="true" signature="1841:2024" ph="..." />
+            <marker date="1517311486278" expanded="true" signature="2043:2222" ph="..." />
+            <marker date="1517311486278" expanded="true" signature="2241:2430" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v23editor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
+        <state relative-caret-position="986">
           <caret line="110" column="38" lean-forward="false" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="38" />
-          <folding />
+          <folding>
+            <marker date="1517312546076" expanded="true" signature="8044:8373" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="8403:8551" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="8584:13684" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="12525:13540" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="12653:13522" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="13712:13812" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="13847:13944" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="13974:14066" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="14100:14196" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="14226:14329" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="14377:15498" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="14935:15065" ph="{...}" />
+            <marker date="1517312546076" expanded="false" signature="14998:15017" ph=" { " />
+            <marker date="1517312546076" expanded="false" signature="15041:15055" ph=" }" />
+            <marker date="1517312546076" expanded="true" signature="15309:15425" ph="{...}" />
+            <marker date="1517312546076" expanded="false" signature="15372:15391" ph=" { " />
+            <marker date="1517312546076" expanded="false" signature="15401:15415" ph=" }" />
+            <marker date="1517312546076" expanded="true" signature="15535:17789" ph="{...}" />
+            <marker date="1517312546076" expanded="true" signature="16123:16236" ph="{...}" />
+            <marker date="1517312546076" expanded="false" signature="16186:16205" ph=" { " />
+            <marker date="1517312546076" expanded="false" signature="16212:16226" ph=" }" />
+            <marker date="1517312546076" expanded="true" signature="16369:17771" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="131" column="38" lean-forward="false" selection-start-line="131" selection-start-column="38" selection-end-line="131" selection-end-column="38" />
+        <state relative-caret-position="1751">
+          <caret line="104" column="38" lean-forward="false" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
+          <folding>
+            <marker date="1517312546092" expanded="true" signature="24872:24927" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../../ABI2017/AppData/Local/Android/Sdk/platforms/android-26/android.jar!/android/graphics/BitmapFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1649">
+          <caret line="126" column="83" lean-forward="false" selection-start-line="126" selection-start-column="83" selection-end-line="126" selection-end-column="83" />
+          <folding>
+            <marker date="1517315627919" expanded="true" signature="1554:2462" ph="{...}" />
+            <marker date="1517315627919" expanded="true" signature="1565:1633" ph="@{...}" />
+            <marker date="1517315627919" expanded="true" signature="1706:2456" ph="{...}" />
+            <marker date="1517315627919" expanded="true" signature="2500:2622" ph="{...}" />
+            <marker date="1517315627919" expanded="true" signature="2693:3249" ph="{...}" />
+            <marker date="1517315627919" expanded="true" signature="3344:5703" ph="{...}" />
+            <marker date="1517315627919" expanded="true" signature="5788:6108" ph="{...}" />
+            <marker date="1517315627919" expanded="true" signature="6138:6352" ph="{...}" />
+            <marker date="1517315627919" expanded="true" signature="6380:7320" ph="{...}" />
+            <marker date="1517315627919" expanded="true" signature="7380:7803" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenConfig.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenTags.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenerationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-612">
-          <caret line="45" column="51" lean-forward="false" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
-          <folding />
+        <state relative-caret-position="4046">
+          <caret line="271" column="36" lean-forward="false" selection-start-line="271" selection-start-column="36" selection-end-line="271" selection-end-column="36" />
+          <folding>
+            <element signature="e#1870#2129#0" expanded="true" />
+            <element signature="e#2128#2129#0" expanded="true" />
+            <element signature="e#2235#2409#0" expanded="true" />
+            <element signature="e#2408#2409#0" expanded="true" />
+            <element signature="e#2515#2661#0" expanded="true" />
+            <element signature="e#2660#2661#0" expanded="true" />
+            <element signature="e#2765#2937#0" expanded="true" />
+            <element signature="e#2936#2937#0" expanded="true" />
+            <element signature="e#3047#3460#0" expanded="true" />
+            <element signature="e#3459#3460#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

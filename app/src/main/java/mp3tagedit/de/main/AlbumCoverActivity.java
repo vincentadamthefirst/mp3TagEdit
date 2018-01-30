@@ -126,8 +126,7 @@ public class AlbumCoverActivity extends AppCompatActivity {
                     Bitmap bitmap;
                     ImageView CoverView = (ImageView) findViewById(R.id.CoverView);
                     try {
-                        bitmap = BitmapFactory.decodeByteArray(
-                                getIntent().getByteArrayExtra("byteArray"),0,getIntent().getByteArrayExtra("byteArray").length);
+                        bitmap = ((CoverGenTags) data.getSerializableExtra("active")).getImage();
 
                         CoverView.setImageBitmap(bitmap);
                         Toast.makeText(this, "Loaded", Toast.LENGTH_LONG).show();
