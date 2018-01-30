@@ -1,6 +1,7 @@
 package mp3tagedit.de.main;
 
 import android.Manifest;
+import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.InsetDrawable;
@@ -80,6 +81,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
 
     private AdapterView.OnItemSelectedListener slcItmListener;
 
+    private Activity thisEditor;
 
     //private FileManager fManager;
     private ArrayList<File> queue;
@@ -87,6 +89,8 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
     File currentFile;
 
     private Button playButton;
+    private Button saveButton;
+    private Button shareButton;
     private Button nextButton;
     private Button prevButton;
 
@@ -98,6 +102,8 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.content_id3v24editor);
+
+        thisEditor = this;
 
         artistList = new ArrayList<>();
         artistList.add((EditText)(findViewById(R.id.artistIn)));
@@ -175,6 +181,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         //fManager = new FileManager();
         queue = new ArrayList<File>();
 
+        /*
         File[] allRootPaths = getExternalFilesDirs(null);
         for (File f : allRootPaths) {
             System.out.println(f.getAbsolutePath());
@@ -188,13 +195,13 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
                 }
             }
         }
+        */
 
 
         setupDrawer();
         setupActionBar(getResources().getString(R.string.id3v24edit));
         setupEditorHead();
 
-        load();
     }
 
     private void resetAll() {
@@ -231,6 +238,10 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             playButton.setBackgroundDrawable(new IconicsDrawable(id3v24editor.this)
                     .icon(GoogleMaterial.Icon.gmd_play_arrow).sizeDp(20)
                     .color(getResources().getColor(R.color.colorPrimary)));
+
+            playButton.setEnabled(true);
+            saveButton.setEnabled(true);
+            shareButton.setEnabled(true);
         }
     }
 
@@ -335,13 +346,16 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             e.printStackTrace();
         }
         */
+        playButton.setEnabled(true);
+        saveButton.setEnabled(true);
+        shareButton.setEnabled(true);
 
         return true;
     }
 
     private boolean save() {
         MP3File mp3;
-
+        System.out.println("Save comming");
         try {
             mp3 = (MP3File) AudioFileIO.read(currentFile);
         } catch (CannotReadException | TagException | IOException | ReadOnlyFileException | InvalidAudioFrameException e) {
@@ -375,6 +389,9 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             return false;
         }
 
+        System.out.println("Toast comming");
+        Toast.makeText(getBaseContext(), "Der Tag wurde gespeichert", Toast.LENGTH_LONG).show();
+        //does not work for no reason
         return true;
     }
 
@@ -552,7 +569,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             nextButton.setVisibility(View.VISIBLE);
             nextButton.setEnabled(true);
             return true;
-        }//TODO Queue durchlaufen + Alles auf 23 copieren
+        }//TODO enable SDCard Exploration + Alles auf 23 copieren + string machen
         return false;
     }
 
@@ -590,8 +607,8 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
 
     private void setupEditorHead() {
         playButton = findViewById(R.id.play_button);
-        Button saveButton = findViewById(R.id.save_button);
-        Button shareButton = findViewById(R.id.share_button);
+        saveButton = findViewById(R.id.save_button);
+        shareButton = findViewById(R.id.share_button);
 
         playButton.setBackgroundDrawable(new IconicsDrawable(this)
                 .icon(GoogleMaterial.Icon.gmd_play_arrow).sizeDp(20)
@@ -599,10 +616,6 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         shareButton.setBackgroundDrawable(new IconicsDrawable(this)
                 .icon(GoogleMaterial.Icon.gmd_share).sizeDp(20)
                 .color(getResources().getColor(R.color.colorPrimary)));
-        /*nextButton.setBackgroundDrawable(new IconicsDrawable(this)
-                .icon(GoogleMaterial.Icon.gmd_play_arrow).sizeDp(20)
-                .color(getResources().getColor(R.color.colorSecondary)));*/
-
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -642,6 +655,10 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
                 }
             }
         });
+
+        playButton.setEnabled(false);
+        saveButton.setEnabled(false);
+        shareButton.setEnabled(false);
     }
 
     private void playSong() throws IOException {
@@ -703,9 +720,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             clearAddFile(file);
         }
 
-        if (!queue.isEmpty()) {
-            firstLoad();
-        }
+        firstLoad();
 
         frag.dismiss();
     }
@@ -726,23 +741,36 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             for(File file:multiFile){
                 clearAddFile(file);
             }
-            if(queue.size()-1 < currentQueuePos){
-                currentQueuePos = queue.size()-1;
-            }
         }
 
-        if (!queue.isEmpty()) {
-            firstLoad();
-        }
-
+        firstLoad();
 
         frag.dismiss();
     }
 
     public void firstLoad() {
-        currentFile = queue.get(currentQueuePos);
-        resetAll();
-        load();
+        if(queue.isEmpty()){
+            currentQueuePos = 0;
+            prevButton.setEnabled(false);
+            prevButton.setVisibility(View.INVISIBLE);
+            nextButton.setEnabled(false);
+            nextButton.setVisibility(View.INVISIBLE);
+        }
+        else{
+            if(currentQueuePos <= 0){
+                currentQueuePos = 0;
+                prevButton.setEnabled(false);
+                prevButton.setVisibility(View.INVISIBLE);
+            }
+            else if(currentQueuePos >= queue.size()){
+                currentQueuePos = queue.size()-1;
+                nextButton.setEnabled(false);
+                nextButton.setVisibility(View.INVISIBLE);
+            }
+            currentFile = queue.get(currentQueuePos);
+            resetAll();
+            load();
+        }
     }
 }
 

@@ -373,8 +373,7 @@
                         android:layout_below="@id/tv_track"
                         android:textAlignment="viewEnd"
                         android:ems="10"
-                        android:inputType="number|textFilter"
-                        android:digits="0123456789/"/>
+                        android:inputType="number"/>
                 </RelativeLayout>
 
                 <RelativeLayout
