@@ -1,4 +1,4 @@
-package mp3tagedit.de.main;
+package mp3tagedit.de.additional;
 
 import java.io.Serializable;
 

@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mp3TagEdit.iml" filepath="$PROJECT_DIR$/mp3TagEdit.iml" />
       <module fileurl="file://C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\mp3TagEdit.iml" filepath="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\mp3TagEdit.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mp3TagEditNEW.iml" filepath="$PROJECT_DIR$/mp3TagEditNEW.iml" />
+      <module fileurl="file://C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\mp3TagEditNEW.iml" filepath="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\mp3TagEditNEW.iml" />
       <module fileurl="file://C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\testest.iml" filepath="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\testest.iml" />
     </modules>
   </component>

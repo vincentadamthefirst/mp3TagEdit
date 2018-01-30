@@ -33,6 +33,9 @@ import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.io.StringWriter;
 
+import mp3tagedit.de.additional.CoverGenConfig;
+import mp3tagedit.de.additional.CoverGenTags;
+
 public class CoverGenerationActivity extends AppCompatActivity {
 
     EditText ET_Cover;
