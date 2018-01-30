@@ -109,7 +109,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.content_id3v24editor);
+        setContentView(R.layout.activity_id3v24editor);
 
         artistList = new ArrayList<>();
         artistList.add((EditText)(findViewById(R.id.artistIn)));
@@ -226,9 +226,9 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
                     .icon(GoogleMaterial.Icon.gmd_play_arrow).sizeDp(20)
                     .color(getResources().getColor(R.color.colorPrimary)));
 
-            playButton.setEnabled(true);
-            saveButton.setEnabled(true);
-            shareButton.setEnabled(true);
+            playButton.setEnabled(false);
+            saveButton.setEnabled(false);
+            shareButton.setEnabled(false);
         }
 
         ib_artwork.setImageResource(android.R.color.transparent);
@@ -598,7 +598,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             nextButton.setVisibility(View.VISIBLE);
             nextButton.setEnabled(true);
             return true;
-        }//TODO enable SDCard Exploration + Alles auf 23 copieren + string machen
+        }//TODO Alles auf 23 kopieren + Tag to FileName
         return false;
     }
 

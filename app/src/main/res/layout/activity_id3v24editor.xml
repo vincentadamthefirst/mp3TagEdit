@@ -86,11 +86,11 @@
                 android:id="@+id/coverArt"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:background="@drawable/white_rectangle"
-                android:scaleType="fitCenter"
-                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:layout_marginStart="10dp"/>
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_rectangle"
+                android:scaleType="fitCenter" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -115,6 +115,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:textColor="@color/defaultText"
+                    android:inputType="textImeMultiLine"
                     android:textSize="18sp" />
 
                 <RelativeLayout
@@ -138,8 +139,8 @@
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:background="@drawable/white_rectangle"
-                        android:textColor="@color/defaultText"
-                        android:text="@string/file_save"/>
+                        android:text="@string/file_save"
+                        android:textColor="@color/defaultText" />
 
                     <Button
                         android:id="@+id/share_button"
@@ -156,8 +157,8 @@
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:layout_marginTop="5dp"
             android:layout_below="@id/header"
+            android:layout_marginTop="5dp"
             app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
 
             <LinearLayout
@@ -167,30 +168,30 @@
 
                 <RelativeLayout
                     android:id="@+id/albumLayout"
-                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="@color/whiteSeeThrough">
 
                     <TextView
                         android:id="@+id/tv_album"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:textStyle="bold"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
                         android:text="@string/tagedit_album"
-                        android:textColor="@color/defaultText" />
+                        android:textColor="@color/defaultText"
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/albumIn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="3dp"
                         android:layout_below="@id/tv_album"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
                         android:ems="10"
                         android:inputType="textImeMultiLine"
                         android:text="" />
@@ -200,28 +201,28 @@
 
                 <RelativeLayout
                     android:id="@+id/artistLayout"
-                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="@color/whiteSeeThrough">
 
                     <TextView
                         android:id="@+id/tv_artist"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:textStyle="bold"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
                         android:text="@string/tagedit_artists"
-                        android:textColor="@color/defaultText" />
+                        android:textColor="@color/defaultText"
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
                         android:layout_below="@id/tv_artist"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -241,44 +242,44 @@
 
                             <Button
                                 android:id="@+id/addArtist"
+                                style="@style/Widget.AppCompat.Button.Colored"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="10"
                                 android:layout_marginBottom="5dp"
+                                android:layout_weight="10"
+                                android:background="@drawable/white_rectangle"
                                 android:onClick="addInputLineArtist"
                                 android:text="@string/button_add"
-                                style="@style/Widget.AppCompat.Button.Colored"
-                                android:theme="@style/Button.Add"
                                 android:textColor="@color/defaultText"
-                                android:background="@drawable/white_rectangle"/>
+                                android:theme="@style/Button.Add" />
                         </LinearLayout>
                     </LinearLayout>
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/genre_layout"
-                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="@color/whiteSeeThrough">
 
                     <TextView
                         android:id="@+id/tv_genre"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:textStyle="bold"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
                         android:text="@string/tagedit_genres"
-                        android:textColor="@color/defaultText" />
+                        android:textColor="@color/defaultText"
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
                         android:layout_below="@id/tv_genre"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -298,113 +299,116 @@
 
                             <Button
                                 android:id="@+id/addGenre"
+                                style="@style/Widget.AppCompat.Button.Colored"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="10"
                                 android:layout_marginBottom="5dp"
+                                android:layout_weight="10"
+                                android:background="@drawable/white_rectangle"
                                 android:onClick="addInputLineGenre"
                                 android:text="@string/button_add"
-                                style="@style/Widget.AppCompat.Button.Colored"
-                                android:theme="@style/Button.Add"
                                 android:textColor="@color/defaultText"
-                                android:background="@drawable/white_rectangle"
-                                />
+                                android:theme="@style/Button.Add" />
                         </LinearLayout>
                     </LinearLayout>
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/yearsLayout"
-                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="@color/whiteSeeThrough">
 
                     <TextView
                         android:id="@+id/tv_year"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:textStyle="bold"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
                         android:text="@string/tagedit_year"
-                        android:textColor="@color/defaultText" />
+                        android:textColor="@color/defaultText"
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/yearIn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="3dp"
                         android:layout_below="@id/tv_year"
-                        android:textAlignment="viewEnd"
-                        android:selectAllOnFocus="true"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
                         android:ems="10"
-                        android:inputType="number" />
+                        android:inputType="number|textImeMultiLine" />
 
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/tracksLayout"
-                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="@color/whiteSeeThrough">
 
                     <TextView
                         android:id="@+id/tv_track"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:textStyle="bold"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
                         android:text="@string/tagedit_track"
-                        android:textColor="@color/defaultText" />
+                        android:textColor="@color/defaultText"
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/trackIn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="3dp"
                         android:layout_below="@id/tv_track"
-                        android:textAlignment="viewEnd"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
                         android:ems="10"
-                        android:inputType="number"/>
+                        android:inputType="number|textImeMultiLine" />
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/commentsLayout"
-                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="@color/whiteSeeThrough">
 
                     <TextView
                         android:id="@+id/tv_comment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:textStyle="bold"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
                         android:text="@string/tagedit_comment"
-                        android:textColor="@color/defaultText" />
+                        android:textColor="@color/defaultText"
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/commentIn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="3dp"
                         android:layout_below="@id/tv_comment"
-                        android:textAlignment="viewStart"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
                         android:inputType="text|textMultiLine" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/emptyLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp">
+
                 </RelativeLayout>
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
@@ -413,8 +417,8 @@
             android:id="@+id/prev"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
             android:layout_margin="@dimen/fab_margin"
             android:rotation="180" />
 
@@ -422,8 +426,8 @@
             android:id="@+id/next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/fab_margin"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/fab_margin" />
     </RelativeLayout>
 </android.widget.RelativeLayout>
