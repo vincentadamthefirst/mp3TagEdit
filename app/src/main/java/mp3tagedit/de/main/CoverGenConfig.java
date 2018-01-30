@@ -5,7 +5,9 @@ import java.io.Serializable;
 
 public class CoverGenConfig implements Serializable {
 
+    String Abb;
     boolean PL;
+    int index;
     String PL_Name;
     String[] Colors = new String[4];
     String[] Fonts = new String[2];
@@ -17,8 +19,10 @@ public class CoverGenConfig implements Serializable {
     public CoverGenConfig() {
     }
 
-    public CoverGenConfig(boolean PL, String PL_Name, String[] colors, String[] fonts, boolean[] enabled, int[] positions) {
+    public CoverGenConfig(boolean PL, String Abb, int index, String PL_Name, String[] colors, String[] fonts, boolean[] enabled, int[] positions) {
         this.PL = PL;
+        this.Abb = Abb;
+        this.index = index;
         this.PL_Name = PL_Name;
         Colors = colors;
         Fonts = fonts;
@@ -80,5 +84,21 @@ public class CoverGenConfig implements Serializable {
 
     public void setTagNames(String[] tagNames) {
         TagNames = tagNames;
+    }
+
+    public String getAbb() {
+        return Abb;
+    }
+
+    public void setAbb(String abb) {
+        Abb = abb;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 }
