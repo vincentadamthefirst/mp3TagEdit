@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="thejetstream.de.mp3tagedit.CoverGenerationActivity"
+    tools:context="mp3tagedit.de.main.CoverGenerationActivity"
     tools:showIn="@layout/activity_cover_generation">
 
     <ImageView

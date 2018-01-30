@@ -17,12 +17,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
-        <activity
-            android:name=".FileExplorer"
-            android:label="@string/app_name" >
-
-        </activity>
-
 
         <activity
             android:name=".WelcomeActivity"
@@ -34,12 +28,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".id3v24editor">
-
-        </activity>
-        <activity android:name=".id3v23editor"
+        <activity android:name=".id3v24editor"
             android:screenOrientation="portrait"/>
-        <activity android:name=".FileManager"
+        <activity android:name=".id3v23editor"
             android:screenOrientation="portrait"/>
         <activity android:name=".tagtofile"
             android:screenOrientation="portrait"/>

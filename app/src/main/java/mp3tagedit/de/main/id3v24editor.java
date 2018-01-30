@@ -1,8 +1,12 @@
 package mp3tagedit.de.main;
 
 import android.Manifest;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.InsetDrawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
@@ -85,9 +89,12 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
 
     //private FileManager fManager;
     private ArrayList<File> queue;
+    int currentQueuePos = 0;
     File currentFile;
 
     private Button playButton;
+    private Button nextButton;
+    private Button prevButton;
 
     // TODO
 
@@ -95,13 +102,58 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_id3v24editor);
+        setContentView(R.layout.content_id3v24editor);
 
         artistList = new ArrayList<>();
         artistList.add((EditText)(findViewById(R.id.artistIn)));
         genreList = new ArrayList<>();
         genreList.add((EditText)(findViewById(R.id.genreIn)));
 
+        prevButton = findViewById(R.id.prev);
+        prevButton.setBackgroundDrawable(new IconicsDrawable(this)
+                .icon(GoogleMaterial.Icon.gmd_forward).sizeDp(20)
+                .color(getResources().getColor(R.color.colorPrimary)));
+
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(currentQueuePos > 0){
+                    currentQueuePos--;
+                    currentFile = queue.get(currentQueuePos);
+                }
+                if(currentQueuePos < queue.size()-1){
+                    nextButton.setEnabled(true);
+                    nextButton.setVisibility(View.VISIBLE);
+                }
+                if(currentQueuePos <= 0){
+                    prevButton.setEnabled(false);
+                    prevButton.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
+        nextButton = findViewById(R.id.next);
+        nextButton.setBackgroundDrawable(new IconicsDrawable(this)
+                .icon(GoogleMaterial.Icon.gmd_forward).sizeDp(20)
+                .color(getResources().getColor(R.color.colorPrimary)));
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(currentQueuePos < queue.size()-1){
+                    currentQueuePos++;
+                    currentFile = queue.get(currentQueuePos);
+                }
+                if(currentQueuePos >= queue.size()-1){
+                    nextButton.setEnabled(false);
+                    nextButton.setVisibility(View.INVISIBLE);
+                }
+                if(currentQueuePos > 0){
+                    prevButton.setEnabled(true);
+                    prevButton.setVisibility(View.VISIBLE);
+
+                }
+            }
+        });
 
         et_title = findViewById(R.id.edit_title);
         et_album = findViewById(R.id.albumIn);
@@ -510,6 +562,8 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         System.out.println(isNewFile);
         if(isNewFile){
             queue.add(f);
+            nextButton.setVisibility(View.VISIBLE);
+            nextButton.setEnabled(true);
             return true;
         }//TODO Queue durchlaufen + Alles auf 23 copieren
         return false;
@@ -558,6 +612,10 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         shareButton.setBackgroundDrawable(new IconicsDrawable(this)
                 .icon(GoogleMaterial.Icon.gmd_share).sizeDp(20)
                 .color(getResources().getColor(R.color.colorPrimary)));
+        /*nextButton.setBackgroundDrawable(new IconicsDrawable(this)
+                .icon(GoogleMaterial.Icon.gmd_play_arrow).sizeDp(20)
+                .color(getResources().getColor(R.color.colorSecondary)));*/
+
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -675,6 +733,9 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             queue.clear();
             for(File file:multiFile){
                 clearAddFile(file);
+            }
+            if(queue.size()-1 < currentQueuePos){
+                currentQueuePos = queue.size()-1;
             }
         }
         frag.dismiss();
