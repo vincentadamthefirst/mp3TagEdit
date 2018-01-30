@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -74,6 +76,7 @@ public class AlbumCoverActivity extends AppCompatActivity {
 
     private void startGeneration() {
         Intent i = new Intent(this, CoverGenerationActivity.class);
+        i.putExtra("tags", tags);
         startActivityForResult(i, RESULT_GEN);
     }
 
@@ -85,23 +88,41 @@ public class AlbumCoverActivity extends AppCompatActivity {
         PhotoFile = new File(getExternalFilesDir("").getAbsolutePath(),  "Pic.jpg");
         photoURI = FileProvider.getUriForFile(getApplicationContext(), "thejetstream.de.fileprovider", PhotoFile);
 
-        ImageView CoverView = (ImageView) findViewById(R.id.CoverView);
+        ImageView CoverView = findViewById(R.id.CoverView);
         tags = (CoverGenTags) getIntent().getSerializableExtra("tags");
+
         if(tags != null && tags.getImage() != null){
             CoverView.setImageBitmap(tags.getImage());
+
+            if (photoURI == null) {
+                return;
+            }
+            try {
+                FileOutputStream fos = new FileOutputStream(PhotoFile);
+                tags.getImage().compress(Bitmap.CompressFormat.PNG, 90, fos);
+                fos.close();
+            } catch (FileNotFoundException e) {
+            } catch (IOException e) {
+            }
         }
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.getMenu().getItem(0).setCheckable(false);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        Button save = (Button) findViewById(R.id.button_save);
+        Button save = findViewById(R.id.button_save);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent();
                 i.putExtra("tags", tags);
-                i.putExtra("path", photoURI.toString());
+
+                Bitmap toRet = BitmapFactory.decodeFile(getExternalFilesDir(null) + "/Pic.jpg");
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                toRet.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteToRet = stream.toByteArray();
+
+                i.putExtra("path", byteToRet);
                 setResult(RESULT_OK, i);
                 finish();
             }

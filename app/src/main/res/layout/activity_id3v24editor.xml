@@ -87,6 +87,7 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:background="@drawable/white_rectangle"
+                android:scaleType="fitCenter"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginStart="10dp"/>
