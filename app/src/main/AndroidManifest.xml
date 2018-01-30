@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -52,6 +53,26 @@
             android:screenOrientation="portrait"
             android:label="@string/title_activity_help"
             android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".AlbumCoverActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_album_cover">
+        </activity>
+        <activity
+            android:name=".CoverGenerationActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_cover_generation">
+        </activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="thejetstream.de.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

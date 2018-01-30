@@ -93,5 +93,11 @@ The pattern which the files get renamed after is defined in the settings with fo
     <string name="creditstitle">Credits</string>
     <string name="credits">This App was created by <b>Vincent Adam</b>, <b>Andre Berthold</b> and <b>Christian Gärber</b>.</string>
 
+    <string name="title_activity_album_cover">Album Cover</string>
+    <string name="title_camera">Camera</string>
+    <string name="title_generate">Generate</string>
+    <string name="title_gallery">Gallery</string>
+    <string name="CoverImageView_description">Album Cover</string>
+    <string name="title_activity_cover_generation">CoverGenerationActivity</string>
 
 </resources>

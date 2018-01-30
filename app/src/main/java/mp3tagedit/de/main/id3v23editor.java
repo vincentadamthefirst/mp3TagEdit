@@ -8,6 +8,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.media.MediaPlayer;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -88,7 +90,14 @@ public class id3v23editor extends AppCompatActivity {
         et_album = findViewById(R.id.albumIn);
 
         ib_artwork = findViewById(R.id.coverArt);
-
+        ib_artwork.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), AlbumCoverActivity.class);
+                startActivityForResult(i, 64);
+            }
+        });
         setupActionBar(getResources().getString(R.string.id3v23edit));
         setupDrawer();
         setupEditorHead();
@@ -99,7 +108,7 @@ public class id3v23editor extends AppCompatActivity {
             ArrayList<String> playL = getPlayList(f.getAbsolutePath().replace("Android/data/thejetstream.de.mp3tagedit/files", ""), ".mp3");
             for (String s : playL) {
                 System.out.println(s);
-                if (s.contains("schlawinerwiener")) {
+                if (s.contains("Nessum")) {
                     currentFile = new File(s);
                     System.out.println("GEFUNDEN !!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                     break;

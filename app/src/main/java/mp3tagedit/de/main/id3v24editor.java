@@ -1,6 +1,8 @@
 package mp3tagedit.de.main;
 
 import android.Manifest;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
@@ -63,7 +65,6 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
 
     private final static int PERM_REQ_WRITE_STORAGE = 42;
     private final static int PERM_REQ_READ_STORAGE = 43;
-    private final static int PERM_REQ_CAMERA = 44;
 
 
 
@@ -105,6 +106,14 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         et_album = findViewById(R.id.albumIn);
 
         ib_artwork = findViewById(R.id.coverArt);
+        ib_artwork.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), AlbumCoverActivity.class);
+                startActivityForResult(i, 64);
+            }
+        });
 
         TextView teYear = findViewById(R.id.yearIn);
         teYear.setText( "" + (Calendar.getInstance().get(Calendar.YEAR)-2));
@@ -120,7 +129,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             ArrayList<String> playL = getPlayList(f.getAbsolutePath().replace("Android/data/thejetstream.de.mp3tagedit/files", ""), ".mp3");
             for (String s : playL) {
                 System.out.println(s);
-                if (s.contains("schlawinerwiener")) {
+                if (s.contains("Nessum")) {
                     currentFile = new File(s);
                     System.out.println("GEFUNDEN !!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                     break;
