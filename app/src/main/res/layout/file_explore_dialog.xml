@@ -37,20 +37,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    //le big problem with a buttonAdd de disapearing
-    <ListView
-        android:id="@+id/dialoglist"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-    </ListView>
+        <ListView
+            android:id="@+id/dialoglist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7">
 
-    <Button
-        android:id="@+id/add_folder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        </ListView>
 
-        android:text="Ordner hinzufügen" />
+        <Button
+            android:id="@+id/add_folder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:text="Ordner hinzufügen" />
+
+    </LinearLayout>
 
 </LinearLayout>
