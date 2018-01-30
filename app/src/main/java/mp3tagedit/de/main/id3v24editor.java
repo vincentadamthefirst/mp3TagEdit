@@ -48,6 +48,7 @@ import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
 import org.jaudiotagger.audio.mp3.MP3File;
 import org.jaudiotagger.tag.FieldDataInvalidException;
 import org.jaudiotagger.tag.FieldKey;
+import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagException;
 import org.jaudiotagger.tag.id3.ID3v24Tag;
 import org.jaudiotagger.tag.images.Artwork;
@@ -129,7 +130,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             ArrayList<String> playL = getPlayList(f.getAbsolutePath().replace("Android/data/thejetstream.de.mp3tagedit/files", ""), ".mp3");
             for (String s : playL) {
                 System.out.println(s);
-                if (s.contains("Nessum")) {
+                if (s.contains("07-Sterneneisen")) {
                     currentFile = new File(s);
                     System.out.println("GEFUNDEN !!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                     break;
@@ -142,7 +143,24 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         setupActionBar(getResources().getString(R.string.id3v24edit));
         setupEditorHead();
 
-        load();
+        load2();
+    }
+
+    private boolean load2() {
+        MP3File mp3;
+
+        try {
+            mp3 = (MP3File) AudioFileIO.read(currentFile);
+        } catch (CannotReadException | TagException | IOException | ReadOnlyFileException | InvalidAudioFrameException e) {
+            return false;
+        }
+
+        Tag tag = mp3.getTag();
+
+        System.out.println("ARTIST: " + tag.getFirst(FieldKey.ARTIST));
+
+
+        return true;
     }
 
     private boolean load() {
@@ -155,6 +173,10 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         }
 
         ID3v24Tag tag = mp3.getID3v2TagAsv24();
+
+
+
+
 
         List<String> artists = tag.getAll(FieldKey.ARTIST);
         List<String> genres = tag.getAll(FieldKey.GENRE);
@@ -181,6 +203,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         et_title.setText(tag.getFirst(FieldKey.TITLE));
         et_album.setText(tag.getFirst(FieldKey.ALBUM));
 
+        /*
         try {
             Artwork cover = tag.getFirstArtwork();
             byte[] data = cover.getBinaryData();
@@ -190,6 +213,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         } catch (Exception e) {
             e.printStackTrace();
         }
+        */
 
         return true;
     }
