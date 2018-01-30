@@ -139,6 +139,7 @@ public class AlbumCoverActivity extends AppCompatActivity {
                     getContentResolver().notifyChange(selectedImage, null);
                     cropImage();
                 }
+                break;
             case RESULT_GALLERY:
                 if (resultCode == Activity.RESULT_OK && null != data) {
                     Uri selectedImage = data.getData();
@@ -165,6 +166,7 @@ public class AlbumCoverActivity extends AppCompatActivity {
                         Log.e("Camera", e.toString());
                     }
                 }
+                break;
             case RESULT_GEN:
                 if (resultCode == Activity.RESULT_OK) {
                     Bitmap bitmap = null;
@@ -197,6 +199,7 @@ public class AlbumCoverActivity extends AppCompatActivity {
                     }
                     tags = (CoverGenTags) data.getSerializableExtra("active");
                 }
+                break;
         }
     }
 

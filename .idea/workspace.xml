@@ -11,11 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5855e173-51ed-41a6-a06c-9707403fca85" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -75,13 +71,13 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileExplorer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="451">
-              <caret line="107" column="0" lean-forward="true" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+              <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileSelecter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FileSelecter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileSelecter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="143">
@@ -91,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlbumCoverActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AlbumCoverActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="78" column="24" lean-forward="false" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+            <state relative-caret-position="340">
+              <caret line="201" column="22" lean-forward="false" selection-start-line="201" selection-start-column="22" selection-end-line="201" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -187,6 +183,7 @@
       <find>ContextCom</find>
       <find>Toast.make</find>
       <find>Toast.makeT</find>
+      <find>Date</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -1930,8 +1927,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/white_rectangle_seethrough.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java" />
       </list>
     </option>
   </component>
@@ -2173,7 +2170,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517341432731" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517341837673" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2221,7 +2218,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517341432731" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517341837673" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2383,7 +2380,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517341432732" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517341837674" />
       </method>
     </configuration>
     <list size="1">
@@ -2931,14 +2928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="78" column="24" lean-forward="false" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values-b+de/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-317">
@@ -2980,7 +2969,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileExplorer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
-          <caret line="107" column="0" lean-forward="true" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2989,6 +2978,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="339" column="60" lean-forward="false" selection-start-line="339" selection-start-column="56" selection-end-line="339" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="201" column="22" lean-forward="false" selection-start-line="201" selection-start-column="22" selection-end-line="201" selection-end-column="22" />
           <folding />
         </state>
       </provider>
