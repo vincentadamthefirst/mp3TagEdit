@@ -114,7 +114,9 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             public void onClick(View v) {
                 if(currentQueuePos > 0){
                     currentQueuePos--;
+                    save();
                     currentFile = queue.get(currentQueuePos);
+                    load();
                 }
                 if(currentQueuePos < queue.size()-1){
                     nextButton.setEnabled(true);
@@ -136,7 +138,9 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             public void onClick(View v) {
                 if(currentQueuePos < queue.size()-1){
                     currentQueuePos++;
+                    save();
                     currentFile = queue.get(currentQueuePos);
+                    load();
                 }
                 if(currentQueuePos >= queue.size()-1){
                     nextButton.setEnabled(false);
@@ -159,7 +163,6 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
 
         ib_artwork = findViewById(R.id.coverArt);
         ib_artwork.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), AlbumCoverActivity.class);
@@ -272,6 +275,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
     }
 
     private boolean load() {
+        resetAll();
         MP3File mp3;
 
         try {
@@ -458,9 +462,6 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
                 }).withDrawerWidthDp(240).build();
 
         mainDrawer.setSelection(4);
-
-        mainDrawer.openDrawer();
-        mainDrawer.closeDrawer();
     }
 
     private void open23() {
@@ -701,6 +702,11 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             queue.clear();
             clearAddFile(file);
         }
+
+        if (!queue.isEmpty()) {
+            firstLoad();
+        }
+
         frag.dismiss();
     }
 
@@ -724,9 +730,20 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
                 currentQueuePos = queue.size()-1;
             }
         }
+
+        if (!queue.isEmpty()) {
+            firstLoad();
+        }
+
+
         frag.dismiss();
     }
 
+    public void firstLoad() {
+        currentFile = queue.get(currentQueuePos);
+        resetAll();
+        load();
+    }
 }
 
 
