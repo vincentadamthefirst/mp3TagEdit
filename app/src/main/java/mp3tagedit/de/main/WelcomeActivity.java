@@ -1,7 +1,12 @@
 package mp3tagedit.de.main;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Point;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
@@ -23,6 +28,9 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private Drawer mainDrawer;
 
+    private final static int PERM_REQ_WRITE_STORAGE = 42;
+    private final static int PERM_REQ_READ_STORAGE = 43;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +39,44 @@ public class WelcomeActivity extends AppCompatActivity {
         setupActionBar("");
         setupDrawer();
 
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERM_REQ_WRITE_STORAGE);
+        } else if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERM_REQ_READ_STORAGE);
+        }
+    }
 
+    /**
+     * Overrides existing Method
+     * Used to check if a Permission was granted by the user during runtime
+     */
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case PERM_REQ_WRITE_STORAGE: {
+                if (grantResults.length > 0) {
+                    if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                        finish(); //denied
+                    } else {
+                        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                            // granted
+                        } else {
+                            finish(); //not clicked
+                        }
+                    }
+                }
+            } case PERM_REQ_READ_STORAGE: {
+                if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                    finish(); //denied
+                } else {
+                    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                        // granted
+                    } else {
+                        finish(); //not clicked
+                    }
+                }
+            }
+        }
     }
 
     private void setupDrawer() {

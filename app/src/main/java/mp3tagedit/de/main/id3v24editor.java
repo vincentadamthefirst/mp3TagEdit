@@ -4,18 +4,15 @@ import android.Manifest;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.InsetDrawable;
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.media.MediaPlayer;
-import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -55,7 +52,6 @@ import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagException;
 import org.jaudiotagger.tag.id3.ID3v24Tag;
-import org.jaudiotagger.tag.images.Artwork;
 
 import java.io.File;
 import java.io.IOException;
@@ -68,13 +64,11 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
 
     private Drawer mainDrawer;
 
-    private final static int PERM_REQ_WRITE_STORAGE = 42;
-    private final static int PERM_REQ_READ_STORAGE = 43;
-
-
-
     private EditText et_title;
     private EditText et_album;
+    private EditText et_year;
+    private EditText et_track;
+    private EditText et_comment;
     public static ArrayList<EditText> artistList;
     public static ArrayList<EditText> genreList;
 
@@ -98,6 +92,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
 
     // TODO
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -157,6 +152,10 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
 
         et_title = findViewById(R.id.edit_title);
         et_album = findViewById(R.id.albumIn);
+        et_track = findViewById(R.id.trackIn);
+        et_year = findViewById(R.id.yearIn);
+        et_comment = findViewById(R.id.commentIn);
+
 
         ib_artwork = findViewById(R.id.coverArt);
         ib_artwork.setOnClickListener(new View.OnClickListener() {
@@ -168,13 +167,10 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             }
         });
 
-        TextView teYear = findViewById(R.id.yearIn);
-        teYear.setText( "" + (Calendar.getInstance().get(Calendar.YEAR)-2));
+        et_year.setText("" + (Calendar.getInstance().get(Calendar.YEAR)-2));
 
         //fManager = new FileManager();
         queue = new ArrayList<File>();
-
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERM_REQ_WRITE_STORAGE);
 
         File[] allRootPaths = getExternalFilesDirs(null);
         for (File f : allRootPaths) {
@@ -182,7 +178,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             ArrayList<String> playL = getPlayList(f.getAbsolutePath().replace("Android/data/thejetstream.de.mp3tagedit/files", ""), ".mp3");
             for (String s : playL) {
                 System.out.println(s);
-                if (s.contains("07-Sterneneisen")) {
+                if (s.contains("schlawinerwiener")) {
                     currentFile = new File(s);
                     System.out.println("GEFUNDEN !!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                     break;
@@ -195,24 +191,84 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         setupActionBar(getResources().getString(R.string.id3v24edit));
         setupEditorHead();
 
-        load2();
+        load();
     }
 
-    private boolean load2() {
-        MP3File mp3;
+    private void resetAll() {
+        et_title.setText("");
+        et_album.setText("");
+        et_track.setText("");
+        et_comment.setText("");
+        et_year.setText("");
 
-        try {
-            mp3 = (MP3File) AudioFileIO.read(currentFile);
-        } catch (CannotReadException | TagException | IOException | ReadOnlyFileException | InvalidAudioFrameException e) {
-            return false;
+        for (int i = 1; i < artistList.size(); i++) {
+            EditText et = artistList.get(i);
+            ViewGroup parent = (ViewGroup) et.getParent().getParent();
+            parent.removeViewAt(1);
         }
+        artistList = new ArrayList<>();
+        artistList.add((EditText) findViewById(R.id.artistIn));
 
-        Tag tag = mp3.getTag();
+        for (int i = 1; i < genreList.size(); i++) {
+            EditText et = genreList.get(i);
+            ViewGroup parent = (ViewGroup) et.getParent().getParent();
+            parent.removeViewAt(1);
+        }
+        genreList = new ArrayList<>();
+        genreList.add((EditText) findViewById(R.id.genreIn));
 
-        System.out.println("ARTIST: " + tag.getFirst(FieldKey.ARTIST));
+        if (mediaPlayer != null) {
+            if (mediaPlayer.isPlaying()) {
+                mediaPlayer.pause();
+            }
 
+            mediaPlayer.release();
+            mediaPlayer = null;
 
-        return true;
+            playButton.setBackgroundDrawable(new IconicsDrawable(id3v24editor.this)
+                    .icon(GoogleMaterial.Icon.gmd_play_arrow).sizeDp(20)
+                    .color(getResources().getColor(R.color.colorPrimary)));
+        }
+    }
+
+    public void addInputLineArtist(View view){
+        ViewGroup viewParent = (ViewGroup)(view.getParent().getParent());
+        ViewGroup vg = (ViewGroup) LayoutInflater.from(viewParent.getContext()).inflate(
+                R.layout.input_line, null);
+
+        artistList.add( (EditText) vg.getChildAt(0));
+
+        vg.getChildAt(1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ViewGroup parent = (ViewGroup) v.getParent().getParent();
+                int index = parent.indexOfChild((View) v.getParent());
+                artistList.remove(index);
+                parent.removeViewAt(index);
+            }
+        });
+
+        viewParent.addView(vg);
+    }
+
+    public void addInputLineGenre(View view){
+        ViewGroup viewParent = (ViewGroup)(view.getParent().getParent());
+        ViewGroup vg = (ViewGroup) LayoutInflater.from(viewParent.getContext()).inflate(
+                R.layout.input_line, null);
+
+        genreList.add( (EditText) vg.getChildAt(0) );
+
+        vg.getChildAt(1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ViewGroup parent = (ViewGroup) v.getParent().getParent();
+                int index = parent.indexOfChild((View) v.getParent());
+                genreList.remove(index);
+                parent.removeViewAt(index);
+            }
+        });
+
+        viewParent.addView(vg);
     }
 
     private boolean load() {
@@ -224,14 +280,9 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             return false;
         }
 
-        ID3v24Tag tag = mp3.getID3v2TagAsv24();
-
-
-
-
+        Tag tag = mp3.getTag();
 
         List<String> artists = tag.getAll(FieldKey.ARTIST);
-        List<String> genres = tag.getAll(FieldKey.GENRE);
         if(artists.size() != 0) {
             for (int i = 1; i < artists.size(); i++) {
                 addInputLineArtist(findViewById(R.id.addArtist));
@@ -240,20 +291,34 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             for (int i = 0; i < artists.size(); i++) {
                 artistList.get(i).setText(artists.get(i));
             }
+        } else {
+            ((EditText) findViewById(R.id.artistIn)).setText("");
         }
 
-        if(genres.size() != 0) {
-            for (int i = 1; i < genres.size(); i++) {
-                addInputLineArtist(findViewById(R.id.addGenre));
-            }
+        if (mp3.hasID3v2Tag()) {
+            List<String> genres = tag.getAll(FieldKey.GENRE);
+            if(genres.size() != 0) {
+                if (genres.size() != 0) {
+                    for (int i = 1; i < genres.size(); i++) {
+                        addInputLineGenre(findViewById(R.id.addGenre));
+                    }
 
-            for (int i = 0; i < genres.size(); i++) {
-                genreList.get(i).setText(genres.get(i));
+                    for (int i = 0; i < genres.size(); i++) {
+                        genreList.get(i).setText(genres.get(i));
+                    }
+                }
+            } else {
+                ((EditText) findViewById(R.id.genreIn)).setText("");
             }
+        } else {
+            genreList.get(0).setText("");
         }
 
         et_title.setText(tag.getFirst(FieldKey.TITLE));
         et_album.setText(tag.getFirst(FieldKey.ALBUM));
+        et_year.setText(tag.getFirst(FieldKey.YEAR));
+        et_comment.setText(tag.getFirst(FieldKey.COMMENT));
+        et_track.setText(tag.getFirst(FieldKey.TRACK));
 
         /*
         try {
@@ -291,11 +356,11 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
 
             tag.setField(FieldKey.TITLE, et_title.getText().toString());
             tag.setField(FieldKey.ALBUM, et_album.getText().toString());
-
-
-
+            tag.setField(FieldKey.YEAR, et_year.getText().toString());
+            tag.setField(FieldKey.COMMENT, et_comment.getText().toString());
+            tag.setField(FieldKey.TRACK, et_track.getText().toString());
         } catch (FieldDataInvalidException e) {
-            e.printStackTrace();
+           return false;
         }
 
         mp3.setTag(tag);
@@ -303,7 +368,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         try {
             AudioFileIO.write(mp3);
         } catch (CannotWriteException e) {
-            e.printStackTrace();
+            return false;
         }
 
         return true;
@@ -398,45 +463,6 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         mainDrawer.closeDrawer();
     }
 
-    /**
-     * Overrides existing Method
-     * Used to check if a Permission was granted by the user during runtime
-     */
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case PERM_REQ_WRITE_STORAGE: {
-                if (grantResults.length > 0) {
-                    if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                        // denied
-                        System.out.println("DENIED");
-                    } else {
-                        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                            // granted
-                            System.out.println("GRANTED");
-                        } else {
-                            // not clicked
-                            System.out.println("NOT CLICKED");
-                        }
-                    }
-                }
-            } case PERM_REQ_READ_STORAGE: {
-                if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-                    // denied
-                    System.out.println("DENIED");
-                } else {
-                    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                        // granted
-                        System.out.println("GRANTED");
-                    } else {
-                        // not clicked
-                        System.out.println("NOT CLICKED");
-                    }
-                }
-            }
-        }
-    }
-
     private void open23() {
         Intent intent = new Intent(this, id3v23editor.class);
         startActivity(intent);
@@ -460,46 +486,6 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
     private void openHome() {
         Intent intent = new Intent(this, WelcomeActivity.class);
         startActivity(intent);
-    }
-
-    public void addInputLineArtist(View view){
-        ViewGroup viewParent = (ViewGroup)(view.getParent().getParent());
-        ViewGroup vg = (ViewGroup) LayoutInflater.from(viewParent.getContext()).inflate(
-                R.layout.input_line, null);
-
-        artistList.add( (EditText) vg.getChildAt(0));
-
-        vg.getChildAt(1).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ViewGroup parent = (ViewGroup) v.getParent().getParent();
-                int index = parent.indexOfChild((View) v.getParent());
-                artistList.remove(index);
-                parent.removeViewAt(index);
-            }
-        });
-
-        viewParent.addView(vg);
-    }
-
-    public void addInputLineGenre(View view){
-        ViewGroup viewParent = (ViewGroup)(view.getParent().getParent());
-        ViewGroup vg = (ViewGroup) LayoutInflater.from(viewParent.getContext()).inflate(
-                R.layout.input_line, null);
-
-        genreList.add( (EditText) vg.getChildAt(0) );
-
-        vg.getChildAt(1).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ViewGroup parent = (ViewGroup) v.getParent().getParent();
-                int index = parent.indexOfChild((View) v.getParent());
-                genreList.remove(index);
-                parent.removeViewAt(index);
-            }
-        });
-
-        viewParent.addView(vg);
     }
 
     @Override

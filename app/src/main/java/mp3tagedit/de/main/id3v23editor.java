@@ -220,10 +220,6 @@ public class id3v23editor extends AppCompatActivity {
         }
         */
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-            System.out.println("PERMISSION GRANTED!!!!");
-        }
-
         try {
             AudioFileIO.write(mp3);
         } catch (CannotWriteException e) {
