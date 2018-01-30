@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewManager;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -19,18 +21,21 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
-public class WelcomeActivity extends AppCompatActivity {
+public class tagtofile extends AppCompatActivity {
 
     private Drawer mainDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_tagtofile);
 
-        setupActionBar("");
+        setupActionBar(getResources().getString(R.string.tagtofile));
         setupDrawer();
+    }
 
+    private void options() {
 
     }
 
@@ -96,7 +101,10 @@ public class WelcomeActivity extends AppCompatActivity {
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         long identifier = drawerItem.getIdentifier();
 
-                        if (identifier == 2) {
+                        if (identifier == 1) {
+                            openHome();
+                            return true;
+                        } else if (identifier == 2) {
                             openSettings();
                             return true;
                         } else if (identifier == 3) {
@@ -104,9 +112,6 @@ public class WelcomeActivity extends AppCompatActivity {
                             return true;
                         } else if (identifier == 4) {
                             open24();
-                            return true;
-                        } else if (identifier == 5) {
-                            openTagToFile();
                             return true;
                         } else if (identifier == 6) {
                             openHelp();
@@ -117,7 +122,7 @@ public class WelcomeActivity extends AppCompatActivity {
                     }
                 }).withDrawerWidthDp(240).build();
 
-        mainDrawer.setSelection(1);
+        mainDrawer.setSelection(5);
 
         mainDrawer.openDrawer();
         mainDrawer.closeDrawer();
@@ -133,11 +138,6 @@ public class WelcomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void openTagToFile() {
-        Intent intent = new Intent(this, tagtofile.class);
-        startActivity(intent);
-    }
-
     private void openHelp() {
         Intent intent = new Intent(this, help.class);
         startActivity(intent);
@@ -148,18 +148,33 @@ public class WelcomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void openHome() {
+        Intent intent = new Intent(this, WelcomeActivity.class);
+        startActivity(intent);
+    }
+
     private void setupActionBar(String title) {
         Button openDrawer = findViewById(R.id.open_drawer);
+        Button openOptions = findViewById(R.id.open_options);
         TextView activityTitle = findViewById(R.id.activity_title);
 
         Display display = getWindowManager().getDefaultDisplay();
-        Point size = new Point(); display.getSize(size);
+        Point size = new Point();
+        display.getSize(size);
 
         openDrawer.setBackgroundDrawable(new IconicsDrawable(this).icon(GoogleMaterial.Icon.gmd_menu).sizeDp(30).color(getResources().getColor(R.color.colorPrimary)));
         openDrawer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainDrawer.openDrawer();
+            }
+        });
+
+        openOptions.setBackgroundDrawable(new IconicsDrawable(this).icon(GoogleMaterial.Icon.gmd_more_vert).sizeDp(30).color(getResources().getColor(R.color.colorPrimary)));
+        openOptions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                options();
             }
         });
 

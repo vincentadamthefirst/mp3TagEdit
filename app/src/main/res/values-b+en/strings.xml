@@ -5,6 +5,7 @@
     -->
 
     <string name="app_name">mp3 Tag Edit</string>
+    <string name="app_version">Version 0.2</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -47,4 +48,16 @@
 
     <!-- Text for Help page -->
     <string name="placeholder">placeholder</string>
+
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="settings">Options</string>
+    <string name="id3v24edit">id3v2.4 Editor</string>
+    <string name="id3v23edit">id3v2.3 Editor</string>
+    <string name="tagtofile">Tag-to-File</string>
+    <string name="home">Home</string>
+    <string name="help">Help</string>
+
 </resources>

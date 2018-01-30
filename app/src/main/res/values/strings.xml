@@ -5,13 +5,13 @@
     -->
 
     <string name="app_name">mp3 Tag Edit</string>
+    <string name="app_version">Version 0.2</string>
     <string name="file_extension">.mp3</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <!-- Text for various buttons -->
-    <string name="action_settings">Settings</string>
     <string name="button_add">+</string>
     <string name="button_remove">-</string>
 
@@ -53,9 +53,45 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
-    <!-- Recent Update Text -->
-    <!-- every '*' will start a new point -->
-    <string name="current_version">Version 0.2a</string>
-    <string name="update_text">* test * another test</string>
+    <string name="settings">Options</string>
+    <string name="id3v24edit">id3v2.4 Editor</string>
+    <string name="id3v23edit">id3v2.3 Editor</string>
+    <string name="tagtofile">Tag-to-File</string>
+    <string name="home">Home</string>
+    <string name="help">Help</string>
+    <string name="title_activity_settings">settings</string>
+    <string name="title_activity_help">help</string>
+
+
+    <!-- Strings for the help page -->
+    <string name="chapter1title">1. General</string>
+    <string name="chapter1"><b>Tagger</b> is an easy-to-use app to edit and convert the metadata of mp3-files. It can edit 2 different versions of tags, <i>id3v2.3</i> and <i>id3v2.4</i>. Those are distinguished by how many tags can be set per field.\n
+Whilst the newer version supports multiple tags, most systems are designed to work with id3v2.3 tags and cannot display multiple information.</string>
+
+    <string name="chapter2title">2. First Steps</string>
+    <string name="chapter2">When starting one of the editors you will be presented with a queue in which the soon to be edited files will be listed. You can add complete folders or simply files. After setting up this queue you can start editing.</string>
+
+    <string name="chapter3title">3. The Editor</string>
+    <string name="chapter3">The Editor has a simple layout. On the top is a header containing information about the Cover and Title you are currently working on as well as buttons to play the current song, share the edited file and to manually save.\n
+The save button however is not needed all the time as the app automatically saves whenever another file in queue is edited. \n
+By clicking on the <b>artwork</b> on the header a new selection pops up and there are different options available: \n
+\u2022 <b>Camera</b> \n
+\u2022 <b>Gallery</b> \n
+\u2022 <b>Generator</b></string>
+
+    <string name="chapter31title">3.1. The Cover Generator</string>
+    <string name="chapter31">This function gives you the option to define a pattern using xml and generates covers from the information stored in the tags of a given mp3-file.</string>
+
+    <string name="chapter4title">4. The Tag to File Converter</string>
+    <string name="chapter4">This option in the menu is used to betetr organize your mp3-files on your phone by giving them names according to their tags. This can be applied to all mp3-files on your phone or to a selection of files.
+The pattern which the files get renamed after is defined in the settings with following possible attributes: \n
+\u2022 <b>%artist%</b> - Artist\n
+\u2022 <b>%track%</b> - Track number\n
+\u2022 <b>%album%</b> - Album name\n
+\u2022 <b>%genre%</b> - Genre</string>
+
+    <string name="creditstitle">Credits</string>
+    <string name="credits">This App was created by <b>Vincent Adam</b>, <b>Andre Berthold</b> and <b>Christian Gärber</b>.</string>
+
 
 </resources>

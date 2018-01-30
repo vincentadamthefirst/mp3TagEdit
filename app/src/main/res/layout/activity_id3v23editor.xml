@@ -79,6 +79,7 @@
             android:background="@color/whiteSeeThrough">  <!-- first "OF" used for opacity (6%) -->
 
             <ImageButton
+                android:id="@+id/coverArt"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:background="@drawable/white_rectangle"
@@ -132,7 +133,8 @@
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:background="@drawable/white_rectangle"
-                        android:textColor="@color/defaultText" />
+                        android:textColor="@color/defaultText"
+                        android:text="@string/file_save"/>
 
                     <Button
                         android:id="@+id/share_button"
