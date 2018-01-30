@@ -79,6 +79,7 @@
             android:background="@color/whiteSeeThrough">  <!-- first "OF" used for opacity (6%) -->
 
             <ImageButton
+                android:id="@+id/coverArt"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:background="@drawable/white_rectangle"
