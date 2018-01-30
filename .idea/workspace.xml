@@ -10,11 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5855e173-51ed-41a6-a06c-9707403fca85" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileExplorer.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileExplorer.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/file_explore_dialog.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/file_explore_dialog.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,47 +36,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="id3v24editor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="id3v24editor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="571" column="81" lean-forward="false" selection-start-line="571" selection-start-column="81" selection-end-line="571" selection-end-column="81" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3998#4683#0" expanded="true" />
-                <element signature="e#4682#4683#0" expanded="true" />
-                <element signature="e#4976#5675#0" expanded="true" />
-                <element signature="e#5674#5675#0" expanded="true" />
-                <element signature="e#6009#6265#0" expanded="true" />
-                <element signature="e#6264#6265#0" expanded="true" />
-                <element signature="e#7114#7159#0" expanded="true" />
-                <element signature="e#8943#9290#0" expanded="true" />
-                <element signature="e#9289#9290#0" expanded="true" />
-                <element signature="e#9686#10032#0" expanded="true" />
-                <element signature="e#10031#10032#0" expanded="true" />
-                <element signature="e#13931#13944#0" expanded="true" />
-                <element signature="e#14432#14449#0" expanded="true" />
-                <element signature="e#14946#14965#0" expanded="true" />
-                <element signature="e#15462#15481#0" expanded="true" />
-                <element signature="e#15973#15991#0" expanded="true" />
-                <element signature="e#16483#16496#0" expanded="true" />
-                <element signature="e#17688#18742#0" expanded="true" />
-                <element signature="e#18741#18742#0" expanded="true" />
-                <element signature="e#20072#20639#0" expanded="true" />
-                <element signature="e#20343#20382#0" expanded="true" />
-                <element signature="e#20484#20523#0" expanded="true" />
-                <element signature="e#20638#20639#0" expanded="true" />
-                <element signature="e#21695#21696#0" expanded="true" />
-                <element signature="e#21723#21724#0" expanded="true" />
-                <element signature="e#22303#22460#0" expanded="true" />
-                <element signature="e#22459#22460#0" expanded="true" />
-                <element signature="e#22677#22820#0" expanded="true" />
-                <element signature="e#22819#22820#0" expanded="true" />
-                <element signature="e#23545#23685#0" expanded="true" />
-                <element signature="e#23684#23685#0" expanded="true" />
-                <element signature="e#23727#25230#0" expanded="true" />
-                <element signature="e#25229#25230#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2091">
+              <caret line="179" column="57" lean-forward="false" selection-start-line="179" selection-start-column="8" selection-end-line="179" selection-end-column="57" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,7 +49,7 @@
       <file leaf-file-name="WelcomeActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/WelcomeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
+            <state relative-caret-position="306">
               <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
                 <element signature="method#setupDrawer#0;class#WelcomeActivity#0" expanded="false" />
@@ -104,37 +68,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="input_line.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/input_line.xml">
+      <file leaf-file-name="FileExplorer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileExplorer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="221">
+              <caret line="88" column="63" lean-forward="false" selection-start-line="88" selection-start-column="63" selection-end-line="88" selection-end-column="63" />
               <folding />
             </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_id3v24editor.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="375" column="50" lean-forward="false" selection-start-line="375" selection-start-column="50" selection-end-line="375" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
+      <file leaf-file-name="file_explore_dialog.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/file_explore_dialog.xml">
           <provider editor-type-id="android-designer2">
             <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="39" column="40" lean-forward="false" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="id3v23editor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v23editor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="259" column="62" lean-forward="false" selection-start-line="259" selection-start-column="62" selection-end-line="259" selection-end-column="62" />
+            <state relative-caret-position="935">
+              <caret line="107" column="124" lean-forward="false" selection-start-line="107" selection-start-column="79" selection-end-line="107" selection-end-column="124" />
               <folding />
             </state>
           </provider>
@@ -2017,7 +1978,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/file_element.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/file_select_dialog.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/DialogFragmentResultListener.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileExplorer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileSelecter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenTags.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenConfig.java" />
@@ -2032,6 +1992,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/white_rectangle_seethrough.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileExplorer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/file_explore_dialog.xml" />
       </list>
     </option>
   </component>
@@ -2058,10 +2020,49 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="mp3TagEdit" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="mp3TagEdit" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="mp3TagEdit" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="de" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mp3TagEdit" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="de" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mp3TagEdit" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="mp3TagEdit" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scratches" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2173,7 +2174,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517328495334" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517334417304" />
       </method>
     </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
@@ -2221,7 +2222,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517328495332" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517334417299" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2269,7 +2270,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517328495335" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517334417306" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2419,17 +2420,17 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32216907" sideWeight="0.5027365" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32216907" sideWeight="0.5027365" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4152824" sideWeight="0.49626866" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4152824" sideWeight="0.49626866" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14698984" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20250195" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2441,31 +2442,11 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24941361" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42532468" sideWeight="0.50373137" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42532468" sideWeight="0.50373137" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32216907" sideWeight="0.5027365" order="14" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4318182" sideWeight="0.49626866" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42532468" sideWeight="0.50373137" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24941361" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -2477,87 +2458,32 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v23editor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1870">
-          <caret line="110" column="0" lean-forward="true" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="45" lean-forward="false" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1649">
           <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3998#4683#0" expanded="true" />
-            <element signature="e#4682#4683#0" expanded="true" />
-            <element signature="e#4976#5675#0" expanded="true" />
-            <element signature="e#5674#5675#0" expanded="true" />
-            <element signature="e#6009#6265#0" expanded="true" />
-            <element signature="e#6264#6265#0" expanded="true" />
-            <element signature="e#7114#7159#0" expanded="true" />
-            <element signature="e#8943#9290#0" expanded="true" />
-            <element signature="e#9289#9290#0" expanded="true" />
-            <element signature="e#9686#10032#0" expanded="true" />
-            <element signature="e#10031#10032#0" expanded="true" />
-            <element signature="e#13931#13944#0" expanded="true" />
-            <element signature="e#14432#14449#0" expanded="true" />
-            <element signature="e#14946#14965#0" expanded="true" />
-            <element signature="e#15462#15481#0" expanded="true" />
-            <element signature="e#15973#15991#0" expanded="true" />
-            <element signature="e#16483#16496#0" expanded="true" />
-            <element signature="e#17688#18742#0" expanded="true" />
-            <element signature="e#18741#18742#0" expanded="true" />
-            <element signature="e#20072#20639#0" expanded="true" />
-            <element signature="e#20343#20382#0" expanded="true" />
-            <element signature="e#20484#20523#0" expanded="true" />
-            <element signature="e#20638#20639#0" expanded="true" />
-            <element signature="e#21695#21696#0" expanded="true" />
-            <element signature="e#21723#21724#0" expanded="true" />
-            <element signature="e#22303#22460#0" expanded="true" />
-            <element signature="e#22459#22460#0" expanded="true" />
-            <element signature="e#22677#22820#0" expanded="true" />
-            <element signature="e#22819#22820#0" expanded="true" />
-            <element signature="e#23545#23685#0" expanded="true" />
-            <element signature="e#23684#23685#0" expanded="true" />
-            <element signature="e#23727#25230#0" expanded="true" />
-            <element signature="e#25229#25230#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="44" lean-forward="false" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v23editor.java">
@@ -2569,14 +2495,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-255">
           <caret line="81" column="41" lean-forward="false" selection-start-line="81" selection-start-column="41" selection-end-line="81" selection-end-column="41" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v23editor.java">
@@ -2588,68 +2513,31 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-255">
           <caret line="81" column="41" lean-forward="false" selection-start-line="81" selection-start-column="41" selection-end-line="81" selection-end-column="41" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="185" column="40" lean-forward="false" selection-start-line="185" selection-start-column="40" selection-end-line="185" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3998#4683#0" expanded="true" />
-            <element signature="e#4682#4683#0" expanded="true" />
-            <element signature="e#4976#5675#0" expanded="true" />
-            <element signature="e#5674#5675#0" expanded="true" />
-            <element signature="e#6009#6265#0" expanded="true" />
-            <element signature="e#6264#6265#0" expanded="true" />
-            <element signature="e#7114#7159#0" expanded="true" />
-            <element signature="e#8943#9290#0" expanded="true" />
-            <element signature="e#9289#9290#0" expanded="true" />
-            <element signature="e#9686#10032#0" expanded="true" />
-            <element signature="e#10031#10032#0" expanded="true" />
-            <element signature="e#13931#13944#0" expanded="true" />
-            <element signature="e#14432#14449#0" expanded="true" />
-            <element signature="e#14946#14965#0" expanded="true" />
-            <element signature="e#15462#15481#0" expanded="true" />
-            <element signature="e#15973#15991#0" expanded="true" />
-            <element signature="e#16483#16496#0" expanded="true" />
-            <element signature="e#17688#18742#0" expanded="true" />
-            <element signature="e#18741#18742#0" expanded="true" />
-            <element signature="e#20072#20639#0" expanded="true" />
-            <element signature="e#20343#20382#0" expanded="true" />
-            <element signature="e#20484#20523#0" expanded="true" />
-            <element signature="e#20638#20639#0" expanded="true" />
-            <element signature="e#21695#21696#0" expanded="true" />
-            <element signature="e#21723#21724#0" expanded="true" />
-            <element signature="e#22303#22460#0" expanded="true" />
-            <element signature="e#22459#22460#0" expanded="true" />
-            <element signature="e#22677#22820#0" expanded="true" />
-            <element signature="e#22819#22820#0" expanded="true" />
-            <element signature="e#23545#23685#0" expanded="true" />
-            <element signature="e#23684#23685#0" expanded="true" />
-            <element signature="e#23727#25230#0" expanded="true" />
-            <element signature="e#25229#25230#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/id3v23.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1819">
           <caret line="107" column="12" lean-forward="false" selection-start-line="107" selection-start-column="12" selection-end-line="107" selection-end-column="12" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24.java">
@@ -2663,42 +2551,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3998#4683#0" expanded="true" />
-            <element signature="e#4682#4683#0" expanded="true" />
-            <element signature="e#4976#5675#0" expanded="true" />
-            <element signature="e#5674#5675#0" expanded="true" />
-            <element signature="e#6009#6265#0" expanded="true" />
-            <element signature="e#6264#6265#0" expanded="true" />
-            <element signature="e#7114#7159#0" expanded="true" />
-            <element signature="e#8943#9290#0" expanded="true" />
-            <element signature="e#9289#9290#0" expanded="true" />
-            <element signature="e#9686#10032#0" expanded="true" />
-            <element signature="e#10031#10032#0" expanded="true" />
-            <element signature="e#13931#13944#0" expanded="true" />
-            <element signature="e#14432#14449#0" expanded="true" />
-            <element signature="e#14946#14965#0" expanded="true" />
-            <element signature="e#15462#15481#0" expanded="true" />
-            <element signature="e#15973#15991#0" expanded="true" />
-            <element signature="e#16483#16496#0" expanded="true" />
-            <element signature="e#17688#18742#0" expanded="true" />
-            <element signature="e#18741#18742#0" expanded="true" />
-            <element signature="e#20072#20639#0" expanded="true" />
-            <element signature="e#20343#20382#0" expanded="true" />
-            <element signature="e#20484#20523#0" expanded="true" />
-            <element signature="e#20638#20639#0" expanded="true" />
-            <element signature="e#21695#21696#0" expanded="true" />
-            <element signature="e#21723#21724#0" expanded="true" />
-            <element signature="e#22303#22460#0" expanded="true" />
-            <element signature="e#22459#22460#0" expanded="true" />
-            <element signature="e#22677#22820#0" expanded="true" />
-            <element signature="e#22819#22820#0" expanded="true" />
-            <element signature="e#23545#23685#0" expanded="true" />
-            <element signature="e#23684#23685#0" expanded="true" />
-            <element signature="e#23727#25230#0" expanded="true" />
-            <element signature="e#25229#25230#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2724,14 +2577,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6256">
           <caret line="368" column="40" lean-forward="true" selection-start-line="368" selection-start-column="40" selection-end-line="368" selection-end-column="40" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values-b+en/strings.xml">
@@ -2742,14 +2594,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/id3v24.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Android-Studio/android-sdk/sources/android-26/java/lang/String.java" />
@@ -2761,48 +2612,32 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/id3v23.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="107" column="12" lean-forward="false" selection-start-line="107" selection-start-column="12" selection-end-line="107" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="107" column="12" lean-forward="false" selection-start-line="107" selection-start-column="12" selection-end-line="107" selection-end-column="12" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/file_element.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="72" lean-forward="false" selection-start-line="1" selection-start-column="72" selection-end-line="1" selection-end-column="72" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/file_select_dialog.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/DialogFragmentResultListener.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileSelecter.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3349">
-          <caret line="243" column="13" lean-forward="false" selection-start-line="243" selection-start-column="13" selection-end-line="243" selection-end-column="143" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenConfig.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/image_layout.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/navigation.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileExplorer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="107" column="32" lean-forward="false" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenTags.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/file_paths.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenerationActivity.java" />
@@ -2814,37 +2649,37 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_cover_generation.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_album_cover.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/Main2Activity.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main2.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-136">
           <caret line="31" column="50" lean-forward="false" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_forward_white_24dp.png">
@@ -2853,13 +2688,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_id3v24editor.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/white_rectangle_seethrough.xml">
@@ -2870,20 +2705,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="426" column="49" lean-forward="false" selection-start-line="426" selection-start-column="49" selection-end-line="426" selection-end-column="49" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Android-Studio/android-sdk/sources/android-26/android/view/View.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/WelcomeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
+        <state relative-caret-position="306">
           <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
             <element signature="method#setupDrawer#0;class#WelcomeActivity#0" expanded="false" />
@@ -2891,68 +2725,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="375" column="50" lean-forward="false" selection-start-line="375" selection-start-column="50" selection-end-line="375" selection-end-column="50" />
+        <state relative-caret-position="2091">
+          <caret line="179" column="57" lean-forward="false" selection-start-line="179" selection-start-column="8" selection-end-line="179" selection-end-column="57" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/input_line.xml">
       <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="375" column="50" lean-forward="false" selection-start-line="375" selection-start-column="50" selection-end-line="375" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3349">
+          <caret line="243" column="13" lean-forward="false" selection-start-line="243" selection-start-column="13" selection-end-line="243" selection-end-column="143" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v23editor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="259" column="62" lean-forward="false" selection-start-line="259" selection-start-column="62" selection-end-line="259" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="571" column="81" lean-forward="false" selection-start-line="571" selection-start-column="81" selection-end-line="571" selection-end-column="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3998#4683#0" expanded="true" />
-            <element signature="e#4682#4683#0" expanded="true" />
-            <element signature="e#4976#5675#0" expanded="true" />
-            <element signature="e#5674#5675#0" expanded="true" />
-            <element signature="e#6009#6265#0" expanded="true" />
-            <element signature="e#6264#6265#0" expanded="true" />
-            <element signature="e#7114#7159#0" expanded="true" />
-            <element signature="e#8943#9290#0" expanded="true" />
-            <element signature="e#9289#9290#0" expanded="true" />
-            <element signature="e#9686#10032#0" expanded="true" />
-            <element signature="e#10031#10032#0" expanded="true" />
-            <element signature="e#13931#13944#0" expanded="true" />
-            <element signature="e#14432#14449#0" expanded="true" />
-            <element signature="e#14946#14965#0" expanded="true" />
-            <element signature="e#15462#15481#0" expanded="true" />
-            <element signature="e#15973#15991#0" expanded="true" />
-            <element signature="e#16483#16496#0" expanded="true" />
-            <element signature="e#17688#18742#0" expanded="true" />
-            <element signature="e#18741#18742#0" expanded="true" />
-            <element signature="e#20072#20639#0" expanded="true" />
-            <element signature="e#20343#20382#0" expanded="true" />
-            <element signature="e#20484#20523#0" expanded="true" />
-            <element signature="e#20638#20639#0" expanded="true" />
-            <element signature="e#21695#21696#0" expanded="true" />
-            <element signature="e#21723#21724#0" expanded="true" />
-            <element signature="e#22303#22460#0" expanded="true" />
-            <element signature="e#22459#22460#0" expanded="true" />
-            <element signature="e#22677#22820#0" expanded="true" />
-            <element signature="e#22819#22820#0" expanded="true" />
-            <element signature="e#23545#23685#0" expanded="true" />
-            <element signature="e#23684#23685#0" expanded="true" />
-            <element signature="e#23727#25230#0" expanded="true" />
-            <element signature="e#25229#25230#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="935">
+          <caret line="107" column="124" lean-forward="false" selection-start-line="107" selection-start-column="79" selection-end-line="107" selection-end-column="124" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileExplorer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="88" column="63" lean-forward="false" selection-start-line="88" selection-start-column="63" selection-end-line="88" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/file_explore_dialog.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="39" column="40" lean-forward="false" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
