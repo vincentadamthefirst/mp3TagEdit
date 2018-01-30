@@ -2,6 +2,7 @@ package mp3tagedit.de.main;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -9,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.InsetDrawable;
 import android.annotation.SuppressLint;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v4.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
@@ -53,8 +55,11 @@ import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagException;
 import org.jaudiotagger.tag.id3.ID3v24Tag;
 import org.jaudiotagger.tag.images.Artwork;
+import org.jaudiotagger.tag.images.ArtworkFactory;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -96,6 +101,8 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
     private Button shareButton;
     private Button nextButton;
     private Button prevButton;
+
+    private Bitmap currentCover;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -223,6 +230,8 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             saveButton.setEnabled(true);
             shareButton.setEnabled(true);
         }
+
+        ib_artwork.setImageResource(android.R.color.transparent);
     }
 
     /**
@@ -330,9 +339,9 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         try {
             Artwork cover = tag.getFirstArtwork();
             byte[] data = cover.getBinaryData();
-            Bitmap bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
+            currentCover = BitmapFactory.decodeByteArray(data, 0, data.length);
 
-            ib_artwork.setImageBitmap(bmp);
+            ib_artwork.setImageBitmap(currentCover);
         } catch (Exception e) {}
 
 
@@ -374,6 +383,23 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         } catch (FieldDataInvalidException e) {
            return false;
         }
+
+        if (currentCover != null) {
+            File tmp = new File(getExternalFilesDir(null) + "tmp.png");
+            FileOutputStream fos;
+            try {
+                fos = new FileOutputStream(tmp);
+                currentCover.compress(Bitmap.CompressFormat.PNG, 90, fos);
+                Artwork art = ArtworkFactory.createArtworkFromFile(tmp);
+
+                tag.setField(art);
+            } catch (IOException | FieldDataInvalidException e) {
+                e.printStackTrace();
+            }
+
+            tmp.delete();
+        }
+
 
         mp3.setTag(tag);
 
@@ -676,7 +702,11 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         ib_artwork.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                CoverGenTags coverGenTags = new CoverGenTags(et_title.getText().toString(), artistList.get(0).getText().toString(), genreList.get(0).getText().toString(), et_year.getText().toString());
+                coverGenTags.setImage(currentCover);
+
                 Intent i = new Intent(getApplicationContext(), AlbumCoverActivity.class);
+                i.putExtra("tags", coverGenTags);
                 startActivityForResult(i, 64);
             }
         });
@@ -684,6 +714,17 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         playButton.setEnabled(false);
         saveButton.setEnabled(false);
         shareButton.setEnabled(false);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 64) {
+            if (resultCode == RESULT_OK) {
+                byte[] toBmp = data.getByteArrayExtra("path");
+                currentCover = BitmapFactory.decodeByteArray(toBmp, 0, toBmp.length);
+                ib_artwork.setImageBitmap(currentCover);
+            }
+        }
     }
 
     /**
@@ -751,7 +792,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
                     counter++;
                 }
             }
-            Toast.makeText(this, getResources().getString(R.string.files_added), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, counter + getResources().getString(R.string.files_added), Toast.LENGTH_LONG).show();
         }
         else{
             queue.clear();
