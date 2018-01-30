@@ -21,17 +21,17 @@
 
         <RelativeLayout
             android:id="@+id/open_drawer_layout"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:layout_width="50dp"
-            android:layout_height="50dp">
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
 
             <Button
                 android:id="@+id/open_drawer"
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"/>
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
 
         </RelativeLayout>
 
@@ -57,6 +57,8 @@
                 android:id="@+id/open_options"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true" />
         </RelativeLayout>
@@ -159,15 +161,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-
-                <!--
-                Album
-                Artist
-                Comment (auto generated, hidden)
-                Track
-                TotalTracks
-                Genre
-                -->
 
                 <RelativeLayout
                     android:id="@+id/albumLayout"
@@ -315,6 +308,101 @@
                                 />
                         </LinearLayout>
                     </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/yearsLayout"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/whiteSeeThrough">
+
+                    <TextView
+                        android:id="@+id/tv_year"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:textStyle="bold"
+                        android:text="@string/tagedit_year"
+                        android:textColor="@color/defaultText" />
+
+                    <EditText
+                        android:id="@+id/yearIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_below="@id/tv_year"
+                        android:textAlignment="viewEnd"
+                        android:selectAllOnFocus="true"
+                        android:ems="10"
+                        android:inputType="number" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/tracksLayout"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/whiteSeeThrough">
+
+                    <TextView
+                        android:id="@+id/tv_track"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:textStyle="bold"
+                        android:text="@string/tagedit_track"
+                        android:textColor="@color/defaultText" />
+
+                    <EditText
+                        android:id="@+id/trackIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_below="@id/tv_track"
+                        android:textAlignment="viewEnd"
+                        android:ems="10"
+                        android:inputType="number|textFilter"
+                        android:digits="0123456789/"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/commentsLayout"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/whiteSeeThrough">
+
+                    <TextView
+                        android:id="@+id/tv_comment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:textStyle="bold"
+                        android:text="@string/tagedit_comment"
+                        android:textColor="@color/defaultText" />
+
+                    <EditText
+                        android:id="@+id/commentIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_below="@id/tv_comment"
+                        android:textAlignment="viewStart"
+                        android:inputType="text|textMultiLine" />
                 </RelativeLayout>
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>

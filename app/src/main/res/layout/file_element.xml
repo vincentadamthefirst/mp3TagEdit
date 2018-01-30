@@ -4,21 +4,17 @@
     android:layout_height="match_parent"
     android:background="@drawable/custom_border"
     android:padding="5dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:weightSum="10">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:maxLines="1"
-        android:ellipsize="marquee"
-        android:fadingEdge="horizontal"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:scrollHorizontally="true"
         android:textSize="10pt"
-        android:textColor="#000000"
-        android:text=""/>
+        android:textColor="@color/defaultText"
+        android:text="Datei"/>
 
     <CheckBox
         android:id="@+id/checkBox"

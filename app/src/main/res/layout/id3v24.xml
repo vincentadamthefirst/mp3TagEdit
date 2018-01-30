@@ -122,12 +122,12 @@
             android:paddingRight="16dp">
 
             <!--
-            Album
-            Artist
-            Comment (auto generated, hidden)
+
+
+
             Track
             TotalTracks
-            Genre
+
             -->
             <TextView
                 android:id="@+id/album"
@@ -230,6 +230,8 @@
                     android:text="-" />
                 -->
             </LinearLayout>
+
+
 
 
         </LinearLayout>
