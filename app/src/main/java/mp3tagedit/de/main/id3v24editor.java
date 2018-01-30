@@ -1,19 +1,12 @@
 package mp3tagedit.de.main;
 
-import android.Manifest;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.InsetDrawable;
 import android.annotation.SuppressLint;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.design.widget.FloatingActionButton;
+import android.net.Uri;
 import android.support.v4.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
 import android.media.MediaPlayer;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
@@ -89,8 +82,6 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
     private Button playButton;
     private Button nextButton;
     private Button prevButton;
-
-    // TODO
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -603,6 +594,13 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
                 .icon(GoogleMaterial.Icon.gmd_play_arrow).sizeDp(20)
                 .color(getResources().getColor(R.color.colorSecondary)));*/
 
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                share();
+            }
+        });
+
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -642,6 +640,15 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
                 }
             }
         });
+    }
+
+    private void share() {
+        if (currentFile != null) {
+            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+            sharingIntent.setType("audio/*");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_STREAM, Uri.fromFile(currentFile));
+            startActivity(Intent.createChooser(sharingIntent,"Share using"));
+        }
     }
 
     private void playSong() throws IOException {
