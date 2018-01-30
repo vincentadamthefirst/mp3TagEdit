@@ -3,9 +3,11 @@ package mp3tagedit.de.main;
 import android.Manifest;
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.InsetDrawable;
 import android.annotation.SuppressLint;
@@ -58,7 +60,6 @@ import org.jaudiotagger.tag.images.Artwork;
 import org.jaudiotagger.tag.images.ArtworkFactory;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -101,6 +102,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
     private Button shareButton;
     private Button nextButton;
     private Button prevButton;
+    private Button saveQueue;
 
     private Bitmap currentCover;
 
@@ -111,12 +113,12 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.content_id3v24editor);
 
+        queue = new ArrayList<>();
+
         artistList = new ArrayList<>();
         artistList.add((EditText)(findViewById(R.id.artistIn)));
         genreList = new ArrayList<>();
         genreList.add((EditText)(findViewById(R.id.genreIn)));
-
-        queue = new ArrayList<>();
 
         et_title = findViewById(R.id.edit_title);
         et_album = findViewById(R.id.albumIn);
@@ -132,6 +134,25 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         setupDrawer();
         setupActionBar(getResources().getString(R.string.id3v24edit));
         setupEditorHead();
+
+        String[] newQueue = getIntent().getStringArrayExtra("queueStrings");
+        int newPos = getIntent().getIntExtra("queuePos", -1);
+        if ((newQueue.length == 1) & (newQueue[0].equals("[IDENT]"))) {
+            // request new queue
+        } else {
+            for (String s : newQueue) {
+                queue.add(new File(s));
+            }
+
+            if (newPos != -1) {
+                currentQueuePos = newPos;
+            } else {
+                currentQueuePos = 0;
+            }
+
+            currentFile = queue.get(currentQueuePos);
+            load();
+        }
     }
 
     /**
@@ -184,6 +205,31 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
                     prevButton.setEnabled(true);
                     prevButton.setVisibility(View.VISIBLE);
                 }
+            }
+        });
+
+        saveQueue = findViewById(R.id.saveQueue);
+        saveQueue.setBackgroundDrawable(new IconicsDrawable(this)
+                .icon(GoogleMaterial.Icon.gmd_save).sizeDp(15)
+                .color(getResources().getColor(R.color.colorPrimary)));
+        saveQueue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences prefs = getApplicationContext().getSharedPreferences("queueSavePrefs", 0);
+                SharedPreferences.Editor editor = prefs.edit();
+
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < queue.size(); i++) {
+                    sb.append(queue.get(i)).append(",");
+                }
+
+                editor.putString("queueSave", sb.toString());
+                editor.putInt("queuePos", currentQueuePos);
+                editor.putString("editorType", "24");
+
+                editor.apply();
+
+                finish();
             }
         });
     }
@@ -358,7 +404,6 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
      */
     private boolean save() {
         MP3File mp3;
-        System.out.println("Save comming");
         try {
             mp3 = (MP3File) AudioFileIO.read(currentFile);
         } catch (CannotReadException | TagException | IOException | ReadOnlyFileException | InvalidAudioFrameException e) {
@@ -385,11 +430,11 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         }
 
         if (currentCover != null) {
-            File tmp = new File(getExternalFilesDir(null) + "tmp.png");
+            File tmp = new File(getExternalFilesDir(null) + "tmp.jpeg");
             FileOutputStream fos;
             try {
                 fos = new FileOutputStream(tmp);
-                currentCover.compress(Bitmap.CompressFormat.PNG, 90, fos);
+                currentCover.compress(Bitmap.CompressFormat.JPEG, 90, fos);
                 Artwork art = ArtworkFactory.createArtworkFromFile(tmp);
 
                 tag.setField(art);
@@ -585,7 +630,6 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
     public boolean addFile(File f){
         boolean isNewFile = true;
         for(File g:queue){
-            System.out.println(f.getAbsolutePath() + "|" + g.getAbsolutePath());
             if(f.getAbsolutePath().equals(g.getAbsolutePath())){
                 isNewFile = false;
 

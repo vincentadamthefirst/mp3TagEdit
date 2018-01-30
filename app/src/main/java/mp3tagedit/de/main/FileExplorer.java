@@ -68,7 +68,7 @@ public class FileExplorer extends DialogFragment {
 
         fileExt = getString(R.string.file_extension);
 
-        Dialog dialog = null;
+        Dialog dialog;
 
         dialog = new Dialog(getActivity());
         dialog.setContentView(R.layout.file_explore_dialog);
@@ -111,8 +111,8 @@ public class FileExplorer extends DialogFragment {
         root = Environment.getExternalStoragePublicDirectory("");
         System.out.println(root.getAbsolutePath());
         curFolder = root;
-        textFolder = (TextView) dialog.findViewById(R.id.folder);
-        buttonUp = (Button) dialog.findViewById(R.id.up);
+        textFolder = dialog.findViewById(R.id.folder);
+        buttonUp = dialog.findViewById(R.id.up);
         buttonUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,7 +120,7 @@ public class FileExplorer extends DialogFragment {
             }
         });
 
-        buttonAdd = (Button) dialog.findViewById(R.id.add_folder);
+        buttonAdd = dialog.findViewById(R.id.add_folder);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,7 +135,7 @@ public class FileExplorer extends DialogFragment {
             }
         });
 
-        dialog_ListView = (ListView) dialog.findViewById(R.id.dialoglist);
+        dialog_ListView = dialog.findViewById(R.id.dialoglist);
         dialog_ListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

@@ -2,6 +2,7 @@ package mp3tagedit.de.main;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Point;
 import android.support.annotation.NonNull;
@@ -14,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
@@ -44,6 +46,32 @@ public class WelcomeActivity extends AppCompatActivity {
         } else if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERM_REQ_READ_STORAGE);
         }
+
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences("queueSavePrefs", 0);
+        String type = prefs.getString("editorType", "-1");
+
+        Button resumeButton = findViewById(R.id.resumeButton);
+        /*
+        resumeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resume();
+            }
+        });
+        */
+
+        if (type.equals("-1")) {
+            resumeButton.setVisibility(View.INVISIBLE);
+            resumeButton.setEnabled(false);
+        } else if (type.equals("23") | type.equals("24")) {
+            resumeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    resume();
+                }
+            });
+        }
+
     }
 
     /**
@@ -168,8 +196,41 @@ public class WelcomeActivity extends AppCompatActivity {
         mainDrawer.closeDrawer();
     }
 
+    private void resume() {
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences("queueSavePrefs", 0);
+        String type = prefs.getString("editorType", "-1");
+
+        if (type.equals("23")) {
+
+        } else if (type.equals("24")) {
+            open24WithQueue();
+        } else {
+            Toast.makeText(getBaseContext(), getResources().getString(R.string.resume_failed), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void open24WithQueue() {
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences("queueSavePrefs", 0);
+        String newQueueString = prefs.getString("queueSave","0");
+        if (!newQueueString.equals("0")) {
+            String[] newQueue = newQueueString.split(",");
+            int newQueuePos = prefs.getInt("queuePos", 0);
+
+            Intent intent = new Intent(this, id3v24editor.class);
+            intent.putExtra("queuePos", newQueuePos);
+            intent.putExtra("queueStrings", newQueue);
+            startActivity(intent);
+        }
+    }
+
+    private void open23WithQueue() {
+
+    }
+
     private void open24() {
         Intent intent = new Intent(this, id3v24editor.class);
+        intent.putExtra("queuePos", 0);
+        intent.putExtra("queueStrings", new String[]{"[IDENT]"});
         startActivity(intent);
     }
 
