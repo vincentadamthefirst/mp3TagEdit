@@ -20,6 +20,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,6 +48,7 @@ public class FileExplorer extends DialogFragment {
     Button buttonUp;
     Button buttonAdd;
     TextView textFolder;
+    Spinner rootPath;
 
     String KEY_TEXTPSS = "TEXTPSS";
     static final int CUSTOM_DIALOG_ID = 0;
@@ -73,6 +75,38 @@ public class FileExplorer extends DialogFragment {
         dialog.setTitle("Custom Dialog");
         dialog.setCancelable(true);
         dialog.setCanceledOnTouchOutside(true);
+
+
+        rootPath = dialog.findViewById(R.id.root_path_spinner);
+        File[] allRootPaths = getActivity().getExternalFilesDirs(null);
+
+        ArrayList<String> allRootPathsArrayL = new ArrayList<>();
+        for(File f:allRootPaths){
+            allRootPathsArrayL.add(f.getAbsolutePath()
+                    .replace("Android/data/thejetstream.de.mp3tagedit/files", ""));
+            allRootPathsArrayL.add("");
+        }
+        allRootPathsArrayL.remove(allRootPathsArrayL.size()-1);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getContext(),
+                android.R.layout.simple_spinner_item, allRootPathsArrayL);
+        rootPath.setAdapter(adapter);
+        rootPath.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                changeRoot();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
+        });
+        for(File f:allRootPaths) {
+            System.out.println(f.getAbsolutePath());
+
+        }
 
         root = Environment.getExternalStoragePublicDirectory("");
         System.out.println(root.getAbsolutePath());
@@ -118,6 +152,16 @@ public class FileExplorer extends DialogFragment {
         ListDir(curFolder, fileExt);
 
         return dialog;
+    }
+
+    private void changeRoot(){
+        String path = rootPath.getSelectedItem().toString();
+        if(path.equals("")){
+            rootPath.setSelection(rootPath.getSelectedItemPosition() - 1);
+        }
+        this.root = new File(rootPath.getSelectedItem().toString());
+        curFolder = root;
+        ListDir(curFolder, fileExt);
     }
 
     void ListDir(File f, String fileExtension) {

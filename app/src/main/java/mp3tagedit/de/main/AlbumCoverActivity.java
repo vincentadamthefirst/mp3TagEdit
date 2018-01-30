@@ -20,11 +20,14 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
@@ -37,9 +40,11 @@ public class AlbumCoverActivity extends AppCompatActivity {
     private static final int RESULT_CROP = 3;
     private static final int RESULT_GEN = 4;
 
-    public Bitmap image;
-    public File PhotoFile;
-    public Uri photoURI;
+    private Bitmap image;
+    private File PhotoFile;
+    private Uri photoURI;
+
+    private CoverGenTags tags;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -80,9 +85,27 @@ public class AlbumCoverActivity extends AppCompatActivity {
         PhotoFile = new File(getExternalFilesDir("").getAbsolutePath(),  "Pic.jpg");
         photoURI = FileProvider.getUriForFile(getApplicationContext(), "thejetstream.de.fileprovider", PhotoFile);
 
+        ImageView CoverView = (ImageView) findViewById(R.id.CoverView);
+        tags = (CoverGenTags) getIntent().getSerializableExtra("tags");
+        if(tags != null && tags.getImage() != null){
+            CoverView.setImageBitmap(tags.getImage());
+        }
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.getMenu().getItem(0).setCheckable(false);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        Button save = (Button) findViewById(R.id.button_save);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent();
+                i.putExtra("tags", tags);
+                i.putExtra("path", photoURI.toString());
+                setResult(RESULT_OK, i);
+                finish();
+            }
+        });
     }
 
     @Override
@@ -123,7 +146,7 @@ public class AlbumCoverActivity extends AppCompatActivity {
                 }
             case RESULT_GEN:
                 if (resultCode == Activity.RESULT_OK) {
-                    Bitmap bitmap;
+                    Bitmap bitmap = null;
                     ImageView CoverView = (ImageView) findViewById(R.id.CoverView);
                     try {
                         bitmap = ((CoverGenTags) data.getSerializableExtra("active")).getImage();
@@ -135,6 +158,23 @@ public class AlbumCoverActivity extends AppCompatActivity {
                                 .show();
                         Log.e("Camera", e.toString());
                     }
+
+                    String TAG = "GEN";
+
+                    if (photoURI == null) {
+                        Log.d(TAG, "Error creating media file, check storage permissions: ");// e.getMessage());
+                        return;
+                    }
+                    try {
+                        FileOutputStream fos = new FileOutputStream(PhotoFile);
+                        bitmap.compress(Bitmap.CompressFormat.PNG, 90, fos);
+                        fos.close();
+                    } catch (FileNotFoundException e) {
+                        Log.d(TAG, "File not found: " + e.getMessage());
+                    } catch (IOException e) {
+                        Log.d(TAG, "Error accessing file: " + e.getMessage());
+                    }
+                    tags = (CoverGenTags) data.getSerializableExtra("active");
                 }
         }
     }

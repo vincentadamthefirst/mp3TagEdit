@@ -37,8 +37,8 @@ public class CoverGenerationActivity extends AppCompatActivity {
 
     EditText ET_Cover;
     CoverGenConfig CoverConfig;
-    CoverGenTags defaultTestTags = new CoverGenTags("UK National Anthem - God Save The Queen yaaaaaaaaaaaay", "Alexander Alexandrov/Sergey Milkhalkov and the rest", "<genre>", "<year>");
-    CoverGenTags activeTags = new CoverGenTags();
+    CoverGenTags defaultTestTags = new CoverGenTags("<title>", "<artist>", "<genre>", "<year>");
+    CoverGenTags activeTags;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,11 @@ public class CoverGenerationActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         ET_Cover = findViewById(R.id.XML_ET);
+
+        activeTags = (CoverGenTags) getIntent().getSerializableExtra("tags");
+        if(activeTags == null){
+            activeTags = defaultTestTags;
+        }
 
         newXML();
         readXML();
@@ -90,6 +95,9 @@ public class CoverGenerationActivity extends AppCompatActivity {
         B_Save_Image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                activeTags.setAlbumName(CoverConfig.getAbb() + "_" + String.format("%04d", CoverConfig.getIndex()));
+
                 Intent i = new Intent();
                 Bitmap b = draw(); // your bitmap
                 activeTags.setImage(Bitmap.createScaledBitmap(b, 1000, 1000, false));
@@ -108,7 +116,7 @@ public class CoverGenerationActivity extends AppCompatActivity {
         CoverGenTags tags;
         String[] order = new String[4];
 
-        tags = defaultTestTags;
+        tags = activeTags;
         int index = CoverConfig.getIndex();
 
         int dist = src.getHeight()/6;
