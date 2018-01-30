@@ -22,7 +22,7 @@ public class CoverGenTags implements Serializable {
     String t1 = "";
     String t2 = "";
 
-    byte[] image;
+    byte[] image = new byte[1];
 
     public CoverGenTags() {
     }
