@@ -2,6 +2,8 @@ package mp3tagedit.de.main;
 
 import android.Manifest;
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.InsetDrawable;
@@ -50,6 +52,7 @@ import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagException;
 import org.jaudiotagger.tag.id3.ID3v24Tag;
+import org.jaudiotagger.tag.images.Artwork;
 
 import java.io.File;
 import java.io.IOException;
@@ -58,10 +61,14 @@ import java.util.List;
 
 import java.util.Calendar;
 
+import static android.graphics.BitmapFactory.*;
+
 public class id3v24editor extends AppCompatActivity implements DialogFragmentResultListener{
 
+    // Navigation Drawer
     private Drawer mainDrawer;
 
+    // all EditTexts used for input
     private EditText et_title;
     private EditText et_album;
     private EditText et_year;
@@ -69,22 +76,21 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
     private EditText et_comment;
     public static ArrayList<EditText> artistList;
     public static ArrayList<EditText> genreList;
-
+    // ImageButton for the Cover
     private ImageButton ib_artwork;
 
+    // MediaPlayer to listen to the current song
     MediaPlayer mediaPlayer;
-    private int AudioSession = 1;
     private int currentPos;
 
     private AdapterView.OnItemSelectedListener slcItmListener;
 
-    private Activity thisEditor;
-
-    //private FileManager fManager;
+    // used to handle what the current file is and what the previous/next files are
     private ArrayList<File> queue;
     int currentQueuePos = 0;
     File currentFile;
 
+    // buttons for nabigating through files / interact with them
     private Button playButton;
     private Button saveButton;
     private Button shareButton;
@@ -98,13 +104,33 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.content_id3v24editor);
 
-        thisEditor = this;
-
         artistList = new ArrayList<>();
         artistList.add((EditText)(findViewById(R.id.artistIn)));
         genreList = new ArrayList<>();
         genreList.add((EditText)(findViewById(R.id.genreIn)));
 
+        queue = new ArrayList<>();
+
+        et_title = findViewById(R.id.edit_title);
+        et_album = findViewById(R.id.albumIn);
+        et_track = findViewById(R.id.trackIn);
+        et_year = findViewById(R.id.yearIn);
+        et_comment = findViewById(R.id.commentIn);
+
+        et_year.setText("" + (Calendar.getInstance().get(Calendar.YEAR)-2));
+
+        ib_artwork = findViewById(R.id.coverArt);
+
+        setupNavigationButtons();
+        setupDrawer();
+        setupActionBar(getResources().getString(R.string.id3v24edit));
+        setupEditorHead();
+    }
+
+    /**
+     * Adds Listeners to the Navigation Buttons on the bottom of the screen
+     */
+    private void setupNavigationButtons() {
         prevButton = findViewById(R.id.prev);
         prevButton.setBackgroundDrawable(new IconicsDrawable(this)
                 .icon(GoogleMaterial.Icon.gmd_forward).sizeDp(20)
@@ -150,55 +176,14 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
                 if(currentQueuePos > 0){
                     prevButton.setEnabled(true);
                     prevButton.setVisibility(View.VISIBLE);
-
                 }
             }
         });
-
-        et_title = findViewById(R.id.edit_title);
-        et_album = findViewById(R.id.albumIn);
-        et_track = findViewById(R.id.trackIn);
-        et_year = findViewById(R.id.yearIn);
-        et_comment = findViewById(R.id.commentIn);
-
-
-        ib_artwork = findViewById(R.id.coverArt);
-        ib_artwork.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), AlbumCoverActivity.class);
-                startActivityForResult(i, 64);
-            }
-        });
-
-        et_year.setText("" + (Calendar.getInstance().get(Calendar.YEAR)-2));
-
-        //fManager = new FileManager();
-        queue = new ArrayList<File>();
-
-        /*
-        File[] allRootPaths = getExternalFilesDirs(null);
-        for (File f : allRootPaths) {
-            System.out.println(f.getAbsolutePath());
-            ArrayList<String> playL = getPlayList(f.getAbsolutePath().replace("Android/data/thejetstream.de.mp3tagedit/files", ""), ".mp3");
-            for (String s : playL) {
-                System.out.println(s);
-                if (s.contains("schlawinerwiener")) {
-                    currentFile = new File(s);
-                    System.out.println("GEFUNDEN !!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                    break;
-                }
-            }
-        }
-        */
-
-
-        setupDrawer();
-        setupActionBar(getResources().getString(R.string.id3v24edit));
-        setupEditorHead();
-
     }
 
+    /**
+     * Resets all input fields to refill them with the information of the next file
+     */
     private void resetAll() {
         et_title.setText("");
         et_album.setText("");
@@ -240,6 +225,9 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         }
     }
 
+    /**
+     * Adds a new line for the list of artists
+     */
     public void addInputLineArtist(View view){
         ViewGroup viewParent = (ViewGroup)(view.getParent().getParent());
         ViewGroup vg = (ViewGroup) LayoutInflater.from(viewParent.getContext()).inflate(
@@ -260,6 +248,10 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         viewParent.addView(vg);
     }
 
+    /**
+     * Adds a new line for the list of genres
+     * @param view
+     */
     public void addInputLineGenre(View view){
         ViewGroup viewParent = (ViewGroup)(view.getParent().getParent());
         ViewGroup vg = (ViewGroup) LayoutInflater.from(viewParent.getContext()).inflate(
@@ -280,6 +272,10 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         viewParent.addView(vg);
     }
 
+    /**
+     * loads the metadata of "currentFile"
+     * @return if all operations succeeded
+     */
     private boolean load() {
         resetAll();
         MP3File mp3;
@@ -330,17 +326,16 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         et_comment.setText(tag.getFirst(FieldKey.COMMENT));
         et_track.setText(tag.getFirst(FieldKey.TRACK));
 
-        /*
+        // trys to load an artwork, if it catches an exception it leaves it out
         try {
             Artwork cover = tag.getFirstArtwork();
             byte[] data = cover.getBinaryData();
             Bitmap bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
 
             ib_artwork.setImageBitmap(bmp);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        */
+        } catch (Exception e) {}
+
+
         playButton.setEnabled(true);
         saveButton.setEnabled(true);
         shareButton.setEnabled(true);
@@ -348,6 +343,10 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         return true;
     }
 
+    /**
+     * saves the currently defined metadata
+     * @return if all operations succeeded
+     */
     private boolean save() {
         MP3File mp3;
         System.out.println("Save comming");
@@ -384,12 +383,13 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             return false;
         }
 
-        System.out.println("Toast comming");
-        Toast.makeText(getBaseContext(), "Der Tag wurde gespeichert", Toast.LENGTH_LONG).show();
-        //does not work for no reason
+        Toast.makeText(getBaseContext(), getResources().getString(R.string.save_complete), Toast.LENGTH_LONG).show();
         return true;
     }
 
+    /**
+     * sets up all items in the navigation drawer
+     */
     private void setupDrawer() {
         PrimaryDrawerItem homItem = new PrimaryDrawerItem().withIdentifier(1)
                 .withIcon(GoogleMaterial.Icon.gmd_home).withName(R.string.home)
@@ -431,7 +431,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         LayoutInflater li = LayoutInflater.from(getApplicationContext());
         View headerImage = li.inflate(R.layout.drawer_header, null);
 
-        //create the drawer and remember the `Drawer` object
+        //create the drawer and remember the Drawer object
         mainDrawer = new DrawerBuilder()
                 .withActivity(this)
                 .withActionBarDrawerToggle(true)
@@ -476,39 +476,48 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         mainDrawer.setSelection(4);
     }
 
+    /**
+     * opens up the editor for id3v23 tags
+     */
     private void open23() {
         Intent intent = new Intent(this, id3v23editor.class);
         startActivity(intent);
     }
 
+    /**
+     * opens the tag to file converter
+     */
     private void openTagToFile() {
         Intent intent = new Intent(this, tagtofile.class);
         startActivity(intent);
     }
 
+    /**
+     * opens the help window
+     */
     private void openHelp() {
         Intent intent = new Intent(this, help.class);
         startActivity(intent);
     }
 
+    /**
+     * opens the settings window
+     */
     private void openSettings() {
         Intent intent = new Intent(this, settings.class);
         startActivity(intent);
     }
 
+    /**
+     * opens up the home screen
+     */
     private void openHome() {
         Intent intent = new Intent(this, WelcomeActivity.class);
         startActivity(intent);
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(IconicsContextWrapper.wrap(newBase));
-    }
-
     /**
-     * Method is called when "Options"-button is pressed (if it exists)
-     * Leave empty if "hasDrawerButton" in setupActionBar was false
+     * Method is called when "Options"-button is pressed
      */
     private void options() {
         View optionBtn = findViewById(R.id.open_options);
@@ -533,7 +542,6 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
                 return false;
             }
         });
-
         popup.show();
     }
 
@@ -572,6 +580,10 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         queue.add(f);
     }
 
+    /**
+     * sets up the actionbar on top of the screen
+     * @param title the title to be displayed in the middle of the bar, use "" if no title is needed
+     */
     private void setupActionBar(String title) {
         Button openDrawer = findViewById(R.id.open_drawer);
         Button openOptions = findViewById(R.id.open_options);
@@ -600,6 +612,9 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         activityTitle.setText(title); //sets the TextViews text
     }
 
+    /**
+     * sets up all necessary components of the header (e.g. listeners)
+     */
     private void setupEditorHead() {
         playButton = findViewById(R.id.play_button);
         saveButton = findViewById(R.id.save_button);
@@ -618,7 +633,6 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
                 share();
             }
         });
-
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -659,20 +673,38 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             }
         });
 
+        ib_artwork.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), AlbumCoverActivity.class);
+                startActivityForResult(i, 64);
+            }
+        });
+
         playButton.setEnabled(false);
         saveButton.setEnabled(false);
         shareButton.setEnabled(false);
     }
 
+    /**
+     * shares the current mp3 File after saving it
+     */
     private void share() {
         if (currentFile != null) {
+            save();
+
             Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
             sharingIntent.setType("audio/*");
             sharingIntent.putExtra(android.content.Intent.EXTRA_STREAM, Uri.fromFile(currentFile));
-            startActivity(Intent.createChooser(sharingIntent,"Share using"));
+            startActivity(Intent.createChooser(sharingIntent,getResources().getString(R.string.share)));
+        } else {
+            Toast.makeText(getBaseContext(), getResources().getString(R.string.share_error), Toast.LENGTH_LONG).show();
         }
     }
 
+    /**
+     * plays the current files song
+     */
     private void playSong() throws IOException {
         if (mediaPlayer == null) {
             mediaPlayer = new MediaPlayer();
@@ -685,40 +717,13 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         }
     }
 
+    /**
+     * pauses the player and saves the state to be later resumed
+     */
     private void pauseSong(){
         if (mediaPlayer.isPlaying()) {
             mediaPlayer.pause();
             currentPos = mediaPlayer.getCurrentPosition();
-        }
-    }
-
-    /**
-     * Returns a list of Hashmaps containing the path and name of every file with a certain extension.
-     * @param rootPath The root directory which should be searched
-     * @param fileExtension The extension the to be found files should have
-     * @return null if the file is not a directory or a list of Hashmaps
-     */
-    private ArrayList<String> getPlayList(String rootPath, String fileExtension) {
-        ArrayList<String> fileList = new ArrayList<>();
-
-        try {
-            File rootFolder = new File(rootPath);
-            File[] files = rootFolder.listFiles();
-            for (File file : files) {
-                if (file.isDirectory()) {
-                    ArrayList<String> tmp = getPlayList(file.getAbsolutePath(), fileExtension);
-                    if (tmp != null) {
-                        fileList.addAll(tmp);
-                    } else {
-                        break;
-                    }
-                } else if (file.getName().endsWith(fileExtension)) {
-                    fileList.add(file.getAbsolutePath());
-                }
-            }
-            return fileList;
-        } catch (Exception e) {
-            return null;
         }
     }
 
@@ -746,7 +751,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
                     counter++;
                 }
             }
-            Toast.makeText(this, counter + " Dateien wurden hinzugefügt", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getResources().getString(R.string.files_added), Toast.LENGTH_LONG).show();
         }
         else{
             queue.clear();
@@ -760,6 +765,9 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         frag.dismiss();
     }
 
+    /**
+     * Method to initialize the first loaded file and displaying all necessary information
+     */
     public void firstLoad() {
         if(queue.isEmpty()){
             currentQueuePos = 0;
@@ -785,5 +793,3 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         }
     }
 }
-
-

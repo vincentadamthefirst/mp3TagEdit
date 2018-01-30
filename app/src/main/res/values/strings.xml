@@ -100,4 +100,11 @@ The pattern which the files get renamed after is defined in the settings with fo
     <string name="CoverImageView_description">Album Cover</string>
     <string name="title_activity_cover_generation">CoverGenerationActivity</string>
 
+    <string name="share">Share using...</string>
+    <string name="share_error">No file selected.</string>
+
+    <string name="save_complete">The Tags were saved.</string>
+
+    <string name="files_added"> files added</string>
+
 </resources>
