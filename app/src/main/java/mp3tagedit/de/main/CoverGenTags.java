@@ -103,9 +103,8 @@ public class CoverGenTags implements Serializable {
     }
 
     public void setImage(Bitmap image) {
-
         ByteArrayOutputStream bs = new ByteArrayOutputStream();
-        image.compress(Bitmap.CompressFormat.PNG, 100, bs);
+        image.compress(Bitmap.CompressFormat.JPEG, 90, bs);
         this.image = bs.toByteArray();
     }
 

@@ -112,7 +112,8 @@ The pattern which the files get renamed after is defined in the settings with fo
     <string name="files_added">files added</string>
     <string name="files_removed">files got removed from the list</string>
 
-    <string name="resume">Resume</string>
+    <string name="resume23">Resume v23</string>
+    <string name="resume24">Resume v24</string>
 
     <string name="resume_failed">Resuming Failed!</string>
 </resources>

@@ -82,57 +82,71 @@
         android:background="@drawable/white_rectangle"
         android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/resumeButton23"
+        <LinearLayout
+            android:id="@+id/resume23layout"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:background="@drawable/white_rectangle"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
-            android:text="@string/resume"/>
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/deleteResume23"
+            <Button
+                android:id="@+id/resumeButton23"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@drawable/white_rectangle"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/resume23"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/deleteResume23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/resume24layout"
             android:layout_width="wrap_content"
-            android:layout_height="50dp" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/resumeButton24"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:background="@drawable/white_rectangle"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
-            android:text="@string/resume"/>
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/deleteResume24"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp" />
+            <Button
+                android:id="@+id/resumeButton24"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@drawable/white_rectangle"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="5dp"
+                android:padding="5dp"
+                android:text="@string/resume24"/>
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
 
+                <Button
+                    android:id="@+id/deleteResume24"
+                    android:layout_marginBottom="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp" />
+            </RelativeLayout>
+        </LinearLayout>
     </LinearLayout>
-
-    </LinearLayout>
-
-
 </RelativeLayout>

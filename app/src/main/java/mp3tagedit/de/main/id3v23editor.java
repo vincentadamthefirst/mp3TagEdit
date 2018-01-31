@@ -3,6 +3,7 @@ package mp3tagedit.de.main;
 import android.Manifest;
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -101,6 +102,7 @@ public class id3v23editor extends AppCompatActivity implements DialogFragmentRes
     private Button shareButton;
     private Button nextButton;
     private Button prevButton;
+    private Button saveQueue;
 
     private Bitmap currentCover;
 
@@ -129,6 +131,25 @@ public class id3v23editor extends AppCompatActivity implements DialogFragmentRes
         setupDrawer();
         setupActionBar(getResources().getString(R.string.id3v23edit));
         setupEditorHead();
+
+        String[] newQueue = getIntent().getStringArrayExtra("queueStrings");
+        int newPos = getIntent().getIntExtra("queuePos", -1);
+        if ((newQueue.length == 1) & (newQueue[0].equals("[IDENT]"))) {
+            // request new queue
+        } else {
+            for (String s : newQueue) {
+                queue.add(new File(s));
+            }
+
+            if (newPos != -1) {
+                currentQueuePos = newPos;
+            } else {
+                currentQueuePos = 0;
+            }
+
+            currentFile = queue.get(currentQueuePos);
+            load();
+        }
     }
 
     /**
@@ -181,6 +202,30 @@ public class id3v23editor extends AppCompatActivity implements DialogFragmentRes
                     prevButton.setEnabled(true);
                     prevButton.setVisibility(View.VISIBLE);
                 }
+            }
+        });
+
+        saveQueue = findViewById(R.id.saveQueue);
+        saveQueue.setBackgroundDrawable(new IconicsDrawable(this)
+                .icon(GoogleMaterial.Icon.gmd_save).sizeDp(15)
+                .color(getResources().getColor(R.color.colorPrimary)));
+        saveQueue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences prefs = getApplicationContext().getSharedPreferences("queueSavePrefs23", 0);
+                SharedPreferences.Editor editor = prefs.edit();
+
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < queue.size(); i++) {
+                    sb.append(queue.get(i)).append(",");
+                }
+
+                editor.putString("queueSave", sb.toString());
+                editor.putInt("queuePos", currentQueuePos);
+
+                editor.apply();
+
+                finish();
             }
         });
     }
@@ -246,6 +291,10 @@ public class id3v23editor extends AppCompatActivity implements DialogFragmentRes
             Artwork cover = tag.getFirstArtwork();
             byte[] data = cover.getBinaryData();
             currentCover = BitmapFactory.decodeByteArray(data, 0, data.length);
+
+            if (currentCover.getWidth() > 1000 | currentCover.getHeight() > 1000) {
+                currentCover = Bitmap.createScaledBitmap(currentCover, 1000, 1000, false);
+            }
 
             ib_artwork.setImageBitmap(currentCover);
         } catch (Exception e) {}
@@ -602,12 +651,14 @@ public class id3v23editor extends AppCompatActivity implements DialogFragmentRes
         ib_artwork.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CoverGenTags coverGenTags = new CoverGenTags(et_title.getText().toString(),
-                        et_artist.getText().toString(), et_genre.getText().toString(), et_year.getText().toString());
-                coverGenTags.setImage(currentCover);
+                CoverGenTags coverGenTags = new CoverGenTags(et_title.getText().toString(), et_artist.getText().toString(), et_genre.getText().toString(), et_year.getText().toString());
+                if (currentCover != null) {
+                    coverGenTags.setImage(currentCover);
+                }
 
                 Intent i = new Intent(getApplicationContext(), AlbumCoverActivity.class);
                 i.putExtra("tags", coverGenTags);
+
                 startActivityForResult(i, 64);
             }
         });
@@ -622,7 +673,16 @@ public class id3v23editor extends AppCompatActivity implements DialogFragmentRes
         if (requestCode == 64) {
             if (resultCode == RESULT_OK) {
                 byte[] toBmp = data.getByteArrayExtra("path");
-                currentCover = BitmapFactory.decodeByteArray(toBmp, 0, toBmp.length);
+                CoverGenTags cgt = (CoverGenTags) data.getSerializableExtra("tags");
+
+                if (cgt.getAlbumName() != null) {
+                    et_album.setText(cgt.getAlbumName());
+                }
+
+                if (toBmp.length != 1) {
+                    currentCover = BitmapFactory.decodeByteArray(toBmp, 0, toBmp.length);
+                }
+
                 ib_artwork.setImageBitmap(currentCover);
             }
         }

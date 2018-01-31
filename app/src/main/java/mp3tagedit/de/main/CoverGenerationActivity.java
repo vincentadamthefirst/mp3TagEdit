@@ -110,8 +110,8 @@ public class CoverGenerationActivity extends AppCompatActivity {
     }
 
     public Bitmap draw(){
-        Bitmap src = BitmapFactory.decodeResource(getResources(), R.drawable.carbon); // the original file yourimage.jpg i added in resources
-        Bitmap dest = Bitmap.createBitmap(src.getWidth(), src.getHeight(), Bitmap.Config.ARGB_8888);
+        Bitmap src = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.carbon), 3000, 3000, false);
+        Bitmap dest = Bitmap.createBitmap(src.getWidth() , src.getHeight() , Bitmap.Config.ARGB_8888);
 
         CoverGenTags tags;
         String[] order = new String[4];

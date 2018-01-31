@@ -12,6 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.InsetDrawable;
 import android.annotation.SuppressLint;
 import android.net.Uri;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.DialogFragment;
 import android.content.Context;
@@ -155,6 +156,28 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         }
     }
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 64) {
+            if (resultCode == RESULT_OK) {
+                byte[] toBmp = data.getByteArrayExtra("path");
+                CoverGenTags cgt = (CoverGenTags) data.getSerializableExtra("tags");
+
+                if (cgt.getAlbumName() != null) {
+                    et_album.setText(cgt.getAlbumName());
+                }
+
+
+                if (toBmp.length != 1) {
+                    currentCover = BitmapFactory.decodeByteArray(toBmp, 0, toBmp.length);
+                }
+
+                ib_artwork.setImageBitmap(currentCover);
+            }
+        }
+    }
+
     /**
      * Adds Listeners to the Navigation Buttons on the bottom of the screen
      */
@@ -215,7 +238,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         saveQueue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences prefs = getApplicationContext().getSharedPreferences("queueSavePrefs", 0);
+                SharedPreferences prefs = getApplicationContext().getSharedPreferences("queueSavePrefs24", 0);
                 SharedPreferences.Editor editor = prefs.edit();
 
                 StringBuilder sb = new StringBuilder();
@@ -225,7 +248,6 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
 
                 editor.putString("queueSave", sb.toString());
                 editor.putInt("queuePos", currentQueuePos);
-                editor.putString("editorType", "24");
 
                 editor.apply();
 
@@ -386,6 +408,10 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             Artwork cover = tag.getFirstArtwork();
             byte[] data = cover.getBinaryData();
             currentCover = BitmapFactory.decodeByteArray(data, 0, data.length);
+
+            if (currentCover.getWidth() > 1000 | currentCover.getHeight() > 1000) {
+                currentCover = Bitmap.createScaledBitmap(currentCover, 1000, 1000, false);
+            }
 
             ib_artwork.setImageBitmap(currentCover);
         } catch (Exception e) {}
@@ -747,10 +773,13 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             @Override
             public void onClick(View view) {
                 CoverGenTags coverGenTags = new CoverGenTags(et_title.getText().toString(), artistList.get(0).getText().toString(), genreList.get(0).getText().toString(), et_year.getText().toString());
-                coverGenTags.setImage(currentCover);
+                if (currentCover != null) {
+                    coverGenTags.setImage(currentCover);
+                }
 
                 Intent i = new Intent(getApplicationContext(), AlbumCoverActivity.class);
                 i.putExtra("tags", coverGenTags);
+
                 startActivityForResult(i, 64);
             }
         });
@@ -758,17 +787,6 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         playButton.setEnabled(false);
         saveButton.setEnabled(false);
         shareButton.setEnabled(false);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 64) {
-            if (resultCode == RESULT_OK) {
-                byte[] toBmp = data.getByteArrayExtra("path");
-                currentCover = BitmapFactory.decodeByteArray(toBmp, 0, toBmp.length);
-                ib_artwork.setImageBitmap(currentCover);
-            }
-        }
     }
 
     /**

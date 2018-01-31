@@ -13,7 +13,9 @@ import android.os.Bundle;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewManager;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,31 +49,7 @@ public class WelcomeActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERM_REQ_READ_STORAGE);
         }
 
-        SharedPreferences prefs = getApplicationContext().getSharedPreferences("queueSavePrefs", 0);
-        String type = prefs.getString("editorType", "-1");
-
-        Button resumeButton = findViewById(R.id.resumeButton);
-        /*
-        resumeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                resume();
-            }
-        });
-        */
-
-        if (type.equals("-1")) {
-            resumeButton.setVisibility(View.INVISIBLE);
-            resumeButton.setEnabled(false);
-        } else if (type.equals("23") | type.equals("24")) {
-            resumeButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    resume();
-                }
-            });
-        }
-
+        setupResume();
     }
 
     /**
@@ -196,21 +174,86 @@ public class WelcomeActivity extends AppCompatActivity {
         mainDrawer.closeDrawer();
     }
 
-    private void resume() {
-        SharedPreferences prefs = getApplicationContext().getSharedPreferences("queueSavePrefs", 0);
-        String type = prefs.getString("editorType", "-1");
+    private void setupResume() {
+        final SharedPreferences prefs24 = getApplicationContext().getSharedPreferences("queueSavePrefs24", 0);
+        int newQueuePos24 = prefs24.getInt("queuePos", -1);
 
-        if (type.equals("23")) {
-
-        } else if (type.equals("24")) {
-            open24WithQueue();
+        if (newQueuePos24 == -1) {
+            LinearLayout ll = findViewById(R.id.resume24layout);
+            ll.setVisibility(View.GONE);
+            //((ViewManager) ll.getParent()).removeView(ll);
         } else {
-            Toast.makeText(getBaseContext(), getResources().getString(R.string.resume_failed), Toast.LENGTH_LONG).show();
+            LinearLayout ll = findViewById(R.id.resume24layout);
+            ll.setVisibility(View.VISIBLE);
+
+            Button delRes24 = findViewById(R.id.deleteResume24);
+            delRes24.setBackgroundDrawable(new IconicsDrawable(this)
+                    .icon(GoogleMaterial.Icon.gmd_delete).sizeDp(15)
+                    .color(getResources().getColor(R.color.colorPrimary)));
+
+            delRes24.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    SharedPreferences.Editor editor = prefs24.edit();
+                    editor.putInt("queuePos", -1);
+                    editor.apply();
+
+                    LinearLayout ll = findViewById(R.id.resume24layout);
+                    ll.setVisibility(View.GONE);
+                    //((ViewManager) ll.getParent()).removeView(ll);
+                }
+            });
+
+            Button res24 = findViewById(R.id.resumeButton24);
+            res24.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    open24WithQueue();
+                }
+            });
+        }
+
+        final SharedPreferences prefs23 = getApplicationContext().getSharedPreferences("queueSavePrefs23", 0);
+        int newQueuePos23 = prefs23.getInt("queuePos", -1);
+
+        if (newQueuePos23 == -1) {
+            LinearLayout ll = findViewById(R.id.resume23layout);
+            ll.setVisibility(View.GONE);
+            //((ViewManager) ll.getParent()).removeView(ll);
+        } else {
+            LinearLayout ll = findViewById(R.id.resume23layout);
+            ll.setVisibility(View.VISIBLE);
+
+            Button delRes23 = findViewById(R.id.deleteResume23);
+            delRes23.setBackgroundDrawable(new IconicsDrawable(this)
+                    .icon(GoogleMaterial.Icon.gmd_delete).sizeDp(15)
+                    .color(getResources().getColor(R.color.colorPrimary)));
+
+            delRes23.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    SharedPreferences.Editor editor = prefs23.edit();
+                    editor.putInt("queuePos", -1);
+                    editor.apply();
+
+                    LinearLayout ll = findViewById(R.id.resume23layout);
+                    ll.setVisibility(View.GONE);
+                    //((ViewManager) ll.getParent()).removeView(ll);
+                }
+            });
+
+            Button res23 = findViewById(R.id.resumeButton23);
+            res23.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    open23WithQueue();
+                }
+            });
         }
     }
 
     private void open24WithQueue() {
-        SharedPreferences prefs = getApplicationContext().getSharedPreferences("queueSavePrefs", 0);
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences("queueSavePrefs24", 0);
         String newQueueString = prefs.getString("queueSave","0");
         if (!newQueueString.equals("0")) {
             String[] newQueue = newQueueString.split(",");
@@ -220,11 +263,39 @@ public class WelcomeActivity extends AppCompatActivity {
             intent.putExtra("queuePos", newQueuePos);
             intent.putExtra("queueStrings", newQueue);
             startActivity(intent);
+        } else {
+            open24();
         }
     }
 
-    private void open23WithQueue() {
+    @Override
+    protected void onRestart() {
+        super.onRestart();
 
+        setupResume();
+
+        /*
+        Intent openMainActivity = new Intent(this, WelcomeActivity.class);
+        openMainActivity.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(openMainActivity);
+        */
+
+    }
+
+    private void open23WithQueue() {
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences("queueSavePrefs23", 0);
+        String newQueueString = prefs.getString("queueSave","0");
+        if (!newQueueString.equals("0")) {
+            String[] newQueue = newQueueString.split(",");
+            int newQueuePos = prefs.getInt("queuePos", 0);
+
+            Intent intent = new Intent(this, id3v23editor.class);
+            intent.putExtra("queuePos", newQueuePos);
+            intent.putExtra("queueStrings", newQueue);
+            startActivity(intent);
+        } else {
+            open23();
+        }
     }
 
     private void open24() {
@@ -236,6 +307,8 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private void open23() {
         Intent intent = new Intent(this, id3v23editor.class);
+        intent.putExtra("queuePos", 0);
+        intent.putExtra("queueStrings", new String[]{"[IDENT]"});
         startActivity(intent);
     }
 

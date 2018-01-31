@@ -85,7 +85,12 @@ public class AlbumCoverActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album_cover);
 
-        PhotoFile = new File(getExternalFilesDir("").getAbsolutePath(),  "Pic.jpg");
+        File tmp = new File(getExternalFilesDir("").getAbsolutePath(),  "Pic.jpeg");
+        if (tmp.exists()) {
+            tmp.delete();
+        }
+
+        PhotoFile = new File(getExternalFilesDir("").getAbsolutePath(),  "Pic.jpeg");
         photoURI = FileProvider.getUriForFile(getApplicationContext(), "thejetstream.de.fileprovider", PhotoFile);
 
         ImageView CoverView = findViewById(R.id.CoverView);
@@ -117,10 +122,15 @@ public class AlbumCoverActivity extends AppCompatActivity {
                 Intent i = new Intent();
                 i.putExtra("tags", tags);
 
-                Bitmap toRet = BitmapFactory.decodeFile(getExternalFilesDir(null) + "/Pic.jpg");
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                toRet.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                byte[] byteToRet = stream.toByteArray();
+                byte[] byteToRet = new byte[]{0};
+
+                try {
+                    Bitmap toRet = BitmapFactory.decodeFile(getExternalFilesDir(null) + "/Pic.jpeg");
+                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                    toRet.compress(Bitmap.CompressFormat.JPEG, 90, stream);
+                    byteToRet = stream.toByteArray();
+                } catch (Exception e) { /* ignore */ }
+
 
                 i.putExtra("path", byteToRet);
                 setResult(RESULT_OK, i);
@@ -151,7 +161,7 @@ public class AlbumCoverActivity extends AppCompatActivity {
                 if (resultCode == Activity.RESULT_OK) {
                     Uri selectedImage = photoURI;
                     getContentResolver().notifyChange(selectedImage, null);
-                    ImageView CoverView = (ImageView) findViewById(R.id.CoverView);
+                    ImageView CoverView = findViewById(R.id.CoverView);
                     ContentResolver cr = getContentResolver();
                     Bitmap bitmap;
                     try {
@@ -170,7 +180,7 @@ public class AlbumCoverActivity extends AppCompatActivity {
             case RESULT_GEN:
                 if (resultCode == Activity.RESULT_OK) {
                     Bitmap bitmap = null;
-                    ImageView CoverView = (ImageView) findViewById(R.id.CoverView);
+                    ImageView CoverView = findViewById(R.id.CoverView);
                     try {
                         bitmap = ((CoverGenTags) data.getSerializableExtra("active")).getImage();
 
