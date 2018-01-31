@@ -91,6 +91,8 @@ By clicking on the <b>artwork</b> on the header a new selection pops up and ther
     <string name="chapter4title">4. The Tag to File Converter</string>
     <string name="chapter4">This option in the menu is used to betetr organize your mp3-files on your phone by giving them names according to their tags. This can be applied to all mp3-files on your phone or to a selection of files.
 The pattern which the files get renamed after is defined in the settings with following possible attributes: \n
+        \u2022 <b>%title%</b> - Title\n
+        \u2022 <b>%year%</b> - Year\n
 \u2022 <b>%artist%</b> - Artist\n
 \u2022 <b>%track%</b> - Track number\n
 \u2022 <b>%album%</b> - Album name\n

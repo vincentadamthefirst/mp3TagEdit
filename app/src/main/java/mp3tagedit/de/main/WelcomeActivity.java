@@ -139,8 +139,8 @@ public class WelcomeActivity extends AppCompatActivity {
                         v24Item,
                         tagItem,
                         new DividerDrawerItem(),
-                        helItem,
-                        setItem
+                        helItem
+                        //setItem
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -273,6 +273,8 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onRestart();
 
         setupResume();
+
+        mainDrawer.setSelection(1);
 
         /*
         Intent openMainActivity = new Intent(this, WelcomeActivity.class);

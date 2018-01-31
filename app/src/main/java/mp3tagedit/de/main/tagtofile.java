@@ -159,8 +159,8 @@ public class tagtofile extends AppCompatActivity implements DialogFragmentResult
                         v24Item,
                         tagItem,
                         new DividerDrawerItem(),
-                        helItem,
-                        setItem
+                        helItem
+                        //setItem
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -196,27 +196,41 @@ public class tagtofile extends AppCompatActivity implements DialogFragmentResult
 
     private void open24() {
         Intent intent = new Intent(this, id3v24editor.class);
+        intent.putExtra("queuePos", 0);
+        intent.putExtra("queueStrings", new String[]{"[IDENT]"});
         startActivity(intent);
+
+        finish();
     }
 
     private void open23() {
         Intent intent = new Intent(this, id3v23editor.class);
+        intent.putExtra("queuePos", 0);
+        intent.putExtra("queueStrings", new String[]{"[IDENT]"});
         startActivity(intent);
+
+        finish();
     }
 
     private void openHelp() {
         Intent intent = new Intent(this, help.class);
         startActivity(intent);
+
+        finish();
     }
 
     private void openSettings() {
         Intent intent = new Intent(this, settings.class);
         startActivity(intent);
+
+        finish();
     }
 
     private void openHome() {
         Intent intent = new Intent(this, WelcomeActivity.class);
         startActivity(intent);
+
+        finish();
     }
 
     private void setupActionBar(String title) {

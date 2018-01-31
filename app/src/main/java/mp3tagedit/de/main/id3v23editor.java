@@ -419,8 +419,8 @@ public class id3v23editor extends AppCompatActivity implements DialogFragmentRes
                         v24Item,
                         tagItem,
                         new DividerDrawerItem(),
-                        helItem,
-                        setItem
+                        helItem
+                        //setItem
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -456,7 +456,11 @@ public class id3v23editor extends AppCompatActivity implements DialogFragmentRes
      */
     private void open24() {
         Intent intent = new Intent(this, id3v24editor.class);
+        intent.putExtra("queuePos", 0);
+        intent.putExtra("queueStrings", new String[]{"[IDENT]"});
         startActivity(intent);
+
+        finish();
     }
 
     /**
@@ -465,6 +469,8 @@ public class id3v23editor extends AppCompatActivity implements DialogFragmentRes
     private void openTagToFile() {
         Intent intent = new Intent(this, tagtofile.class);
         startActivity(intent);
+
+        finish();
     }
 
     /**
@@ -473,6 +479,8 @@ public class id3v23editor extends AppCompatActivity implements DialogFragmentRes
     private void openHelp() {
         Intent intent = new Intent(this, help.class);
         startActivity(intent);
+
+        finish();
     }
 
     /**
@@ -481,6 +489,8 @@ public class id3v23editor extends AppCompatActivity implements DialogFragmentRes
     private void openSettings() {
         Intent intent = new Intent(this, settings.class);
         startActivity(intent);
+
+        finish();
     }
 
     /**
@@ -489,6 +499,8 @@ public class id3v23editor extends AppCompatActivity implements DialogFragmentRes
     private void openHome() {
         Intent intent = new Intent(this, WelcomeActivity.class);
         startActivity(intent);
+
+        finish();
     }
 
     /**
