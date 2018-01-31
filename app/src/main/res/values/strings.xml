@@ -71,7 +71,7 @@
 
     <!-- Strings for the help page -->
     <string name="chapter1title">1. General</string>
-    <string name="chapter1"><b>Tagger</b> is an easy-to-use app to edit and convert the metadata of mp3-files. It can edit 2 different versions of tags, <i>id3v2.3</i> and <i>id3v2.4</i>. Those are distinguished by how many tags can be set per field.\n
+    <string name="chapter1"><b>mp3TagEdit</b> is an easy-to-use app to edit and convert the metadata of mp3-files. It can edit 2 different versions of tags, <i>id3v2.3</i> and <i>id3v2.4</i>. Those are distinguished by how many tags can be set per field.\n
 Whilst the newer version supports multiple tags, most systems are designed to work with id3v2.3 tags and cannot display multiple information.</string>
 
     <string name="chapter2title">2. First Steps</string>
