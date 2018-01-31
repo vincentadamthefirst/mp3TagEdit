@@ -22,7 +22,9 @@
     <!-- Text for rename files -->
     <string name="insert_pattern"> Muster eingeben</string>
     <string name="start_rename">Dateien umbenennen</string>
-    <string name="cancle_rename">Umbenennung stoppen</string>
+    <string name="cancel_rename">Umbenennung stoppen</string>
+    <string name="files_renamed"> Dateien wurden umbenannt</string>
+    <string name="rename_canceled"> Datei-Umbenennung wurde abgebrochen</string>
 
     <!-- Text for the tags (fields) -->
     <string name="tagedit_artists">Interpret</string>

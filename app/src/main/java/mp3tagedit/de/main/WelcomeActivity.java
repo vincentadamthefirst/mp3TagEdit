@@ -50,7 +50,7 @@ public class WelcomeActivity extends AppCompatActivity {
         SharedPreferences prefs = getApplicationContext().getSharedPreferences("queueSavePrefs", 0);
         String type = prefs.getString("editorType", "-1");
 
-        Button resumeButton = findViewById(R.id.resumeButton);
+        //Button resumeButton = findViewById(R.id.resumeButton);
         /*
         resumeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +60,7 @@ public class WelcomeActivity extends AppCompatActivity {
         });
         */
 
-        if (type.equals("-1")) {
+        /*if (type.equals("-1")) {
             resumeButton.setVisibility(View.INVISIBLE);
             resumeButton.setEnabled(false);
         } else if (type.equals("23") | type.equals("24")) {
@@ -70,7 +70,7 @@ public class WelcomeActivity extends AppCompatActivity {
                     resume();
                 }
             });
-        }
+        }*/
 
     }
 
