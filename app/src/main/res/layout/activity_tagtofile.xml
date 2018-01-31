@@ -53,12 +53,6 @@
             android:layout_width="50dp"
             android:layout_height="50dp">
 
-            <Button
-                android:id="@+id/open_options"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
         </RelativeLayout>
     </RelativeLayout>
 
@@ -122,76 +116,72 @@
                     android:textColor="@color/defaultText"
                     android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/patternIn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:ems="10"
-                android:inputType="textImeMultiLine"
-                android:text="@string/default_pattern" />
+                <EditText
+                    android:id="@+id/patternIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:ems="10"
+                    android:inputType="textImeMultiLine"
+                    android:text="@string/default_pattern" />
 
-            <Button
-                android:id="@+id/changeQueue"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/patternIn"
-                android:layout_marginBottom="5dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_weight="10"
-                android:background="@drawable/white_rectangle"
-                android:text="@string/action_change_queue"
-                android:textColor="@color/defaultText"
-                android:theme="@style/Button.Add" />
+                <Button
+                    android:id="@+id/addToQueue"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="10"
+                    android:background="@drawable/white_rectangle"
+                    android:text="@string/action_add_to_queue"
+                    android:textColor="@color/defaultText"
+                    android:theme="@style/Button.Add" />
 
-            <Button
-                android:id="@+id/addToQueue"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/changeQueue"
-                android:layout_marginBottom="5dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_weight="10"
-                android:background="@drawable/white_rectangle"
-                android:text="@string/action_add_to_queue"
-                android:textColor="@color/defaultText"
-                android:theme="@style/Button.Add" />
+                <Button
+                    android:id="@+id/changeQueue"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="10"
+                    android:background="@drawable/white_rectangle"
+                    android:text="@string/action_change_queue"
+                    android:textColor="@color/defaultText"
+                    android:theme="@style/Button.Add" />
 
-            <Button
-                android:id="@+id/startRename"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/changeQueue"
-                android:layout_marginBottom="5dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_weight="10"
-                android:background="@drawable/white_rectangle"
-                android:text="@string/start_rename"
-                android:textColor="@color/defaultText"
-                android:theme="@style/Button.Add" />
+                <Button
+                    android:id="@+id/startRename"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="10"
+                    android:background="@drawable/white_rectangle"
+                    android:text="@string/start_rename"
+                    android:textColor="@color/defaultText"
+                    android:theme="@style/Button.Add" />
 
-            <Button
-                android:id="@+id/cancelRename"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/changeQueue"
-                android:layout_marginBottom="5dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_weight="10"
-                android:background="@drawable/white_rectangle"
-                android:text="@string/cancle_rename"
-                android:textColor="@color/defaultText"
-                android:theme="@style/Button.Add" />
+                <Button
+                    android:id="@+id/cancelRename"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="10"
+                    android:background="@drawable/white_rectangle"
+                    android:text="@string/cancel_rename"
+                    android:textColor="@color/defaultText"
+                    android:theme="@style/Button.Add" />
 
             </LinearLayout>
 

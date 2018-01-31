@@ -23,7 +23,9 @@
     <string name="insert_pattern">Add pattern</string>
     <string name="default_pattern">%title%-%artist%</string>
     <string name="start_rename">Rename files</string>
-    <string name="cancle_rename">Cancle raname</string>
+    <string name="cancel_rename">Cancel rename</string>
+    <string name="files_renamed"> files was renamed</string>
+    <string name="rename_canceled"> file rename was canceled</string>
 
     <!-- Text for the tags (fields) -->
     <string name="tagedit_artists">Artist</string>
@@ -109,8 +111,8 @@ The pattern which the files get renamed after is defined in the settings with fo
 
     <string name="save_complete">The Tags were saved.</string>
 
-    <string name="files_added">files added</string>
-    <string name="files_removed">files got removed from the list</string>
+    <string name="files_added"> files added</string>
+    <string name="files_removed"> files got removed from the list</string>
 
     <string name="resume23">Resume v23</string>
     <string name="resume24">Resume v24</string>

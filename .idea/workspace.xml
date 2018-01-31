@@ -10,96 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5855e173-51ed-41a6-a06c-9707403fca85" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-16-33-47-650.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-16-33-47-650.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-17-12-42-405.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-17-12-42-405.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-17-12-44-587.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-17-12-44-587.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-19-30-54-211.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-19-30-54-211.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-19-30-58-605.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-19-30-58-605.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-19-43-51-949.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-19-43-51-949.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-19-46-11-066.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-19-46-11-066.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-19-50-13-199.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-19-50-13-199.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-19-50-57-038.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-19-50-57-038.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-19-57-13-555.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-19-57-13-555.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-01-30-132.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-01-30-132.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-07-45-087.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-07-45-087.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-10-14-985.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-10-14-985.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-12-00-047.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-12-00-047.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-21-15-504.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-21-15-504.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-24-23-363.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-24-23-363.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-27-30-252.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-27-30-252.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-35-17-440.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-35-17-440.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-37-30-417.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-37-30-417.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-39-36-816.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-39-36-816.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-42-28-512.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-42-28-512.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-48-58-327.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-20-48-58-327.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-21-13-09-906.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-21-13-09-906.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-21-13-12-349.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-21-13-12-349.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-21-19-26-012.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-21-19-26-012.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-21-21-42-793.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-21-21-42-793.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-21-36-06-352.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-21-36-06-352.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-21-37-06-768.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-21-37-06-768.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-21-38-14-098.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-21-38-14-098.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-21-44-02-540.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-21-44-02-540.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-22-20-42-822.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-22-20-42-822.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-22-21-50-918.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-22-21-50-918.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-22-22-51-352.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-22-22-51-352.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-22-57-04-025.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-22-57-04-025.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-22-59-30-719.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-22-59-30-719.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-23-00-48-875.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-23-00-48-875.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-23-01-31-871.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-23-01-31-871.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-23-03-02-378.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-23-03-02-378.rawproto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-23-04-37-528.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-01-30-23-04-37-528.rawproto" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v21/carbon.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/carbon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenTags.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenTags.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenerationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenerationActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/WelcomeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/WelcomeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v23editor.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v23editor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_id3v23editor.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_id3v23editor.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_welcome.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_welcome.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/tagtofile.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/tagtofile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_tagtofile.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_tagtofile.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values-b+de/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-b+de/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values-b+en/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-b+en/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -264,17 +182,34 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/WelcomeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="361">
-              <caret line="280" column="10" lean-forward="false" selection-start-line="280" selection-start-column="10" selection-end-line="280" selection-end-column="10" />
+              <caret line="308" column="10" lean-forward="false" selection-start-line="308" selection-start-column="10" selection-end-line="308" selection-end-column="10" />
               <folding>
-                <element signature="method#setupDrawer#0;class#WelcomeActivity#0" expanded="false" />
-                <element signature="e#9606#10087#0" expanded="true" />
-                <element signature="e#10086#10087#0" expanded="true" />
-                <element signature="e#10190#10361#0" expanded="true" />
-                <element signature="e#10360#10361#0" expanded="true" />
-                <element signature="e#11196#11677#0" expanded="true" />
-                <element signature="e#11676#11677#0" expanded="true" />
-                <element signature="e#11780#11951#0" expanded="true" />
-                <element signature="e#11950#11951#0" expanded="true" />
+                <marker date="1517363084992" expanded="true" signature="3057:3177" ph="/**...*/" />
+                <marker date="1517363084992" expanded="true" signature="3312:4540" ph="{...}" />
+                <marker date="1517363084992" expanded="false" signature="4573:9671" ph="{...}" />
+                <marker date="1517363084992" expanded="false" signature="4718:4731" ph="&quot;Home&quot;" />
+                <marker date="1517363084992" expanded="false" signature="5219:5236" ph="&quot;Options&quot;" />
+                <marker date="1517363084992" expanded="false" signature="5733:5752" ph="&quot;id3v2.4 Editor&quot;" />
+                <marker date="1517363084992" expanded="false" signature="6249:6268" ph="&quot;id3v2.3 Editor&quot;" />
+                <marker date="1517363084992" expanded="false" signature="6760:6778" ph="&quot;Tag-to-File&quot;" />
+                <marker date="1517363084992" expanded="false" signature="7270:7283" ph="&quot;Help&quot;" />
+                <marker date="1517363084992" expanded="false" signature="8475:8643" ph="(view, position, drawerItem) → {" />
+                <marker date="1517363084992" expanded="false" signature="9504:9527" ph="}" />
+                <marker date="1517363084992" expanded="true" signature="9704:12890" ph="{...}" />
+                <marker date="1517363084992" expanded="true" signature="10527:10627" ph="(v) → {" />
+                <marker date="1517363084992" expanded="true" signature="10989:11008" ph="}" />
+                <marker date="1517363084992" expanded="true" signature="11111:11232" ph="(v) → { " />
+                <marker date="1517363084992" expanded="true" signature="11250:11282" ph=" }" />
+                <marker date="1517363084992" expanded="true" signature="12117:12217" ph="(v) → {" />
+                <marker date="1517363084992" expanded="true" signature="12579:12598" ph="}" />
+                <marker date="1517363084992" expanded="true" signature="12701:12822" ph="(v) → { " />
+                <marker date="1517363084992" expanded="true" signature="12840:12872" ph=" }" />
+                <marker date="1517363084992" expanded="true" signature="12927:13524" ph="{...}" />
+                <marker date="1517363084992" expanded="true" signature="13571:13843" ph="{...}" />
+                <marker date="1517363084992" expanded="true" signature="13880:14477" ph="{...}" />
+                <marker date="1517363084992" expanded="true" signature="14505:14711" ph="{...}" />
+                <marker date="1517363084992" expanded="true" signature="14739:14945" ph="{...}" />
+                <marker date="1517363084992" expanded="true" signature="14980:15077" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -2344,7 +2279,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517363070068" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517363135511" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2392,7 +2327,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517363070068" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517363135512" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2575,7 +2510,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517363070068" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517363135512" />
       </method>
     </configuration>
     <list size="1">
@@ -3267,17 +3202,34 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/WelcomeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
-          <caret line="280" column="10" lean-forward="false" selection-start-line="280" selection-start-column="10" selection-end-line="280" selection-end-column="10" />
+          <caret line="308" column="10" lean-forward="false" selection-start-line="308" selection-start-column="10" selection-end-line="308" selection-end-column="10" />
           <folding>
-            <element signature="method#setupDrawer#0;class#WelcomeActivity#0" expanded="false" />
-            <element signature="e#9606#10087#0" expanded="true" />
-            <element signature="e#10086#10087#0" expanded="true" />
-            <element signature="e#10190#10361#0" expanded="true" />
-            <element signature="e#10360#10361#0" expanded="true" />
-            <element signature="e#11196#11677#0" expanded="true" />
-            <element signature="e#11676#11677#0" expanded="true" />
-            <element signature="e#11780#11951#0" expanded="true" />
-            <element signature="e#11950#11951#0" expanded="true" />
+            <marker date="1517363084992" expanded="true" signature="3057:3177" ph="/**...*/" />
+            <marker date="1517363084992" expanded="true" signature="3312:4540" ph="{...}" />
+            <marker date="1517363084992" expanded="false" signature="4573:9671" ph="{...}" />
+            <marker date="1517363084992" expanded="false" signature="4718:4731" ph="&quot;Home&quot;" />
+            <marker date="1517363084992" expanded="false" signature="5219:5236" ph="&quot;Options&quot;" />
+            <marker date="1517363084992" expanded="false" signature="5733:5752" ph="&quot;id3v2.4 Editor&quot;" />
+            <marker date="1517363084992" expanded="false" signature="6249:6268" ph="&quot;id3v2.3 Editor&quot;" />
+            <marker date="1517363084992" expanded="false" signature="6760:6778" ph="&quot;Tag-to-File&quot;" />
+            <marker date="1517363084992" expanded="false" signature="7270:7283" ph="&quot;Help&quot;" />
+            <marker date="1517363084992" expanded="false" signature="8475:8643" ph="(view, position, drawerItem) → {" />
+            <marker date="1517363084992" expanded="false" signature="9504:9527" ph="}" />
+            <marker date="1517363084992" expanded="true" signature="9704:12890" ph="{...}" />
+            <marker date="1517363084992" expanded="true" signature="10527:10627" ph="(v) → {" />
+            <marker date="1517363084992" expanded="true" signature="10989:11008" ph="}" />
+            <marker date="1517363084992" expanded="true" signature="11111:11232" ph="(v) → { " />
+            <marker date="1517363084992" expanded="true" signature="11250:11282" ph=" }" />
+            <marker date="1517363084992" expanded="true" signature="12117:12217" ph="(v) → {" />
+            <marker date="1517363084992" expanded="true" signature="12579:12598" ph="}" />
+            <marker date="1517363084992" expanded="true" signature="12701:12822" ph="(v) → { " />
+            <marker date="1517363084992" expanded="true" signature="12840:12872" ph=" }" />
+            <marker date="1517363084992" expanded="true" signature="12927:13524" ph="{...}" />
+            <marker date="1517363084992" expanded="true" signature="13571:13843" ph="{...}" />
+            <marker date="1517363084992" expanded="true" signature="13880:14477" ph="{...}" />
+            <marker date="1517363084992" expanded="true" signature="14505:14711" ph="{...}" />
+            <marker date="1517363084992" expanded="true" signature="14739:14945" ph="{...}" />
+            <marker date="1517363084992" expanded="true" signature="14980:15077" ph="{...}" />
           </folding>
         </state>
       </provider>
