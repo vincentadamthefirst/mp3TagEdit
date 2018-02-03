@@ -1,28 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="thejetstream.de.mp3tagedit">
+    package="mp3tagedit.de.main">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:label="mp3TagEdit"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".id3v24"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
+            android:name=".WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".id3v24editor"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".id3v23editor"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".tagtofile"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".settings"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".help"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_help"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".AlbumCoverActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_album_cover">
+        </activity>
+        <activity
+            android:name=".CoverGenerationActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_cover_generation">
+        </activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="thejetstream.de.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

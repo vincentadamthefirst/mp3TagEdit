@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "thejetstream.de.mp3tagedit"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -24,8 +24,24 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
-    compile 'com.android.support:design:26.0.0-alpha1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
+
+    //
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:support-v4:26.1.0'
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'   // used partly in activities
+
+    // Including dependencies needed for the navigation drawer
+    compile("com.mikepenz:materialdrawer:6.0.2@aar") {
+        transitive = true
+    }
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+    // additionally needed by materialdrawer
+    compile 'com.android.support:support-annotations:27.0.2'
+    // additionally needed by materialdrawer
+
+    // Including usable Icons and Fonts from Google Typeface
+    compile 'com.mikepenz:iconics-core:3.0.1@aar'
+    compile 'com.mikepenz:google-material-typeface:3.0.1.2.original@aar'
 }
