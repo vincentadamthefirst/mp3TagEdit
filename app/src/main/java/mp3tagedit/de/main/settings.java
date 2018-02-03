@@ -21,6 +21,11 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
+/**
+ * THIS CLASS IS CURRENTLY NOT IN USE
+ *
+ * @author Vincent
+ */
 public class settings extends AppCompatActivity {
 
     private Drawer mainDrawer;

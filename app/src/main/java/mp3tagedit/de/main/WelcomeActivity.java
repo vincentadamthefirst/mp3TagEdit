@@ -13,11 +13,9 @@ import android.os.Bundle;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
@@ -28,6 +26,12 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
+/**
+ * This class handles everything displayed on the start screen of the app,
+ * e.g. the processing of saved queues
+ *
+ * @author Vincent
+ */
 public class WelcomeActivity extends AppCompatActivity {
 
     private Drawer mainDrawer;
@@ -50,6 +54,19 @@ public class WelcomeActivity extends AppCompatActivity {
         }
 
         setupResume();
+    }
+
+    /**
+     * Overrides existing method, gets called when any opened activity terminates
+     * and handles the redrawing of this activity to show resume-buttons if necessary
+     */
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        setupResume();
+
+        mainDrawer.setSelection(1);
     }
 
     /**
@@ -85,6 +102,9 @@ public class WelcomeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * sets up all items in the navigation drawer
+     */
     private void setupDrawer() {
         PrimaryDrawerItem homItem = new PrimaryDrawerItem().withIdentifier(1)
                 .withIcon(GoogleMaterial.Icon.gmd_home).withName(R.string.home)
@@ -174,6 +194,11 @@ public class WelcomeActivity extends AppCompatActivity {
         mainDrawer.closeDrawer();
     }
 
+    /**
+     * Checks if there are saved queues for the id3v23 and id3v24 editors
+     * if it finds saved queues it converts them into lists and sets up
+     * the resume buttons to start the editors with these lists
+     */
     private void setupResume() {
         final SharedPreferences prefs24 = getApplicationContext().getSharedPreferences("queueSavePrefs24", 0);
         int newQueuePos24 = prefs24.getInt("queuePos", -1);
@@ -181,7 +206,6 @@ public class WelcomeActivity extends AppCompatActivity {
         if (newQueuePos24 == -1) {
             LinearLayout ll = findViewById(R.id.resume24layout);
             ll.setVisibility(View.GONE);
-            //((ViewManager) ll.getParent()).removeView(ll);
         } else {
             LinearLayout ll = findViewById(R.id.resume24layout);
             ll.setVisibility(View.VISIBLE);
@@ -200,7 +224,6 @@ public class WelcomeActivity extends AppCompatActivity {
 
                     LinearLayout ll = findViewById(R.id.resume24layout);
                     ll.setVisibility(View.GONE);
-                    //((ViewManager) ll.getParent()).removeView(ll);
                 }
             });
 
@@ -219,7 +242,6 @@ public class WelcomeActivity extends AppCompatActivity {
         if (newQueuePos23 == -1) {
             LinearLayout ll = findViewById(R.id.resume23layout);
             ll.setVisibility(View.GONE);
-            //((ViewManager) ll.getParent()).removeView(ll);
         } else {
             LinearLayout ll = findViewById(R.id.resume23layout);
             ll.setVisibility(View.VISIBLE);
@@ -238,7 +260,6 @@ public class WelcomeActivity extends AppCompatActivity {
 
                     LinearLayout ll = findViewById(R.id.resume23layout);
                     ll.setVisibility(View.GONE);
-                    //((ViewManager) ll.getParent()).removeView(ll);
                 }
             });
 
@@ -252,11 +273,14 @@ public class WelcomeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * opens up the editor for id3v24 tags with the saved queue
+     */
     private void open24WithQueue() {
         SharedPreferences prefs = getApplicationContext().getSharedPreferences("queueSavePrefs24", 0);
         String newQueueString = prefs.getString("queueSave","0");
         if (!newQueueString.equals("0")) {
-            String[] newQueue = newQueueString.split(",");
+            String[] newQueue = newQueueString.split("|");
             int newQueuePos = prefs.getInt("queuePos", 0);
 
             Intent intent = new Intent(this, id3v24editor.class);
@@ -268,27 +292,14 @@ public class WelcomeActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-
-        setupResume();
-
-        mainDrawer.setSelection(1);
-
-        /*
-        Intent openMainActivity = new Intent(this, WelcomeActivity.class);
-        openMainActivity.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        startActivity(openMainActivity);
-        */
-
-    }
-
+    /**
+     * opens up the editor for id3v23 tags with the saved queue
+     */
     private void open23WithQueue() {
         SharedPreferences prefs = getApplicationContext().getSharedPreferences("queueSavePrefs23", 0);
         String newQueueString = prefs.getString("queueSave","0");
         if (!newQueueString.equals("0")) {
-            String[] newQueue = newQueueString.split(",");
+            String[] newQueue = newQueueString.split("|");
             int newQueuePos = prefs.getInt("queuePos", 0);
 
             Intent intent = new Intent(this, id3v23editor.class);
@@ -300,6 +311,9 @@ public class WelcomeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * opens up the editor for id3v24 tags
+     */
     private void open24() {
         Intent intent = new Intent(this, id3v24editor.class);
         intent.putExtra("queuePos", 0);
@@ -307,6 +321,9 @@ public class WelcomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * opens up the editor for id3v23 tags
+     */
     private void open23() {
         Intent intent = new Intent(this, id3v23editor.class);
         intent.putExtra("queuePos", 0);
@@ -314,21 +331,34 @@ public class WelcomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * opens the tag to file converter
+     */
     private void openTagToFile() {
         Intent intent = new Intent(this, tagtofile.class);
         startActivity(intent);
     }
 
+    /**
+     * opens the help window
+     */
     private void openHelp() {
         Intent intent = new Intent(this, help.class);
         startActivity(intent);
     }
 
+    /**
+     * opens the settings window
+     */
     private void openSettings() {
         Intent intent = new Intent(this, settings.class);
         startActivity(intent);
     }
 
+    /**
+     * sets up the actionbar on top of the screen
+     * @param title the title to be displayed in the middle of the bar, use "" if no title is needed
+     */
     private void setupActionBar(String title) {
         Button openDrawer = findViewById(R.id.open_drawer);
         TextView activityTitle = findViewById(R.id.activity_title);

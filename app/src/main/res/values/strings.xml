@@ -24,7 +24,7 @@
     <string name="default_pattern">%title%-%artist%</string>
     <string name="start_rename">Rename files</string>
     <string name="cancel_rename">Cancel rename</string>
-    <string name="files_renamed"> files was renamed</string>
+    <string name="files_renamed"> files were renamed</string>
     <string name="rename_canceled"> file rename was canceled</string>
 
     <!-- Text for the tags (fields) -->

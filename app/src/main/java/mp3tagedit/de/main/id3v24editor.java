@@ -1,21 +1,11 @@
 package mp3tagedit.de.main;
 
-import android.Manifest;
-import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.InsetDrawable;
 import android.annotation.SuppressLint;
 import android.net.Uri;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.v4.app.DialogFragment;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
 import android.media.MediaPlayer;
@@ -38,7 +28,6 @@ import android.widget.Toast;
 
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
-import com.mikepenz.iconics.context.IconicsContextWrapper;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
@@ -68,8 +57,15 @@ import java.util.List;
 
 import java.util.Calendar;
 
-import static android.graphics.BitmapFactory.*;
-
+/**
+ * This class handles everything needed for editing id3v24 tags.
+ * It is an extended version of the id3v23 editor as it also handles
+ * multiple artists as well as multiple genres
+ *
+ * TODO find a way to save to SD-Card
+ *
+ * @author Vincent, André
+ */
 public class id3v24editor extends AppCompatActivity implements DialogFragmentResultListener{
 
     // Navigation Drawer
@@ -156,7 +152,11 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         }
     }
 
-
+    /**
+     * Overrides existing method, waits for the result of any activity launched in this activity
+     * @param requestCode  The code of the terminating Activity
+     * @param data The data transmitted by the terminating Activity
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 64) {
@@ -243,7 +243,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
 
                 StringBuilder sb = new StringBuilder();
                 for (int i = 0; i < queue.size(); i++) {
-                    sb.append(queue.get(i)).append(",");
+                    sb.append(queue.get(i)).append("|");
                 }
 
                 editor.putString("queueSave", sb.toString());
@@ -327,7 +327,6 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
 
     /**
      * Adds a new line for the list of genres
-     * @param view
      */
     public void addInputLineGenre(View view){
         ViewGroup viewParent = (ViewGroup)(view.getParent().getParent());
@@ -467,10 +466,8 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
             } catch (IOException | FieldDataInvalidException e) {
                 e.printStackTrace();
             }
-
             tmp.delete();
         }
-
 
         mp3.setTag(tag);
 
@@ -494,7 +491,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
                 .withSelectedTextColor(getResources().getColor(R.color.colorPrimaryDark))
                 .withIconColor(getResources().getColor(R.color.defaultText))
                 .withSelectedIconColor(getResources().getColor(R.color.colorPrimaryDark));
-        SecondaryDrawerItem setItem = new SecondaryDrawerItem().withIdentifier(2)
+        SecondaryDrawerItem setItem = new SecondaryDrawerItem().withIdentifier(2)                   //currently unused as there are no options needed, reserved for future usage
                 .withIcon(GoogleMaterial.Icon.gmd_settings).withName(R.string.settings)
                 .withTextColor(getResources().getColor(R.color.defaultText))
                 .withSelectedTextColor(getResources().getColor(R.color.colorPrimaryDark))
@@ -528,7 +525,6 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         LayoutInflater li = LayoutInflater.from(getApplicationContext());
         View headerImage = li.inflate(R.layout.drawer_header, null);
 
-        //create the drawer and remember the Drawer object
         mainDrawer = new DrawerBuilder()
                 .withActivity(this)
                 .withActionBarDrawerToggle(true)
@@ -621,6 +617,8 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
     private void openHome() {
         Intent intent = new Intent(this, WelcomeActivity.class);
         startActivity(intent);
+
+        finish();
     }
 
     /**
@@ -652,17 +650,28 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         popup.show();
     }
 
+    /**
+     * Opens the Dialog to add files to the queue
+     */
     private void addFilesDialog(){
         DialogFragment df = new FileExplorer();
         df.show(this.getSupportFragmentManager(), "Choose Files");
     }
 
+    /**
+     * Opens the Dialog to delete files from the queue
+     */
     private void deleteFilesDialog(){
         FileSelecter df = new FileSelecter();
         df.fileList = queue;
         df.show(this.getSupportFragmentManager(), "Select Files");
     }
 
+    /**
+     * Checks whether the File f is already in the Queue, adds it to it if no.
+     * @param f The File that should be added
+     * @return if the file was added or not
+     */
     public boolean addFile(File f){
         boolean isNewFile = true;
         for(File g:queue){
@@ -672,16 +681,19 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
                 break;
             }
         }
-        System.out.println(isNewFile);
         if(isNewFile){
             queue.add(f);
             nextButton.setVisibility(View.VISIBLE);
             nextButton.setEnabled(true);
             return true;
-        }//TODO Alles auf 23 kopieren + Tag to FileName
+        }
         return false;
     }
 
+    /**
+     * Adds the File f directly to the Queue, skipping any double-checking
+     * @param f The File that should be added
+     */
     public void clearAddFile(File f){
         queue.add(f);
     }
@@ -719,7 +731,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
     }
 
     /**
-     * sets up all necessary components of the header (e.g. listeners)
+     * sets up all necessary components for the head of the editor (e.g. listeners for the buttons)
      */
     private void setupEditorHead() {
         playButton = findViewById(R.id.play_button);
@@ -800,7 +812,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
     }
 
     /**
-     * shares the current mp3 File after saving it
+     * shares the current mp3 File after saving it as an Audio File
      */
     private void share() {
         if (currentFile != null) {
@@ -816,7 +828,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
     }
 
     /**
-     * plays the current files song
+     * Plays the currently selected song
      */
     private void playSong() throws IOException {
         if (mediaPlayer == null) {
@@ -831,7 +843,7 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
     }
 
     /**
-     * pauses the player and saves the state to be later resumed
+     * pauses the player and saves its state to be later able to resume the song
      */
     private void pauseSong(){
         if (mediaPlayer.isPlaying()) {
@@ -840,6 +852,11 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         }
     }
 
+    /**
+     * Overrides existing method, waits for the result of the file chooser and handles it (1 file)
+     * @param file The file returned by the Dialog
+     * @param frag The fragment terminating
+     */
     @Override
     public void getFragmentResult(File file, DialogFragment frag) {
         if(frag.getClass().equals(FileExplorer.class)){
@@ -851,10 +868,14 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         }
 
         firstLoad();
-
         frag.dismiss();
     }
 
+    /**
+     * Overrides existing method, waits for the result of the file choosers and handles it (>1 file)
+     * @param multiFile The files returned by the Dialog
+     * @param frag The fragment terminating
+     */
     @Override
     public void getMultipleFragmentResult(File[] multiFile, DialogFragment frag) {
         if(frag.getClass().equals(FileExplorer.class)){
@@ -874,7 +895,6 @@ public class id3v24editor extends AppCompatActivity implements DialogFragmentRes
         }
 
         firstLoad();
-
         frag.dismiss();
     }
 

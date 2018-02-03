@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -34,6 +33,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 
+/**
+ * Used to handle everything that is needed for selecting the album cover picture
+ * or generating it
+ *
+ * @author Christian
+ */
 public class AlbumCoverActivity extends AppCompatActivity {
 
     public static final int PERMISSIONS_REQUEST_CAMERA = 44;
@@ -42,16 +47,15 @@ public class AlbumCoverActivity extends AppCompatActivity {
     private static final int RESULT_CROP = 3;
     private static final int RESULT_GEN = 4;
 
-    private Bitmap image;
     private File PhotoFile;
     private Uri photoURI;
 
     private CoverGenTags tags;
 
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
+    /**
+     * Listeners to handle clicks on the BottomNavigationView
+     */
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -74,18 +78,25 @@ public class AlbumCoverActivity extends AppCompatActivity {
         }
     };
 
+    /**
+     * starts the Activity for generating a cover and passes and instance of CoverGenTags
+     */
     private void startGeneration() {
         Intent i = new Intent(this, CoverGenerationActivity.class);
         i.putExtra("tags", tags);
         startActivityForResult(i, RESULT_GEN);
     }
 
+    /**
+     * Retrieves all necessary data from the Intent and sets up the view
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album_cover);
 
         File tmp = new File(getExternalFilesDir("").getAbsolutePath(),  "Pic.jpeg");
+        // if the temporary file already exists it gets cleared to be later rewritten
         if (tmp.exists()) {
             tmp.delete();
         }
@@ -96,6 +107,7 @@ public class AlbumCoverActivity extends AppCompatActivity {
         ImageView CoverView = findViewById(R.id.CoverView);
         tags = (CoverGenTags) getIntent().getSerializableExtra("tags");
 
+        // loads the image fro mthe Intent if it was transmitted
         if(tags != null && tags.getImage() != null){
             CoverView.setImageBitmap(tags.getImage());
 
@@ -139,6 +151,13 @@ public class AlbumCoverActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Overrides existing method, waits for the result of any activity launched in this activity
+     * and handles what is in the Intents <br>
+     * In this class it handles the different images transmitted if they exist
+     * @param requestCode  The code of the terminating Activity
+     * @param data The data transmitted by the terminating Activity
+     */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -213,6 +232,9 @@ public class AlbumCoverActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Opens the Camera
+     */
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public void takePhoto() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -221,14 +243,21 @@ public class AlbumCoverActivity extends AppCompatActivity {
         intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
         startActivityForResult(intent, RESULT_CAMERA);
     }
+
+    /**
+     * Opens the Gallery
+     */
     public void openGallery(){
         Intent galleryIntent = new Intent(
                 Intent.ACTION_PICK,
                 MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(galleryIntent , RESULT_GALLERY );
     }
+
+    /**
+     * Initializes the cropping of the current Image
+     */
     public void cropImage(){
-//grant uri with essential permission the first arg is the The packagename you would like to allow to access the Uri.
         getApplicationContext().grantUriPermission("com.android.camera",photoURI,
                 Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
@@ -244,22 +273,27 @@ public class AlbumCoverActivity extends AppCompatActivity {
         intent.putExtra("outputX", 500);
         intent.putExtra("outputY", 500);
         intent.putExtra("return-data", true);
-//you must setup this
+
         intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
         startActivityForResult(intent, RESULT_CROP);
     }
 
-    private void saveFile(Uri sourceUri, File destination){
-    try {
-        FileChannel src = ((FileInputStream) getContentResolver().openInputStream(sourceUri)).getChannel();
-        FileChannel dst = new FileOutputStream(destination).getChannel();
-        dst.transferFrom(src, 0, src.size());
-        src.close();
-        dst.close();
-        Log.e("saving", "SUCCESS?");
-    } catch (IOException ex) {
-        Log.e("saving", "FAILURE");
-        ex.printStackTrace();
+    /**
+     * Takes a Uri and saves the file
+     * @param sourceUri the Uri to be read from
+     * @param destination the file that should be rewritten
+     */
+    private void saveFile(Uri sourceUri, File destination) {
+        try {
+            FileChannel src = ((FileInputStream) getContentResolver().openInputStream(sourceUri)).getChannel();
+            FileChannel dst = new FileOutputStream(destination).getChannel();
+            dst.transferFrom(src, 0, src.size());
+            src.close();
+            dst.close();
+            Log.e("saving", "SUCCESS?");
+        } catch (IOException ex) {
+            Log.e("saving", "FAILURE");
+            ex.printStackTrace();
+        }
     }
-}
 }

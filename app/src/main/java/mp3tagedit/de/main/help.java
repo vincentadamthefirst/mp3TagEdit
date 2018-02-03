@@ -3,14 +3,10 @@ package mp3tagedit.de.main;
 import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewManager;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,6 +20,12 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
+/**
+ * This class is only used to define the actionbar and the navigation drawer
+ * all element-handling is done in the corresponding .xml
+ *
+ * @author Vincent
+ */
 public class help extends AppCompatActivity {
 
     private Drawer mainDrawer;
@@ -38,6 +40,9 @@ public class help extends AppCompatActivity {
         setupDrawer();
     }
 
+    /**
+     * sets up all items in the navigation drawer
+     */
     private void setupDrawer() {
         PrimaryDrawerItem homItem = new PrimaryDrawerItem().withIdentifier(1)
                 .withIcon(GoogleMaterial.Icon.gmd_home).withName(R.string.home)
@@ -127,6 +132,9 @@ public class help extends AppCompatActivity {
         mainDrawer.closeDrawer();
     }
 
+    /**
+     * opens up the editor for id3v24 tags
+     */
     private void open24() {
         Intent intent = new Intent(this, id3v24editor.class);
         intent.putExtra("queuePos", 0);
@@ -136,6 +144,9 @@ public class help extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * opens up the editor for id3v23 tags
+     */
     private void open23() {
         Intent intent = new Intent(this, id3v23editor.class);
         intent.putExtra("queuePos", 0);
@@ -145,6 +156,9 @@ public class help extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * opens the tag to file converter
+     */
     private void openTagToFile() {
         Intent intent = new Intent(this, tagtofile.class);
         startActivity(intent);
@@ -152,6 +166,9 @@ public class help extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * opens the settings window
+     */
     private void openSettings() {
         Intent intent = new Intent(this, settings.class);
         startActivity(intent);
@@ -159,6 +176,9 @@ public class help extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * opens up the home screen
+     */
     private void openHome() {
         Intent intent = new Intent(this, WelcomeActivity.class);
         startActivity(intent);
@@ -166,6 +186,10 @@ public class help extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * sets up the actionbar on top of the screen
+     * @param title the title to be displayed in the middle of the bar, use "" if no title is needed
+     */
     private void setupActionBar(String title) {
         Button openDrawer = findViewById(R.id.open_drawer);
         TextView activityTitle = findViewById(R.id.activity_title);
@@ -184,5 +208,4 @@ public class help extends AppCompatActivity {
 
         activityTitle.setText(title); //sets the TextViews text
     }
-
 }

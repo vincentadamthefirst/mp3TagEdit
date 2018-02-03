@@ -1,57 +1,37 @@
 package mp3tagedit.de.main;
 
-import android.Manifest;
-import android.app.Activity;
 import android.app.Dialog;
 import android.support.v4.app.DialogFragment;
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.jaudiotagger.audio.AudioFile;
-import org.jaudiotagger.audio.AudioFileIO;
-import org.jaudiotagger.audio.exceptions.CannotReadException;
-import org.jaudiotagger.audio.exceptions.InvalidAudioFrameException;
-import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
-import org.jaudiotagger.tag.Tag;
-import org.jaudiotagger.tag.TagException;
-import org.jaudiotagger.tag.images.Artwork;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
-
+/**
+ * This class handles the FileExplorer used to add files to the various
+ * queues in the editors and in the tag-to-file converter
+ *
+ * Code modified and partly taken from http://www.indragni.com/android/FileExplorerDemo.rar
+ *
+ * @author André
+ */
 public class FileExplorer extends DialogFragment {
 
-    //code partly taken from "http://www.indragni.com/android/FileExplorerDemo.rar"
     public static final int PERMISSIONS_REQUEST_READ_STORAGE = 42;
 
-    Button buttonOpenDialog;
     Button buttonUp;
     Button buttonAdd;
     TextView textFolder;
     Spinner rootPath;
 
-    String KEY_TEXTPSS = "TEXTPSS";
-    static final int CUSTOM_DIALOG_ID = 0;
     ListView dialog_ListView;
 
     File root;
@@ -61,6 +41,10 @@ public class FileExplorer extends DialogFragment {
 
     private ArrayList<File> fileList = new ArrayList<>();
 
+    /**
+     * Sets up all necessary parts for the Dialog (e.g. buttons)
+     * @author Vincent, André
+     */
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
@@ -75,7 +59,6 @@ public class FileExplorer extends DialogFragment {
         dialog.setTitle("Custom Dialog");
         dialog.setCancelable(true);
         dialog.setCanceledOnTouchOutside(true);
-
 
         rootPath = dialog.findViewById(R.id.root_path_spinner);
         File[] allRootPaths = getActivity().getExternalFilesDirs(null);
@@ -105,7 +88,6 @@ public class FileExplorer extends DialogFragment {
         });
         for(File f:allRootPaths) {
             System.out.println(f.getAbsolutePath());
-
         }
 
         root = Environment.getExternalStoragePublicDirectory("");
@@ -154,6 +136,9 @@ public class FileExplorer extends DialogFragment {
         return dialog;
     }
 
+    /**
+     * Changes the current root folder and updates the dialog
+     */
     private void changeRoot(){
         String path = rootPath.getSelectedItem().toString();
         if(path.equals("")){
@@ -164,6 +149,12 @@ public class FileExplorer extends DialogFragment {
         ListDir(curFolder, fileExt);
     }
 
+    /**
+     * Lists all the files with the specified extension (or if they are
+     * directories) into the dialog
+     * @param f the directory whose files should be displayed
+     * @param fileExtension the extension that the files can have
+     */
     void ListDir(File f, String fileExtension) {
         if(f.equals(root)) {
             buttonUp.setEnabled(false);
@@ -177,13 +168,10 @@ public class FileExplorer extends DialogFragment {
         File[] files = f.listFiles();
         fileList.clear();
 
-        System.out.println(files.length);
-
         for(File file : files) {
             if(file.getName().endsWith(fileExtension) || file.isDirectory()){
                 fileList.add(file);
             }
-
         }
 
         ArrayList<String> fileListStr = new ArrayList<>();
@@ -194,6 +182,13 @@ public class FileExplorer extends DialogFragment {
         dialog_ListView.setAdapter(directoryList);
     }
 
+    /**
+     * Goes through a given folder and all sub-folders and returns a list containing
+     * Files with the extension fileExtension
+     * @param dir The directory that should be searched
+     * @param fileExtension The extension all the searched files should have (e.g. .mp3)
+     * @author Vincent
+     */
     private ArrayList<File> getFilesOfDir(File dir, String fileExtension) {
         ArrayList<File> fileList = new ArrayList<>();
 

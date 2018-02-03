@@ -7,7 +7,11 @@ import android.graphics.Paint;
 import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
 
-
+/**
+ * This class is solely used to transmit data to and from the AlbumCoverActivity
+ *
+ * @author Christian
+ */
 public class CoverGenTags implements Serializable {
 
     String Title = "";
@@ -24,15 +28,25 @@ public class CoverGenTags implements Serializable {
 
     byte[] image = new byte[1];
 
+    /**
+     * Initializes this class with some of the needed variables
+     */
     public CoverGenTags() {
     }
 
+    /**
+     * Initializes this class with some of the needed variables
+     */
     public CoverGenTags(String title, String artist, String genre, String year) {
         Title = title;
         Artist = artist;
         Genre = genre;
         Year = year;
     }
+
+    /*
+     * Getter and Setter methods for all of the saved Stirngs
+     */
 
     public String getTitle() {
         return Title;
@@ -116,6 +130,11 @@ public class CoverGenTags implements Serializable {
         AlbumName = albumName;
     }
 
+    /**
+     * This method is used to verify if a given text (artist or title)
+     * fits onto the screen, if not the method tries to build in line breaks
+     * on different possible locations
+     */
     public void verifyLengths(Paint tPaint0, Paint tPaint){
         String a = getArtist();
         String t = getTitle();
@@ -130,7 +149,7 @@ public class CoverGenTags implements Serializable {
 
         float LengthA1 = 2900 - tPaint0.measureText("Artist: ");
         float LengthA2 = 2900;
-        float LengthT1 = 2900 - tPaint0.measureText("Title: ");;
+        float LengthT1 = 2900 - tPaint0.measureText("Title: ");
         float LengthT2 = 2900;
 
         if(widthA < LengthA1){
@@ -184,8 +203,6 @@ public class CoverGenTags implements Serializable {
                     j++;
                 }
             }
-
-
         }
 
         if(widthT < LengthT1){

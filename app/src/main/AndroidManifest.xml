@@ -14,11 +14,6 @@
         android:label="mp3TagEdit"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".id3v24"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-
-        <activity
             android:name=".WelcomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">

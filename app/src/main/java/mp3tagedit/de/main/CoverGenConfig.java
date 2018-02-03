@@ -2,7 +2,12 @@ package mp3tagedit.de.main;
 
 import java.io.Serializable;
 
-
+/**
+ * This class is used to store information for the Cover generation
+ * (e.g. Fonts needed)
+ *
+ * @author Christian
+ */
 public class CoverGenConfig implements Serializable {
 
     String Abb;

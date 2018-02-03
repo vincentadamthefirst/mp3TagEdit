@@ -14,16 +14,24 @@ import android.widget.Toast;
 import java.io.File;
 import java.util.ArrayList;
 
+/**
+ * This class is used to display the current queue and to handle
+ * deleting files from it
+ *
+ * Code modified and partly taken from http://www.indragni.com/android/FileExplorerDemo.rar
+ *
+ * @author André
+ */
 public class FileSelecter extends DialogFragment {
-
-    //code partly taken from "http://www.indragni.com/android/FileExplorerDemo.rar"
-
     Button buttonDel;
     Button buttonDelAll;
     Dialog dialog;
 
     public ArrayList<File> fileList = new ArrayList<>();
 
+    /**
+     * Sets up all necessary components for the dialog (e.g. buttons)
+     */
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         dialog = new Dialog(getActivity());
@@ -76,6 +84,10 @@ public class FileSelecter extends DialogFragment {
         return dialog;
     }
 
+    /**
+     * Lists all files in the List into the Dialog
+     * @param files the files that should be displayed in the dialog
+     */
     void ListFiles(ArrayList<File> files) {
         for(File file:files){
             ViewGroup viewParent = dialog.findViewById(R.id.listing);
@@ -85,33 +97,5 @@ public class FileSelecter extends DialogFragment {
 
             viewParent.addView(vg);
         }
-
-        /*ArrayAdapter<String> directoryList = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_list_item_1, fileList);
-        dialog_ListView.setAdapter(directoryList);*/
     }
-
-    /*private ArrayList<String> getFilesOfDir(String dir, String fileExtension) {
-        ArrayList<String> fileList = new ArrayList<>();
-
-        try {
-            File rootFolder = new File(dir);
-            File[] files = rootFolder.listFiles();
-            for (File file : files) {
-                if (file.isDirectory()) {
-                    ArrayList<String> tmp = getFilesOfDir(file.getAbsolutePath(), fileExtension);
-                    if (tmp != null) {
-                        fileList.addAll(tmp);
-                    } else {
-                        break;
-                    }
-                } else if (file.getName().endsWith(fileExtension)) {
-                    fileList.add(file.getAbsolutePath());
-                }
-            }
-            return fileList;
-        } catch (Exception e) {
-            return null;
-        }
-    }*/
 }

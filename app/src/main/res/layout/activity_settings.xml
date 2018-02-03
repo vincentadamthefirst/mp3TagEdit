@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:showIn="@layout/activity_settings">
 
+    <!--
+    CURRENTLY UNUSED
+    -->
+
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

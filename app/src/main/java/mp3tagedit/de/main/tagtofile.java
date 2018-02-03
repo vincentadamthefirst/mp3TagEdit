@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewManager;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
@@ -36,6 +35,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Handles the Activity for renaming the files
+ * Uses a user-defined pattern to rename the files according to their mp3-tags
+ *
+ * @author Vincent, André
+ */
 public class tagtofile extends AppCompatActivity implements DialogFragmentResultListener {
 
     private Drawer mainDrawer;
@@ -63,10 +68,9 @@ public class tagtofile extends AppCompatActivity implements DialogFragmentResult
         queue = new ArrayList<File>();
     }
 
-    private void options() {
-
-    }
-
+    /**
+     * Sets up all necessary buttons for this activity
+     */
     private void setupButtons(){
         changeQueue = findViewById(R.id.changeQueue);
         addToQueue = findViewById(R.id.addToQueue);
@@ -105,6 +109,9 @@ public class tagtofile extends AppCompatActivity implements DialogFragmentResult
 
     }
 
+    /**
+     * sets up all items in the navigation drawer
+     */
     private void setupDrawer() {
         PrimaryDrawerItem homItem = new PrimaryDrawerItem().withIdentifier(1)
                 .withIcon(GoogleMaterial.Icon.gmd_home).withName(R.string.home)
@@ -194,6 +201,9 @@ public class tagtofile extends AppCompatActivity implements DialogFragmentResult
         mainDrawer.closeDrawer();
     }
 
+    /**
+     * opens up the editor for id3v24 tags
+     */
     private void open24() {
         Intent intent = new Intent(this, id3v24editor.class);
         intent.putExtra("queuePos", 0);
@@ -203,6 +213,9 @@ public class tagtofile extends AppCompatActivity implements DialogFragmentResult
         finish();
     }
 
+    /**
+     * opens up the editor for id3v23 tags
+     */
     private void open23() {
         Intent intent = new Intent(this, id3v23editor.class);
         intent.putExtra("queuePos", 0);
@@ -212,6 +225,9 @@ public class tagtofile extends AppCompatActivity implements DialogFragmentResult
         finish();
     }
 
+    /**
+     * opens the help window
+     */
     private void openHelp() {
         Intent intent = new Intent(this, help.class);
         startActivity(intent);
@@ -219,6 +235,9 @@ public class tagtofile extends AppCompatActivity implements DialogFragmentResult
         finish();
     }
 
+    /**
+     * opens the settings window
+     */
     private void openSettings() {
         Intent intent = new Intent(this, settings.class);
         startActivity(intent);
@@ -226,6 +245,9 @@ public class tagtofile extends AppCompatActivity implements DialogFragmentResult
         finish();
     }
 
+    /**
+     * opens up the home screen
+     */
     private void openHome() {
         Intent intent = new Intent(this, WelcomeActivity.class);
         startActivity(intent);
@@ -233,6 +255,10 @@ public class tagtofile extends AppCompatActivity implements DialogFragmentResult
         finish();
     }
 
+    /**
+     * sets up the actionbar on top of the screen
+     * @param title the title to be displayed in the middle of the bar, use "" if no title is needed
+     */
     private void setupActionBar(String title) {
         Button openDrawer = findViewById(R.id.open_drawer);
         TextView activityTitle = findViewById(R.id.activity_title);
@@ -253,17 +279,28 @@ public class tagtofile extends AppCompatActivity implements DialogFragmentResult
         activityTitle.setText(title); //sets the TextViews text
     }
 
+    /**
+     * Opens the Dialog to add files to the queue
+     */
     private void addFilesDialog(){
         DialogFragment df = new FileExplorer();
         df.show(this.getSupportFragmentManager(), "Choose Files");
     }
 
+    /**
+     * Opens the Dialog to delete files from the queue
+     */
     private void deleteFilesDialog(){
         FileSelecter df = new FileSelecter();
         df.fileList = queue;
         df.show(this.getSupportFragmentManager(), "Select Files");
     }
 
+    /**
+     * Checks whether the File f is already in the Queue, adds it to it if no.
+     * @param f The File that should be added
+     * @return if the file was added or not
+     */
     public boolean addFile(File f){
         boolean isNewFile = true;
         for(File g:queue){
@@ -282,10 +319,17 @@ public class tagtofile extends AppCompatActivity implements DialogFragmentResult
         return false;
     }
 
+    /**
+     * Adds the File f directly to the Queue, skipping any double-checking
+     * @param f The File that should be added
+     */
     public void clearAddFile(File f){
         queue.add(f);
     }
 
+    /**
+     * Renames all files in the Queue according to the defined pattern
+     */
     public boolean renameQueue(){
         kill = false;
         ArrayList<String[]> parsedPattern = parsePattern(patternInput.getText().toString());
@@ -314,13 +358,13 @@ public class tagtofile extends AppCompatActivity implements DialogFragmentResult
             for(String[] parseParticle:parsedPattern){
                 if(parseParticle[1].equals("1")){
                     switch(parseParticle[0]){
-                        case "ARTIST":fileName += artist;break;
-                        case "GENRE":fileName += genre;break;
-                        case "TITLE":fileName += title;break;
-                        case "ALBUM":fileName += album;break;
-                        case "TRACK":fileName += track;break;
-                        case "YEAR":fileName += year;break;
-                        default:fileName += "";break;
+                        case "ARTIST":fileName += artist; break;
+                        case "GENRE":fileName += genre; break;
+                        case "TITLE":fileName += title; break;
+                        case "ALBUM":fileName += album; break;
+                        case "TRACK":fileName += track; break;
+                        case "YEAR":fileName += year; break;
+                        default:fileName += ""; break;
                     }
                 }
                 else{
@@ -336,37 +380,38 @@ public class tagtofile extends AppCompatActivity implements DialogFragmentResult
                 }
                 f.renameTo(new File(f.getParent() + "/" + fileName + "(" + count + ")" +
                         getString(R.string.file_extension)));
-            }
-            else{
+            } else{
                 f.renameTo(new File(f.getParent() + "/" + fileName + getString(R.string.file_extension)));
             }
         }
 
         if(kill){
             Toast.makeText(this,  getString(R.string.rename_canceled), Toast.LENGTH_LONG).show();
-        }
-        else {
+        } else {
             Toast.makeText(this, queue.size() + getString(R.string.files_renamed), Toast.LENGTH_LONG).show();
         }
         queue.clear();
 
         return true;
-
     }
 
-    public ArrayList<String[]> parsePattern(String pattern){
-        ArrayList<String[]> parsed = new ArrayList<String[]>();
+    /**
+     * parses the inserted pattern into a list that can later be used by other methods
+     * @param pattern
+     * @return
+     */
+    public ArrayList<String[]> parsePattern(String pattern) {
+        ArrayList<String[]> parsed = new ArrayList<>();
         boolean inTagName = false;
         String storage = "";
-        for(char c:pattern.toCharArray()){
+        for(char c:pattern.toCharArray()) {
             switch(c){
                 case '%':
-                    if(inTagName){
+                    if(inTagName) {
                         parsed.add(new String[]{storage.toUpperCase(), "1"});
                         storage = "";
                         inTagName = false;
-                    }
-                    else{
+                    } else {
                         parsed.add(new String[]{storage, "0"});
                         storage = "";
                         inTagName = true;
@@ -380,6 +425,11 @@ public class tagtofile extends AppCompatActivity implements DialogFragmentResult
         return parsed;
     }
 
+    /**
+     * Overrides existing method, waits for the result of the file chooser and handles it (1 file)
+     * @param file The file returned by the Dialog
+     * @param frag The fragment terminating
+     */
     @Override
     public void getFragmentResult(File file, DialogFragment frag) {
         if(frag.getClass().equals(FileExplorer.class)){
@@ -393,6 +443,11 @@ public class tagtofile extends AppCompatActivity implements DialogFragmentResult
         frag.dismiss();
     }
 
+    /**
+     * Overrides existing method, waits for the result of the file choosers and handles it (>1 file)
+     * @param multiFile The files returned by the Dialog
+     * @param frag The fragment terminating
+     */
     @Override
     public void getMultipleFragmentResult(File[] multiFile, DialogFragment frag) {
         if(frag.getClass().equals(FileExplorer.class)){
@@ -413,5 +468,4 @@ public class tagtofile extends AppCompatActivity implements DialogFragmentResult
 
         frag.dismiss();
     }
-
 }
