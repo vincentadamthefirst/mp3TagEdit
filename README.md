@@ -1,18 +1,30 @@
-# mp3TagEdit
+# mp3TagEdit - Vincent's Overhaul
 
-## Overview
+## Disclaimer
 
-mp3TagEdit is an eas-to-use app to edit and mass-edit mp3-Files. Development started as part of an project for the "TU Dresden" in 10/2017.
+This project is completely independent from the original one. It's purpose is to create a working 
+nvironment for me to change some of the app's features to my liking. If necessary and needed the
+added features will be merged into the original app.
 
-## Features
+As of right now, this version is not guaranteed to work, **please refer to the _master_-branch!**
 
-**W.I.P.**
+## What is planned?
+
+* _Rework:_ the complete looks of the app
+* _Rework:_ the help page
+* _Rework:_ faster methods for the album cover
+* _Rework:_ the translation
+* (_Rework:_ the album cover generation method)
+
+
+* **Add:** more options for the album cover
+* **Add:** better in-code documentation
+* **Add:** more settings
+
+
+* Remove: unnecessary code fragments
+* Remove: unnecessary translations and colors
 
 ## Additional Libraries
 
-* jAudioTagger ([Website](http://www.jthink.net/jaudiotagger/) | [BitBucket](https://bitbucket.org/ijabz/jaudiotagger))
-* jAudioTagger for Android ([GitHub](https://github.com/hexise/jaudiotagger-android))
-
-## Changelog
-
-See `Changelog.md` for information.
+See the _master_-branch.
