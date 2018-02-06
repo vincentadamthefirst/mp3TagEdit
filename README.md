@@ -16,13 +16,13 @@ As of right now, this version is not guaranteed to work, **please refer to the _
 * _Rework:_ the translation
 * (_Rework:_ the album cover generation method)
 
-======
+---
 
 * **Add:** more options for the album cover
 * **Add:** better in-code documentation
 * **Add:** more settings
 
-======
+---
 
 * Remove: unnecessary code fragments
 * Remove: unnecessary translations and colors
