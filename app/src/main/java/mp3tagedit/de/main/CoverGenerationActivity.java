@@ -375,6 +375,7 @@ public class CoverGenerationActivity extends AppCompatActivity {
         StringWriter writer = new StringWriter();
         try {
             serializer.setOutput(writer);
+
             serializer.setFeature("http://xmlpull.org/v1/doc/features.html#indent-output",true);
             serializer.startDocument("UTF-8", true);
 

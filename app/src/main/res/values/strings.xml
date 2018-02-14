@@ -120,4 +120,9 @@ The pattern which the files get renamed after is defined in the settings with fo
     <string name="resume24">Resume v24</string>
 
     <string name="resume_failed">Resuming Failed!</string>
+
+
+    <!-- ________________________________________________________________________ -->
+    <string name="list_reached_max">The queue reached its maximum number of elements!</string>
+    <string name="list_not_initialized">The queue is not yet initialized.</string>
 </resources>

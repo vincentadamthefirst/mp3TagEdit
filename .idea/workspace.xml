@@ -10,30 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5855e173-51ed-41a6-a06c-9707403fca85" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/additional/BlurBuilder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_id3v24editor.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/firstview_main.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/id3v23.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/id3v24.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenConfig.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenTags.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenTags.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenerationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenerationActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileExplorer.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileExplorer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileSelecter.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileSelecter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/WelcomeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/WelcomeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/help.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/help.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v23editor.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v23editor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/settings.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/settings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/tagtofile.java" afterPath="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/tagtofile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,10 +36,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="id3v24editor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="id3v24editor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
+            <state relative-caret-position="17">
               <caret line="429" column="27" lean-forward="false" selection-start-line="429" selection-start-column="27" selection-end-line="429" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -96,11 +74,119 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="CoverGenerationActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenerationActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="524">
+              <caret line="377" column="0" lean-forward="false" selection-start-line="377" selection-start-column="0" selection-end-line="377" selection-end-column="0" />
+              <folding>
+                <element signature="method#onCreate#0;class#CoverGenerationActivity#0" expanded="false" />
+                <element signature="e#1958#2217#0" expanded="true" />
+                <element signature="e#2216#2217#0" expanded="true" />
+                <element signature="e#2314#2488#0" expanded="true" />
+                <element signature="e#2487#2488#0" expanded="true" />
+                <element signature="e#2585#2731#0" expanded="true" />
+                <element signature="e#2730#2731#0" expanded="true" />
+                <element signature="e#2826#2998#0" expanded="true" />
+                <element signature="e#2997#2998#0" expanded="true" />
+                <element signature="e#3099#3631#0" expanded="true" />
+                <element signature="e#3630#3631#0" expanded="true" />
+                <element signature="method#draw#0;class#CoverGenerationActivity#0" expanded="false" />
+                <element signature="method#dialog#0;class#CoverGenerationActivity#0" expanded="false" />
+                <element signature="method#readXML#0;class#CoverGenerationActivity#0" expanded="false" />
+                <element signature="method#readFile#0;class#CoverGenerationActivity#0" expanded="false" />
+                <element signature="method#saveXML#0;class#CoverGenerationActivity#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditList.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/util/EditList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="28" column="54" lean-forward="true" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1737#1738#0" expanded="true" />
+                <element signature="e#1778#1779#0" expanded="true" />
+                <element signature="e#6579#6580#0" expanded="true" />
+                <element signature="e#6612#6613#0" expanded="true" />
+                <element signature="e#6698#6699#0" expanded="true" />
+                <element signature="e#6729#6730#0" expanded="true" />
+                <element signature="e#6765#6766#0" expanded="true" />
+                <element signature="e#6792#6793#0" expanded="true" />
+                <element signature="e#6885#6886#0" expanded="true" />
+                <element signature="e#6912#6913#0" expanded="true" />
+                <element signature="e#7011#7012#0" expanded="true" />
+                <element signature="e#7039#7040#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NoFileInListException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/exceptions/NoFileInListException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="52" lean-forward="false" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="737">
+              <caret line="125" column="62" lean-forward="false" selection-start-line="125" selection-start-column="62" selection-end-line="125" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListNotInitializedException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/exceptions/ListNotInitializedException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="10" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ErrorCodes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/values/ErrorCodes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlbumCoverActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="812">
+              <caret line="161" column="0" lean-forward="false" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+              <folding>
+                <element signature="method#onCreate#0;class#AlbumCoverActivity#0" expanded="false" />
+                <element signature="method#onActivityResult#0;class#AlbumCoverActivity#0" expanded="false" />
+                <element signature="method#takePhoto#0;class#AlbumCoverActivity#0" expanded="false" />
+                <element signature="method#openGallery#0;class#AlbumCoverActivity#0" expanded="false" />
+                <element signature="method#cropImage#0;class#AlbumCoverActivity#0" expanded="false" />
+                <element signature="method#saveFile#0;class#AlbumCoverActivity#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="id3v23editor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v23editor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1662">
-              <caret line="306" column="0" lean-forward="false" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
+            <state relative-caret-position="237">
+              <caret line="552" column="80" lean-forward="true" selection-start-line="552" selection-start-column="80" selection-end-line="552" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#onCreate#0;class#id3v23editor#0" expanded="false" />
@@ -117,7 +203,6 @@
                 <element signature="method#options#0;class#id3v23editor#0" expanded="false" />
                 <element signature="method#addFilesDialog#0;class#id3v23editor#0" expanded="false" />
                 <element signature="method#deleteFilesDialog#0;class#id3v23editor#0" expanded="false" />
-                <element signature="method#addFile#0;class#id3v23editor#0" expanded="false" />
                 <element signature="method#setupActionBar#0;class#id3v23editor#0" expanded="false" />
                 <element signature="method#setupEditorHead#0;class#id3v23editor#0" expanded="false" />
                 <element signature="method#onActivityResult#0;class#id3v23editor#0" expanded="false" />
@@ -132,6 +217,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ListSizeMaxReachedException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/exceptions/ListSizeMaxReachedException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -139,6 +234,7 @@
       <list>
         <option value="Interface" />
         <option value="layoutResourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -1903,7 +1999,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_welcome.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v23editor.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/help.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/tagtofile.java" />
@@ -1914,8 +2009,16 @@
         <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenTags.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenConfig.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenerationActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenerationActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/values/ErrorCodes.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/exceptions/ListNotInitializedException.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/exceptions/ListSizeMaxReached.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/exceptions/ListSizeMaxReachedException.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/exceptions/NoFileInListException.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/util/EditList.java" />
       </list>
     </option>
   </component>
@@ -1943,7 +2046,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
@@ -1985,7 +2087,7 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
+              <option name="myItemId" value="values" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1998,6 +2100,28 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="strings.xml" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp3TagEdit" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2025,16 +2149,100 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="de" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp3TagEdit" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="de" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp3TagEdit" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="de" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp3TagEdit" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="de" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exceptions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp3TagEdit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mp3TagEdit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2047,8 +2255,12 @@
     <property name="android.profiler.active" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\app\src\main\res\drawable-nodpi" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+      <recent name="C:\Users\Christian\Documents\GitHub\mp3TagEditNEW\app\src\main\res" />
+      <recent name="C:\Users\Christian\Documents\GitHub\mp3TagEditNEW\app\src\main\res\menu" />
+      <recent name="C:\Users\Christian\Documents\GitHub\mp3TagEditNEW\app\src\main\res\layout" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="mp3tagedit.de.main" />
@@ -2059,12 +2271,8 @@
     <key name="android.template.parentActivityClass">
       <recent name="" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
-      <recent name="C:\Users\Christian\Documents\GitHub\mp3TagEditNEW\app\src\main\res" />
-      <recent name="C:\Users\Christian\Documents\GitHub\mp3TagEditNEW\app\src\main\res\menu" />
-      <recent name="C:\Users\Christian\Documents\GitHub\mp3TagEditNEW\app\src\main\res\layout" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Vincent\AndroidStudioProjects\mp3TagEdit\app\src\main\res\drawable-nodpi" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -2150,7 +2358,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517599334259" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518567576803" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2198,7 +2406,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517599334259" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518567576803" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2230,6 +2438,27 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -2360,7 +2589,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517599334260" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518567576804" />
       </method>
     </configuration>
     <list size="1">
@@ -2405,8 +2634,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32216907" sideWeight="0.5027365" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32107022" sideWeight="0.5027365" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -2416,6 +2644,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42532468" sideWeight="0.50373137" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14765458" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2429,7 +2658,7 @@
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32998884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2437,7 +2666,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32216907" sideWeight="0.5027365" order="14" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32107022" sideWeight="0.5027365" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43143812" sideWeight="0.49626866" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2471,105 +2700,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="45" />
+      <option name="time" value="48" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#onActivityResult#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#setupNavigationButtons#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#resetAll#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#addInputLineArtist#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#addInputLineGenre#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#load#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#save#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#setupDrawer#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#open23#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#openTagToFile#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#openHelp#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#openSettings#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#openHome#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#options#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#addFilesDialog#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#deleteFilesDialog#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#addFile#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#setupActionBar#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#setupEditorHead#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#share#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#playSong#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#pauseSong#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#getFragmentResult#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#getMultipleFragmentResult#0;class#id3v24editor#0" expanded="false" />
-            <element signature="method#firstLoad#0;class#id3v24editor#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-b+de/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="47" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="47" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-b+en/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="47" lean-forward="true" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_id3v24editor.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6256">
-          <caret line="368" column="40" lean-forward="true" selection-start-line="368" selection-start-column="40" selection-end-line="368" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/id3v24.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Android-Studio/android-sdk/sources/android-26/java/lang/String.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/id3v23.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="107" column="12" lean-forward="false" selection-start-line="107" selection-start-column="12" selection-end-line="107" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/id3v23.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/file_element.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -2588,7 +2725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -2607,7 +2743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2615,7 +2750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="426" column="49" lean-forward="false" selection-start-line="426" selection-start-column="49" selection-end-line="426" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -2654,7 +2788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="447">
           <caret line="442" column="47" lean-forward="false" selection-start-line="436" selection-start-column="8" selection-end-line="442" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -2665,7 +2798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2057">
           <caret line="121" column="48" lean-forward="false" selection-start-line="121" selection-start-column="48" selection-end-line="121" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -2676,92 +2808,32 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="5338">
           <caret line="314" column="58" lean-forward="false" selection-start-line="314" selection-start-column="58" selection-end-line="314" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/firstview_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/firstview_main.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/drawer_header.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="51" lean-forward="true" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_id3v24editor.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="81" column="31" lean-forward="false" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_id3v24editor.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -2772,16 +2844,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="method#onCreate#0;class#help#0" expanded="false" />
-            <element signature="method#setupDrawer#0;class#help#0" expanded="false" />
-            <element signature="method#open24#0;class#help#0" expanded="false" />
-            <element signature="method#open23#0;class#help#0" expanded="false" />
-            <element signature="method#openTagToFile#0;class#help#0" expanded="false" />
-            <element signature="method#openSettings#0;class#help#0" expanded="false" />
-            <element signature="method#openHome#0;class#help#0" expanded="false" />
-            <element signature="method#setupActionBar#0;class#help#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2789,24 +2851,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding>
-            <element signature="method#onCreate#0;class#tagtofile#0" expanded="false" />
-            <element signature="method#setupButtons#0;class#tagtofile#0" expanded="false" />
-            <element signature="method#setupDrawer#0;class#tagtofile#0" expanded="false" />
-            <element signature="method#open24#0;class#tagtofile#0" expanded="false" />
-            <element signature="method#open23#0;class#tagtofile#0" expanded="false" />
-            <element signature="method#openHelp#0;class#tagtofile#0" expanded="false" />
-            <element signature="method#openSettings#0;class#tagtofile#0" expanded="false" />
-            <element signature="method#openHome#0;class#tagtofile#0" expanded="false" />
-            <element signature="method#setupActionBar#0;class#tagtofile#0" expanded="false" />
-            <element signature="method#addFilesDialog#0;class#tagtofile#0" expanded="false" />
-            <element signature="method#deleteFilesDialog#0;class#tagtofile#0" expanded="false" />
-            <element signature="method#addFile#0;class#tagtofile#0" expanded="false" />
-            <element signature="method#renameQueue#0;class#tagtofile#0" expanded="false" />
-            <element signature="method#parsePattern#0;class#tagtofile#0" expanded="false" />
-            <element signature="method#getFragmentResult#0;class#tagtofile#0" expanded="false" />
-            <element signature="method#getMultipleFragmentResult#0;class#tagtofile#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2814,27 +2858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1428">
           <caret line="360" column="7" lean-forward="false" selection-start-line="360" selection-start-column="7" selection-end-line="360" selection-end-column="7" />
-          <folding>
-            <element signature="method#onCreate#0;class#WelcomeActivity#0" expanded="false" />
-            <element signature="method#onRestart#0;class#WelcomeActivity#0" expanded="false" />
-            <element signature="method#onRequestPermissionsResult#0;class#WelcomeActivity#0" expanded="false" />
-            <element signature="method#setupDrawer#0;class#WelcomeActivity#0" expanded="false" />
-            <element signature="method#setupResume#0;class#WelcomeActivity#0" expanded="false" />
-            <element signature="method#open24WithQueue#0;class#WelcomeActivity#0" expanded="false" />
-            <element signature="method#open23WithQueue#0;class#WelcomeActivity#0" expanded="false" />
-            <element signature="method#open24#0;class#WelcomeActivity#0" expanded="false" />
-            <element signature="method#open23#0;class#WelcomeActivity#0" expanded="false" />
-            <element signature="method#openTagToFile#0;class#WelcomeActivity#0" expanded="false" />
-            <element signature="method#openHelp#0;class#WelcomeActivity#0" expanded="false" />
-            <element signature="method#openSettings#0;class#WelcomeActivity#0" expanded="false" />
-            <element signature="method#setupActionBar#0;class#WelcomeActivity#0" expanded="false" />
-            <marker date="1517592507196" expanded="false" signature="4271:4284" ph="&quot;Home&quot;" />
-            <marker date="1517592507196" expanded="false" signature="4772:4789" ph="&quot;Options&quot;" />
-            <marker date="1517592507196" expanded="false" signature="5286:5305" ph="&quot;id3v2.4 Editor&quot;" />
-            <marker date="1517592507196" expanded="false" signature="5802:5821" ph="&quot;id3v2.3 Editor&quot;" />
-            <marker date="1517592507196" expanded="false" signature="6313:6331" ph="&quot;Tag-to-File&quot;" />
-            <marker date="1517592507196" expanded="false" signature="6823:6836" ph="&quot;Help&quot;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2842,7 +2865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2858,33 +2880,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-118">
           <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="26" column="44" lean-forward="false" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
-          <folding />
-        </state>
+      <provider editor-type-id="android-manifest">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/FileSelecter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-          <folding>
-            <element signature="method#onCreateDialog#0;class#FileSelecter#0" expanded="false" />
-            <element signature="e#2707#2755#0" expanded="true" />
-            <element signature="method#ListFiles#0;class#FileSelecter#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2892,12 +2901,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="24" selection-end-column="3" />
-          <folding>
-            <element signature="method#onCreateDialog#0;class#FileExplorer#0" expanded="false" />
-            <element signature="method#changeRoot#0;class#FileExplorer#0" expanded="false" />
-            <element signature="method#ListDir#0;class#FileExplorer#0" expanded="false" />
-            <element signature="method#getFilesOfDir#0;class#FileExplorer#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2905,9 +2908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="32" column="7" lean-forward="false" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-          <folding>
-            <element signature="method#verifyLengths#0;class#CoverGenTags#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2915,39 +2915,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="47">
           <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenerationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="36" column="49" lean-forward="false" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
-          <folding>
-            <element signature="method#onCreate#0;class#CoverGenerationActivity#0" expanded="false" />
-            <element signature="method#draw#0;class#CoverGenerationActivity#0" expanded="false" />
-            <element signature="method#dialog#0;class#CoverGenerationActivity#0" expanded="false" />
-            <element signature="method#readXML#0;class#CoverGenerationActivity#0" expanded="false" />
-            <element signature="method#readFile#0;class#CoverGenerationActivity#0" expanded="false" />
-            <element signature="method#saveXML#0;class#CoverGenerationActivity#0" expanded="false" />
-            <element signature="method#newXML#0;class#CoverGenerationActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="74" column="26" lean-forward="true" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
-          <folding>
-            <element signature="method#startGeneration#0;class#AlbumCoverActivity#0" expanded="false" />
-            <element signature="method#onCreate#0;class#AlbumCoverActivity#0" expanded="false" />
-            <element signature="method#onActivityResult#0;class#AlbumCoverActivity#0" expanded="false" />
-            <element signature="method#takePhoto#0;class#AlbumCoverActivity#0" expanded="false" />
-            <element signature="method#openGallery#0;class#AlbumCoverActivity#0" expanded="false" />
-            <element signature="method#cropImage#0;class#AlbumCoverActivity#0" expanded="false" />
-            <element signature="method#saveFile#0;class#AlbumCoverActivity#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2955,50 +2922,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v23editor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1662">
-          <caret line="306" column="0" lean-forward="false" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#setupNavigationButtons#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#resetAll#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#load#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#save#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#setupDrawer#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#open24#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#openTagToFile#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#openHelp#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#openSettings#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#openHome#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#options#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#addFilesDialog#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#deleteFilesDialog#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#addFile#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#setupActionBar#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#setupEditorHead#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#onActivityResult#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#share#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#playSong#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#pauseSong#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#getFragmentResult#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#getMultipleFragmentResult#0;class#id3v23editor#0" expanded="false" />
-            <element signature="method#firstLoad#0;class#id3v23editor#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v24editor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
+        <state relative-caret-position="17">
           <caret line="429" column="27" lean-forward="false" selection-start-line="429" selection-start-column="27" selection-end-line="429" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -3028,6 +2957,154 @@
             <element signature="method#getFragmentResult#0;class#id3v24editor#0" expanded="false" />
             <element signature="method#getMultipleFragmentResult#0;class#id3v24editor#0" expanded="false" />
             <element signature="method#firstLoad#0;class#id3v24editor#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="337">
+            <caret line="24" column="3" lean-forward="false" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/CoverGenerationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="377" column="0" lean-forward="false" selection-start-line="377" selection-start-column="0" selection-end-line="377" selection-end-column="0" />
+          <folding>
+            <element signature="method#onCreate#0;class#CoverGenerationActivity#0" expanded="false" />
+            <element signature="e#1958#2217#0" expanded="true" />
+            <element signature="e#2216#2217#0" expanded="true" />
+            <element signature="e#2314#2488#0" expanded="true" />
+            <element signature="e#2487#2488#0" expanded="true" />
+            <element signature="e#2585#2731#0" expanded="true" />
+            <element signature="e#2730#2731#0" expanded="true" />
+            <element signature="e#2826#2998#0" expanded="true" />
+            <element signature="e#2997#2998#0" expanded="true" />
+            <element signature="e#3099#3631#0" expanded="true" />
+            <element signature="e#3630#3631#0" expanded="true" />
+            <element signature="method#draw#0;class#CoverGenerationActivity#0" expanded="false" />
+            <element signature="method#dialog#0;class#CoverGenerationActivity#0" expanded="false" />
+            <element signature="method#readXML#0;class#CoverGenerationActivity#0" expanded="false" />
+            <element signature="method#readFile#0;class#CoverGenerationActivity#0" expanded="false" />
+            <element signature="method#saveXML#0;class#CoverGenerationActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/id3v23editor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="552" column="80" lean-forward="true" selection-start-line="552" selection-start-column="80" selection-end-line="552" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#onCreate#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#setupNavigationButtons#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#resetAll#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#load#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#save#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#setupDrawer#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#open24#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#openTagToFile#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#openHelp#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#openSettings#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#openHome#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#options#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#addFilesDialog#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#deleteFilesDialog#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#setupActionBar#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#setupEditorHead#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#onActivityResult#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#share#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#playSong#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#pauseSong#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#getFragmentResult#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#getMultipleFragmentResult#0;class#id3v23editor#0" expanded="false" />
+            <element signature="method#firstLoad#0;class#id3v23editor#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/main/AlbumCoverActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="161" column="0" lean-forward="false" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+          <folding>
+            <element signature="method#onCreate#0;class#AlbumCoverActivity#0" expanded="false" />
+            <element signature="method#onActivityResult#0;class#AlbumCoverActivity#0" expanded="false" />
+            <element signature="method#takePhoto#0;class#AlbumCoverActivity#0" expanded="false" />
+            <element signature="method#openGallery#0;class#AlbumCoverActivity#0" expanded="false" />
+            <element signature="method#cropImage#0;class#AlbumCoverActivity#0" expanded="false" />
+            <element signature="method#saveFile#0;class#AlbumCoverActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/values/ErrorCodes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="737">
+          <caret line="125" column="62" lean-forward="false" selection-start-line="125" selection-start-column="62" selection-end-line="125" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/exceptions/ListSizeMaxReachedException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/exceptions/ListNotInitializedException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="10" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/exceptions/NoFileInListException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="52" lean-forward="false" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mp3tagedit/de/util/EditList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="28" column="54" lean-forward="true" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1737#1738#0" expanded="true" />
+            <element signature="e#1778#1779#0" expanded="true" />
+            <element signature="e#6579#6580#0" expanded="true" />
+            <element signature="e#6612#6613#0" expanded="true" />
+            <element signature="e#6698#6699#0" expanded="true" />
+            <element signature="e#6729#6730#0" expanded="true" />
+            <element signature="e#6765#6766#0" expanded="true" />
+            <element signature="e#6792#6793#0" expanded="true" />
+            <element signature="e#6885#6886#0" expanded="true" />
+            <element signature="e#6912#6913#0" expanded="true" />
+            <element signature="e#7011#7012#0" expanded="true" />
+            <element signature="e#7039#7040#0" expanded="true" />
           </folding>
         </state>
       </provider>
