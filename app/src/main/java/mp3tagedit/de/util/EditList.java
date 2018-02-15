@@ -28,8 +28,35 @@ public class EditList implements Serializable {
     // TODO Implementierung der Zusatzinfos (Datum, Beschreibung, etc)
     // TODO vervollständigen der in-Code Dokumentation
 
-    public EditList(String name) {
+    /**
+     * Creates and Object of this Class with a description and a maximum size for the queue
+     * that can not be exceeded when adding items to it
+     * @param desc a string containing a description of the list, can be null if no description is
+     *             needed
+     * @param maxSize the maximum possible number of elements in the queue, can be set to 0 if no
+     *                maximum size is needed (or call EditList(String desc))
+     */
+    public EditList(String desc, int maxSize) {
+        this.description = desc;
+        this.maxSize = maxSize;
+    }
 
+    /**
+     * Creates an Object of this Class with a description
+     * @param desc a string containing a description of the list, can be null if no description is
+     *             needed
+     */
+    public EditList(String desc) {
+        this.description = desc;
+        this.maxSize = 0;
+    }
+
+    /**
+     * Creates an Object of this Class
+     */
+    public EditList() {
+        this.description = null;
+        this.maxSize = 0;
     }
 
     // to save the list to file
@@ -37,9 +64,27 @@ public class EditList implements Serializable {
 
     }
 
+    public void save(File path) {
+
+    }
+
     // to load the list from file
     public void loadList() {
 
+    }
+
+    /**
+     * Checks whether the queue is empty or not
+     * @return either true (if the queue is empty) or
+     * false (if there is at least one file saved)
+     * @throws ListNotInitializedException if the queue is not yet initialized
+     */
+    public boolean isEmpty() throws ListNotInitializedException {
+        if (isInitialized()) {
+            return savedQueue.size() == 0;
+        } else {
+            throw new ListNotInitializedException();
+        }
     }
 
     /**
@@ -165,63 +210,85 @@ public class EditList implements Serializable {
     }
 
     /**
-     *
-     * @return
-     * @throws ListNotInitializedException
+     * Checks whether the current element in the queue has a following element
+     * @return either true (if there is such an element)
+     * or false (if there is no such element)
+     * @throws ListNotInitializedException if the queue is not yet initialized
      */
     public boolean hasNext() throws ListNotInitializedException {
         if (isInitialized()) {
-            if (savedQueue.size() <= 1) {
-                return false;
-            } else {
-                return position != savedQueue.size()-1;
-            }
+            return savedQueue.size() > 1 && position != savedQueue.size() - 1;
         } else {
             throw new ListNotInitializedException();
         }
     }
 
     /**
-     *
-     * @return
-     * @throws ListNotInitializedException
+     * Checks whether the current element in the queue has a previous element
+     * @return either true (if there is such an element)
+     * or false (if there is no such element)
+     * @throws ListNotInitializedException if the queue is not yet initialized
      */
     public boolean hasPrevious() throws ListNotInitializedException {
         if (isInitialized()) {
-            if (savedQueue.size() <= 1) {
-                return false;
-            } else {
-                return position != 0;
-            }
+            return savedQueue.size() > 1 && position != 0;
         } else {
             throw new ListNotInitializedException();
         }
     }
 
     // TODO add throw for ListNotInitializedException
-    public ArrayList<String> getQueue() {
-        return savedQueue;
+    public ArrayList<String> getQueue() throws ListNotInitializedException {
+        if (isInitialized()) {
+            return savedQueue;
+        } else {
+            throw new ListNotInitializedException();
+        }
     }
 
     // TODO add throw for ListNotInitializedException
-    public int getPosition() {
-        return position;
+    public int getPosition() throws ListNotInitializedException {
+        if (isInitialized()) {
+            return position;
+        } else {
+            throw new ListNotInitializedException();
+        }
     }
 
     public Date getChangedDate() {
-        return null;
+        return changedDate;
     }
 
-    public void setChangedDate(Date newDate) {
-
+    private void setChangedDate(Date newDate) {
+        this.changedDate = newDate;
     }
 
+    /**
+     * Retrieves the description of the queue
+     * @return either the description set or "no description" if no description is set
+     */
     public String getDescription() {
-        return null;
+        return description == null ? "no description" : description;
     }
 
-    // TODO method to check if all files in the list still exist
-    public boolean checkList() {
-        return false;
+    /**
+     * Checks if all files that are saved in the queue are still present
+     * @return either true (if all files are still there)
+     * or false (if at least 1 file is missing)
+     * @throws ListNotInitializedException if the queue is not yet initialized
+     */
+    public boolean checkList() throws ListNotInitializedException {
+        if (isInitialized()) {
+            for (String s : savedQueue) {
+                File tmp = new File(s);
+                if (!tmp.exists()) {
+                    return false;
+                }
+            }
+
+            return true;
+        } else {
+            throw new ListNotInitializedException();
+        }
     }
 }
