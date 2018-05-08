@@ -1,21 +1,20 @@
 # mp3TagEdit Changelog
 
-This file is used to track what was released and when it was released.
-Additionally there is information on upcoming features in the "Upcoming" Section.
+## Planned versions:
 
-## Upcoming Features
+### Version 1.0.0 (Dolphin) [W.I.P.]
 
-### Beta Release
+* edit .mp3-files
+* save multiple states of ongoing overwrite sessions
+* edit id3v2.3 and id3v2.4 tags
+* auto-complete edited tags using Spotify's database
+* Help-page to explain the app and it's features
+* tour of the app to help beginners
+* 2 locales (ger and eng)
+* lighter theme
 
-* edit .mp3 files
+## Last versions:
 
-## Releases
+### Version 0.2.0
 
-### Version 0.1 (Initial Release)
-
-* basic functions implemented
-* set-up of the github page
-
-* **APK-Download**: no release
-
-### Version 0.2 (still W.I.P)
+For more information see CHANGELOG.md in master branch
